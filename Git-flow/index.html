@@ -90,13 +90,13 @@
 
 
 
-<meta name="description" content="01. Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -">
+<meta name="description" content="Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -&amp;gt;">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git flow">
 <meta property="og:url" content="http://www.orekiyuta.cn/Git-flow/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="01. Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -">
+<meta property="og:description" content="Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -&amp;gt;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Git/01.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Git/02.png">
@@ -176,10 +176,10 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Git/75.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Git/76.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Git/77.png">
-<meta property="og:updated_time" content="2019-11-29T12:00:12.018Z">
+<meta property="og:updated_time" content="2019-12-03T13:57:39.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git flow">
-<meta name="twitter:description" content="01. Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -">
+<meta name="twitter:description" content="Git工作流Git flow :  for ( =&amp;gt; local-code =&amp;gt; submit to local-repository =&amp;gt; submit to server-repository =&amp;gt; from remote-repository update code =&amp;gt; ) Detail :  localfolder -&amp;gt; git Stage -&amp;gt;">
 <meta name="twitter:image" content="http://www.orekiyuta.cn/images/Git/01.png">
 
 
@@ -456,13 +456,13 @@
       
 
       
-        <h3 id="01-Git工作流"><a href="#01-Git工作流" class="headerlink" title="01. Git工作流"></a>01. Git工作流</h3><p>Git flow : </p>
+        <h3 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a>Git工作流</h3><p>Git flow : </p>
 <p>for ( =&gt; local-code =&gt; submit to local-repository =&gt; submit to server-repository =&gt; from remote-repository update code =&gt; )</p>
 <p>Detail : </p>
 <p>localfolder -&gt; git Stage -&gt; git local -&gt; git remote</p>
 <p>本地工作文件夹 -&gt; 索引区 -&gt; 本地库 -&gt; 远程库（服务器端）</p>
 <hr>
-<h3 id="02-基础配置"><a href="#02-基础配置" class="headerlink" title="02. 基础配置"></a>02. 基础配置</h3><p><code>git init</code>        //初始化</p>
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p><code>git init</code>        //初始化</p>
 <p><code>git config -l</code>  //查看配置信息</p>
 <p><code>git config --global user.name &quot;XXX&quot;</code></p>
 <p><code>git config --global user.email &quot;xxx@zz.com&quot;</code></p>
@@ -473,7 +473,7 @@
 <p><code>git help ...</code> </p>
 <hr>
 <a id="more"></a>
-<h3 id="02-提交本地仓库"><a href="#02-提交本地仓库" class="headerlink" title="02. 提交本地仓库"></a>02. 提交本地仓库</h3><ol>
+<h3 id="提交本地仓库"><a href="#提交本地仓库" class="headerlink" title="提交本地仓库"></a>提交本地仓库</h3><ol>
 <li><code>mkdir mygit</code> //建立本地工作文件夹</li>
 <li><code>cd mygit</code>    //进入文件夹</li>
 <li><code>git init</code>    //初始化git库</li>
@@ -497,7 +497,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="03-查看提交日志"><a href="#03-查看提交日志" class="headerlink" title="03. 查看提交日志"></a>03. 查看提交日志</h3><ol>
+<h3 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h3><ol>
 <li><p>首先修改下原有文件内容 <code>nano test.htm</code> </p>
 <p> <img src="/images/Git/07.png" alt></p>
 </li>
@@ -537,7 +537,7 @@
 </li>
 </ul>
 <hr>
-<h3 id="04-工作状态回退"><a href="#04-工作状态回退" class="headerlink" title="04. 工作状态回退"></a>04. 工作状态回退</h3><ul>
+<h3 id="工作状态回退"><a href="#工作状态回退" class="headerlink" title="工作状态回退"></a>工作状态回退</h3><ul>
 <li><p>未添加到索引区</p>
 <ol>
 <li><p>修改文件内容</p>
@@ -574,7 +574,7 @@
 </li>
 </ul>
 <hr>
-<h3 id="05-比较修改内容"><a href="#05-比较修改内容" class="headerlink" title="05. 比较修改内容"></a>05. 比较修改内容</h3><ol>
+<h3 id="比较修改内容"><a href="#比较修改内容" class="headerlink" title="比较修改内容"></a>比较修改内容</h3><ol>
 <li><p><code>git diff</code> //比较工作文件夹</p>
 <p> <img src="/images/Git/26.png" alt></p>
 </li>
@@ -583,7 +583,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="06-文件操作"><a href="#06-文件操作" class="headerlink" title="06. 文件操作"></a>06. 文件操作</h3><ol>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><ol>
 <li><p>执行多个操作（修改内容，添加文件）</p>
 <p> <img src="/images/Git/28.png" alt><br> <img src="/images/Git/29.png" alt>    </p>
 </li>
@@ -605,7 +605,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="07-忽略管理"><a href="#07-忽略管理" class="headerlink" title="07. 忽略管理"></a>07. 忽略管理</h3><p>设置Git忽略的文件，这些文件不参与Git库的提交和管理。（动态文件，比如Node.js的 node_modules 文件夹）</p>
+<h3 id="忽略管理"><a href="#忽略管理" class="headerlink" title="忽略管理"></a>忽略管理</h3><p>设置Git忽略的文件，这些文件不参与Git库的提交和管理。（动态文件，比如Node.js的 node_modules 文件夹）</p>
 <ol>
 <li><p>新建两个文件;ingnore.tmp为需要被忽略的文件, .gitignore为配置文件</p>
 <p> <img src="/images/Git/36.png" alt></p>
@@ -623,7 +623,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="08-更新最后的提交记录"><a href="#08-更新最后的提交记录" class="headerlink" title="08. 更新最后的提交记录"></a>08. 更新最后的提交记录</h3><p>在上次提交过一次记录，后来发现内容有误，需要修改下内容但是又不想再提交一条修改记录，而是添加到上次提交的记录中去。</p>
+<h3 id="更新最后的提交记录"><a href="#更新最后的提交记录" class="headerlink" title="更新最后的提交记录"></a>更新最后的提交记录</h3><p>在上次提交过一次记录，后来发现内容有误，需要修改下内容但是又不想再提交一条修改记录，而是添加到上次提交的记录中去。</p>
 <ol>
 <li><p>在.gitignore 中再添加一条信息</p>
 <p> <img src="/images/Git/40.png" alt></p>
@@ -639,7 +639,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="09-版本回退-切换"><a href="#09-版本回退-切换" class="headerlink" title="09. 版本回退/切换"></a>09. 版本回退/切换</h3><p><code>git reset --hard HEAD</code> //回退到最新提交版本</p>
+<h3 id="版本回退-切换"><a href="#版本回退-切换" class="headerlink" title="版本回退/切换"></a>版本回退/切换</h3><p><code>git reset --hard HEAD</code> //回退到最新提交版本</p>
 <p><code>git reset --hard HEAD~</code> //回退到最新提交的上一次版本</p>
 <p><code>git reset --hard HEAD~n</code> //回退到倒数第N版本</p>
 <p><code>git reset --hard 版本ID号</code> //回退到指定版本号</p>
@@ -662,7 +662,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="10-分支使用⭐"><a href="#10-分支使用⭐" class="headerlink" title="10. 分支使用⭐"></a>10. 分支使用⭐</h3><p>&emsp;&emsp;以上的操作都是在主分支上执行的,但是在实际应用中不应该多次在主分支操作。</p>
+<h3 id="分支使用⭐"><a href="#分支使用⭐" class="headerlink" title="分支使用⭐"></a>分支使用⭐</h3><p>&emsp;&emsp;以上的操作都是在主分支上执行的,但是在实际应用中不应该多次在主分支操作。</p>
 <p>&emsp;&emsp;在项目中每个人都有自己的要执行的任务,每个人执行的任务都不同,那么就需要在主分支上建立自己的分支,在自己的分支上不断的完善后再向主分支进行合并。</p>
 <p><img src="/images/Git/gitbranch.png" alt></p>
 <p><code>git branch 分支名</code>  //建立新分支</p>
@@ -694,7 +694,7 @@
 </li>
 </ul>
 <hr>
-<h3 id="11-合并分支"><a href="#11-合并分支" class="headerlink" title="11. 合并分支"></a>11. 合并分支</h3><ol>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><ol>
 <li><p><code>git merge 分支名</code> //先得切换到主分支，再进行合并</p>
 <p> <img src="/images/Git/56.png" alt></p>
 </li>
@@ -703,7 +703,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="12-分支冲突"><a href="#12-分支冲突" class="headerlink" title="12. 分支冲突"></a>12. 分支冲突</h3><ol>
+<h3 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h3><ol>
 <li><p><code>git checkout -b 分支名</code> //建立分支并切换到该分支</p>
 <p> <img src="/images/Git/58.png" alt></p>
 </li>
@@ -728,7 +728,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="13-使用Tag标签"><a href="#13-使用Tag标签" class="headerlink" title="13. 使用Tag标签"></a>13. 使用Tag标签</h3><ul>
+<h3 id="使用Tag标签"><a href="#使用Tag标签" class="headerlink" title="使用Tag标签"></a>使用Tag标签</h3><ul>
 <li><p>版本号: 1.1.4   （NNN.abc.xxx）</p>
 </li>
 <li><p>有些为四位数 1.1.4.2356 最后的数字为编译次数</p>
@@ -754,7 +754,7 @@
 </li>
 </ol>
 <hr>
-<h3 id="14-使用别名"><a href="#14-使用别名" class="headerlink" title="14. 使用别名"></a>14. 使用别名</h3><p>在Git中可以将经常使用的命令以别名缩写的方式简化使用,根据个人习惯或者开发组规范吧。</p>
+<h3 id="使用别名"><a href="#使用别名" class="headerlink" title="使用别名"></a>使用别名</h3><p>在Git中可以将经常使用的命令以别名缩写的方式简化使用,根据个人习惯或者开发组规范吧。</p>
 <p><code>git config --global alias.别名 原命令名</code></p>
 <p>例如：</p>
 <ul>
@@ -765,7 +765,7 @@
 <li><code>...</code></li>
 </ul>
 <hr>
-<h3 id="15-GitHub"><a href="#15-GitHub" class="headerlink" title="15. GitHub"></a>15. GitHub</h3><ol>
+<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><ol>
 <li><p>创建Github仓库</p>
 <p> <img src="/images/Git/71.png" alt></p>
 </li>
@@ -1209,7 +1209,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1278,7 +1278,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-Git工作流"><span class="nav-number">1.</span> <span class="nav-text">01. Git工作流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-基础配置"><span class="nav-number">2.</span> <span class="nav-text">02. 基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-提交本地仓库"><span class="nav-number">3.</span> <span class="nav-text">02. 提交本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-查看提交日志"><span class="nav-number">4.</span> <span class="nav-text">03. 查看提交日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-工作状态回退"><span class="nav-number">5.</span> <span class="nav-text">04. 工作状态回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05-比较修改内容"><span class="nav-number">6.</span> <span class="nav-text">05. 比较修改内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06-文件操作"><span class="nav-number">7.</span> <span class="nav-text">06. 文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#07-忽略管理"><span class="nav-number">8.</span> <span class="nav-text">07. 忽略管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#08-更新最后的提交记录"><span class="nav-number">9.</span> <span class="nav-text">08. 更新最后的提交记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#09-版本回退-切换"><span class="nav-number">10.</span> <span class="nav-text">09. 版本回退/切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-分支使用⭐"><span class="nav-number">11.</span> <span class="nav-text">10. 分支使用⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-合并分支"><span class="nav-number">12.</span> <span class="nav-text">11. 合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-分支冲突"><span class="nav-number">13.</span> <span class="nav-text">12. 分支冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-使用Tag标签"><span class="nav-number">14.</span> <span class="nav-text">13. 使用Tag标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-使用别名"><span class="nav-number">15.</span> <span class="nav-text">14. 使用别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-GitHub"><span class="nav-number">16.</span> <span class="nav-text">15. GitHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git工作流"><span class="nav-number">1.</span> <span class="nav-text">Git工作流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础配置"><span class="nav-number">2.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交本地仓库"><span class="nav-number">3.</span> <span class="nav-text">提交本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看提交日志"><span class="nav-number">4.</span> <span class="nav-text">查看提交日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作状态回退"><span class="nav-number">5.</span> <span class="nav-text">工作状态回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较修改内容"><span class="nav-number">6.</span> <span class="nav-text">比较修改内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">7.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略管理"><span class="nav-number">8.</span> <span class="nav-text">忽略管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新最后的提交记录"><span class="nav-number">9.</span> <span class="nav-text">更新最后的提交记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退-切换"><span class="nav-number">10.</span> <span class="nav-text">版本回退/切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支使用⭐"><span class="nav-number">11.</span> <span class="nav-text">分支使用⭐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并分支"><span class="nav-number">12.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支冲突"><span class="nav-number">13.</span> <span class="nav-text">分支冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Tag标签"><span class="nav-number">14.</span> <span class="nav-text">使用Tag标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用别名"><span class="nav-number">15.</span> <span class="nav-text">使用别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub"><span class="nav-number">16.</span> <span class="nav-text">GitHub</span></a></li></ol></div>
             
 
           </div>
@@ -1312,7 +1312,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.2k</span>
+    <span title="Site words total count">5.9k</span>
   
 </div>
 
