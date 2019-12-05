@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2019-11-29T12:55:40.957Z</updated>
+  <updated>2019-12-05T15:07:42.818Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Easy to Vue</title>
+    <link href="http://www.orekiyuta.cn/archives/EasytoVue/"/>
+    <id>http://www.orekiyuta.cn/archives/EasytoVue/</id>
+    <published>2019-12-05T11:17:00.000Z</published>
+    <updated>2019-12-05T15:07:42.818Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="How-to-use-Vue-js"><a href="#How-to-use-Vue-js" class="headerlink" title="How to use Vue.js"></a>How to use Vue.js</h3><p>初步使用 Vue</p><p><img src="/images/Vue/01.png" alt></p><ul><li>引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字</li><li>el 相当于元素选择器 element，这里 <code>#App</code> 选择了 <code>id=&quot;App&quot;</code> 的元素</li><li>data 里面定义任意名称字段，然后在<em>双大括号</em>中显示</li></ul><h3 id="v-if-v-for"><a href="#v-if-v-for" class="headerlink" title="v-if , v-for"></a>v-if , v-for</h3><p>基本的条件判断</p><p><img src="/images/Vue/02.png" alt></p><ul><li><code>v-if=&quot;seen&quot;</code>中的 seen 关联了 data 中 seen , v-if 中的参数为 true 则显示,反之</li><li><code>v-for=&quot;fruit in fruits&quot;</code> 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在<em>双大括号</em>取 fruit 对象中的值</li></ul><h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>为元素进行数据绑定</p><p><img src="/images/Vue/03.png" alt></p><ul><li>首先 data 中的 myName 的值是双向绑定到了 <code></code> 中 , 初始文本为 myName 的值</li><li>然后我想修改 <code></code> 的值怎么办,就添加一个元素设置 <code>v-model</code> 属性,值就为想要绑定的那个字段名即可,这里就设置为 <code>v-model=&quot;myName&quot;</code></li><li>最终在input中输入的结果会呈现在<em>双大括号</em>中</li></ul><a id="more"></a><h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>为元素进行事件绑定</p><p><img src="/images/Vue/04.png" alt></p><ul><li><code>v-on:click</code> 绑定了一个点击事件,点击事件 <code>btnClick(&#39;Orekiyuta&#39;)</code> 的方法名为 btnClick ,关联了 myApp 实例中的 methods 关键字中的 btnClick 字段 , 然后把方法里的值赋给了 data 中的 myName </li><li><code>v-on:</code> 可简写为 <code>@</code></li><li>同理,其他事件也是这样 ( keydown , keyup , dbclick , load , etd . )</li></ul><h3 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h3><p>组件,把当个页面拆分开成各个部件的一种思想,把页面各个部分认为是一个组件,然后操作各个组件元素,最后重新组合为页面;也是一种解耦思想吧</p><p><img src="/images/Vue/05.png" alt></p><ul><li>在这里首先是自定义了一个名为 orekiyuta 的 component , 然后设置了它的 pros 和 template </li><li>这个组件在代码中表现为 <code>&lt;orekiyuta/&gt;</code> 的形式 , 它的 pros 可理解为接受传入的数据 , template 则是定义了 <code>&lt;orekiyuta/&gt;</code> 最终会渲染成何种元素,这里为 <code>&lt;li/&gt;</code></li><li>最终结果是从数组 fruits 中遍历数据赋给 fruit , 然后 <code>v-bind</code> 把 fruit 和 组件的名为 eatfruits 的 props 绑定在一起 , 这样就可以在 template 中通过 <code>eatfruits.name</code> 取得数据</li></ul><h3 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h3><p>过滤器,把元数据格式化输出,就是把所得到的数据改变下输出格式,常见的日期格式就个例子,<br>把数据和其表现形式分离操作,也是MVC常用的一种思想</p><p><img src="/images/Vue/06.png" alt></p><ul><li>用法为在需要格式化的数据后加上管道符和过滤器名 <code>XXX | filterName</code></li><li>filters 和 methods 内容为同样的写法 , 也就关键字不一样而已</li></ul><h3 id="Computed"><a href="#Computed" class="headerlink" title="Computed"></a>Computed</h3><p>计算属性,用于把从服务端传过来的元数据加以计算处理的,这样有便于各种不同算法处理的同一数据的展示</p><p><img src="/images/Vue/07.png" alt></p><ul><li>和前面 methods 、filters 写法一样 , 差别在于用法</li><li>用法直接在<em>双大括号</em>中写入计算属性的方法名</li></ul><h3 id="Watch"><a href="#Watch" class="headerlink" title="Watch"></a>Watch</h3><p>监听属性,用于监听变量的变化,然后执行相应处理</p><p><img src="/images/Vue/08.png" alt></p><ul><li>用法为在 Watch 关键字内 写入需要监听的变量,这里监听了 data 中的 变量 price </li><li>一旦 price 的值发生改变,就触发后面的 <code>function (newVal, oldVal)</code> , 方法中的默认形参为新值和旧值</li><li>和前面的计算属性不一样的是 , 在这里 <code></code> <code></code> 是定义为变量输出的</li></ul><p><img src="/images/Vue/08-1.png" alt></p><p><img src="/images/Vue/08-2.png" alt></p><ul><li>这样一来 priceInTax 和 priceChinaRMB 初始值为 0 , 而我们想在页面第一次加载的时候就让三种价格输出</li></ul><p><img src="/images/Vue/08-3.png" alt></p><ul><li>这样就可以在这个Vue对象实例的时候先不给 price 赋值,而在它实例化完成之后再对 price 赋值 , 这样监听属性就能执行一次处理</li></ul><p><img src="/images/Vue/08-4.png" alt></p><h3 id="设置计算属性"><a href="#设置计算属性" class="headerlink" title="设置计算属性"></a>设置计算属性</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;How-to-use-Vue-js&quot;&gt;&lt;a href=&quot;#How-to-use-Vue-js&quot; class=&quot;headerlink&quot; title=&quot;How to use Vue.js&quot;&gt;&lt;/a&gt;How to use Vue.js&lt;/h3&gt;&lt;p&gt;初步使用 Vue&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Vue/01.png&quot; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字&lt;/li&gt;
+&lt;li&gt;el 相当于元素选择器 element，这里 &lt;code&gt;#App&lt;/code&gt; 选择了 &lt;code&gt;id=&amp;quot;App&amp;quot;&lt;/code&gt; 的元素&lt;/li&gt;
+&lt;li&gt;data 里面定义任意名称字段，然后在&lt;em&gt;双大括号&lt;/em&gt;中显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;v-if-v-for&quot;&gt;&lt;a href=&quot;#v-if-v-for&quot; class=&quot;headerlink&quot; title=&quot;v-if , v-for&quot;&gt;&lt;/a&gt;v-if , v-for&lt;/h3&gt;&lt;p&gt;基本的条件判断&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Vue/02.png&quot; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;v-if=&amp;quot;seen&amp;quot;&lt;/code&gt;中的 seen 关联了 data 中 seen , v-if 中的参数为 true 则显示,反之&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v-for=&amp;quot;fruit in fruits&amp;quot;&lt;/code&gt; 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在&lt;em&gt;双大括号&lt;/em&gt;取 fruit 对象中的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;v-model&quot;&gt;&lt;a href=&quot;#v-model&quot; class=&quot;headerlink&quot; title=&quot;v-model&quot;&gt;&lt;/a&gt;v-model&lt;/h3&gt;&lt;p&gt;为元素进行数据绑定&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/Vue/03.png&quot; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先 data 中的 myName 的值是双向绑定到了 &lt;code&gt;&lt;/code&gt; 中 , 初始文本为 myName 的值&lt;/li&gt;
+&lt;li&gt;然后我想修改 &lt;code&gt;&lt;/code&gt; 的值怎么办,就添加一个元素设置 &lt;code&gt;v-model&lt;/code&gt; 属性,值就为想要绑定的那个字段名即可,这里就设置为 &lt;code&gt;v-model=&amp;quot;myName&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;最终在input中输入的结果会呈现在&lt;em&gt;双大括号&lt;/em&gt;中&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Vue.js" scheme="http://www.orekiyuta.cn/tags/Vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Ark.exploit.log</title>
