@@ -90,18 +90,39 @@
 
 
 
-<meta name="description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在双大括号中显示  v-if , v-for基本的条件判断   v-if=&amp;quot;seen&amp;quot;中的">
+<meta name="description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在 双大括号  中显示  v-if 、 v-for 基础用法    v-if=&amp;quot;seen&amp;quot;">
 <meta name="keywords" content="Vue.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Easy to Vue">
-<meta property="og:url" content="http://www.orekiyuta.cn/archives/EasytoVue/index.html">
+<meta property="og:title" content="Learn to use Vue.js">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/LearnToUseVue/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在双大括号中显示  v-if , v-for基本的条件判断   v-if=&amp;quot;seen&amp;quot;中的">
+<meta property="og:description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在 双大括号  中显示  v-if 、 v-for 基础用法    v-if=&amp;quot;seen&amp;quot;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/01.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/02.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/12.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/12-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/14.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/14-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/15.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/15-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/15-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/15-3.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/13.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/13-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/13-2.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/03.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/10.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/10-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/10-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/11.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/11-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/11-2.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/04.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/16.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/16-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/16-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/16-3.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/05.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/06.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/07.png">
@@ -110,10 +131,40 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/08-2.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/08-3.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/08-4.png">
-<meta property="og:updated_time" content="2019-12-05T15:07:42.818Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/09.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/17.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/17-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/18.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/18-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/18-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/18-3.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/18-4.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/19.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/20.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/20-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/21.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/22.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/22-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/23.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/23-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/24.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/24-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/24-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/25.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/26.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/27.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/28.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/29.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/30-2.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/30.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/30-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/31.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/31-1.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/Vue/31-1.png">
+<meta property="og:updated_time" content="2019-12-07T19:04:45.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Easy to Vue">
-<meta name="twitter:description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在双大括号中显示  v-if , v-for基本的条件判断   v-if=&amp;quot;seen&amp;quot;中的">
+<meta name="twitter:title" content="Learn to use Vue.js">
+<meta name="twitter:description" content="How to use Vue.js初步使用 Vue   引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字 el 相当于元素选择器 element，这里 #App 选择了 id=&amp;quot;App&amp;quot; 的元素 data 里面定义任意名称字段，然后在 双大括号  中显示  v-if 、 v-for 基础用法    v-if=&amp;quot;seen&amp;quot;">
 <meta name="twitter:image" content="http://www.orekiyuta.cn/images/Vue/01.png">
 
 
@@ -144,7 +195,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/archives/EasytoVue/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/LearnToUseVue/">
 
 
 
@@ -152,7 +203,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>Easy to Vue | Canoe</title>
+  <title>Learn to use Vue.js | Canoe</title>
   
 
 
@@ -302,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/EasytoVue/">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/LearnToUseVue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Orekiyuta">
@@ -319,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Easy to Vue</h1>
+          <h1 class="post-title" itemprop="name headline">Learn to use Vue.js</h1>
         
 
         <div class="post-meta">
@@ -365,7 +416,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  940
+                  3.4k
                 </span>
               
 
@@ -395,29 +446,115 @@
 <ul>
 <li>引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字</li>
 <li>el 相当于元素选择器 element，这里 <code>#App</code> 选择了 <code>id=&quot;App&quot;</code> 的元素</li>
-<li>data 里面定义任意名称字段，然后在<em>双大括号</em>中显示</li>
+<li>data 里面定义任意名称字段，然后在 <em>双大括号</em>  中显示</li>
 </ul>
-<h3 id="v-if-v-for"><a href="#v-if-v-for" class="headerlink" title="v-if , v-for"></a>v-if , v-for</h3><p>基本的条件判断</p>
-<p><img src="/images/Vue/02.png" alt></p>
+<h3 id="v-if-、-v-for"><a href="#v-if-、-v-for" class="headerlink" title="v-if 、 v-for"></a>v-if 、 v-for</h3><ol>
+<li><p>基础用法</p>
+<p> <img src="/images/Vue/02.png" alt></p>
 <ul>
 <li><code>v-if=&quot;seen&quot;</code>中的 seen 关联了 data 中 seen , v-if 中的参数为 true 则显示,反之</li>
-<li><code>v-for=&quot;fruit in fruits&quot;</code> 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在<em>双大括号</em>取 fruit 对象中的值</li>
+<li><code>v-for=&quot;fruit in fruits&quot;</code> 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在 <em>双大括号</em>  取 fruit 对象中的值</li>
 </ul>
+</li>
+<li><p>v-if 、v-else-if 、v-else</p>
+<p> <img src="/images/Vue/12.png" alt></p>
+<ul>
+<li><p>这个比较容易理解 , 直接在后面写入表达式 , 然后根据结果真假进行显示与否</p>
+<p><img src="/images/Vue/12-1.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>数组列表渲染-添加索引</p>
+<p> <img src="/images/Vue/14.png" alt></p>
+<ul>
+<li><p>这里对比前面的循环多了个索引 index , 主要表示了当前对象在数组列表中的位置</p>
+<p><img src="/images/Vue/14-1.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>对象迭代</p>
+<p> <img src="/images/Vue/15.png" alt></p>
+<ul>
+<li><p>取出 mygame 对象中的键值对</p>
+<p>  <img src="/images/Vue/15-1.png" alt></p>
+</li>
+<li><p>值得注意的是 <code>(value, key) in mygame</code> 中键值对的顺序 , 前者必定是值 , 后者必定是键 , 这是设计初就定义好的。</p>
+</li>
+<li><p>命名 value 和 key 只是为了提高可读性而已 , 其实取什么名都不影响结果</p>
+<p>  <img src="/images/Vue/15-2.png" alt></p>
+<p>  <img src="/images/Vue/15-3.png" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>设置元素状态为显示</p>
+<p><img src="/images/Vue/13.png" alt></p>
+<ul>
+<li>这个也好理解 , 根据 result 对象的布尔值进行显示或隐藏</li>
+<li>这个与 v-if 的区别在于 v-if 是对 DOM 进行操作的 , 而 v-show 只是设置了标签的 display 属性而已 , 并没有操作 DOM</li>
+</ul>
+<p><img src="/images/Vue/13-1.png" alt></p>
+<p><img src="/images/Vue/13-2.png" alt></p>
 <h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>为元素进行数据绑定</p>
 <p><img src="/images/Vue/03.png" alt></p>
 <ul>
 <li>首先 data 中的 myName 的值是双向绑定到了 <code></code> 中 , 初始文本为 myName 的值</li>
-<li>然后我想修改 <code></code> 的值怎么办,就添加一个元素设置 <code>v-model</code> 属性,值就为想要绑定的那个字段名即可,这里就设置为 <code>v-model=&quot;myName&quot;</code></li>
-<li>最终在input中输入的结果会呈现在<em>双大括号</em>中</li>
+<li>然后我想修改 <code></code> 的值怎么办,那就为一个元素设置 <code>v-model</code> 属性,属性值就设为想要绑定的那个字段名即可,这里就设置为 <code>v-model=&quot;myName&quot;</code></li>
+<li>最终在input中输入的结果会呈现在 <em>双大括号</em>  中</li>
 </ul>
 <a id="more"></a>
-<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>为元素进行事件绑定</p>
-<p><img src="/images/Vue/04.png" alt></p>
+<h3 id="v-bind-class"><a href="#v-bind-class" class="headerlink" title="v-bind:class"></a>v-bind:class</h3><ol>
+<li><p>为元素的 class 属性绑定值</p>
+<p> <img src="/images/Vue/10.png" alt></p>
+<ul>
+<li>首先常规的元素 class 一般为 <code>&lt;p class=&quot;xxx&quot; /&gt;</code> 的形式 , 这样的形式只能不断的在其后面添加 class 名才能对元素加以控制,显得不够灵活</li>
+<li>Vue 能够用过 Js 对其 class 属性进行控制 , 提高了 class 属性的复用性</li>
+<li>这里 <code>v-bind:class=&quot;{active:isActive}&quot;</code> 意思是首先有一个 <code>class=&quot;active&quot;</code> 的元素 , 我们突然不想让它的 class 值为 active 了 , 怎么办 ? 但是又不可能随时手工去移除 , 所以就在双引号内写入表达式 <code>{active:isActive}</code> </li>
+<li><code>active:isActive</code> 中的 isActive 可任意取名 , 然后在 data 中给 isActive 字段赋予一个布尔值 , 然后 v-bind:class 就能根据双引号内的表达式进行布尔判断 , 实现显示与移除</li>
+<li><p><code>v-bind:class</code> 可简写为 <code>:class</code></p>
+<p><img src="/images/Vue/10-1.png" alt></p>
+<p><img src="/images/Vue/10-2.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>为元素的 class 属性绑定对象</p>
+<p> <img src="/images/Vue/11.png" alt></p>
+<ul>
+<li>上面的例子是在 class 属性的双引号内写入表达式 , 然后绑定了样式的属性名</li>
+<li>这里的话 , 直接在双引号内输入任意字段名 , 然后在 data 中写入该字段名对象 , 接着在该对象内写入布尔参数</li>
+<li><p>最终效果为 class 绑定了 myClass 对象 ，class 属性根据对象内容的参数布尔值 , 实现了同时对一个元素添加多个属性值效果</p>
+<p><img src="/images/Vue/11-1.png" alt></p>
+<p><img src="/images/Vue/11-2.png" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><ol>
+<li><p>为元素进行事件绑定</p>
+<p> <img src="/images/Vue/04.png" alt></p>
 <ul>
 <li><code>v-on:click</code> 绑定了一个点击事件,点击事件 <code>btnClick(&#39;Orekiyuta&#39;)</code> 的方法名为 btnClick ,关联了 myApp 实例中的 methods 关键字中的 btnClick 字段 , 然后把方法里的值赋给了 data 中的 myName </li>
 <li><code>v-on:</code> 可简写为 <code>@</code></li>
 <li>同理,其他事件也是这样 ( keydown , keyup , dbclick , load , etd . )</li>
 </ul>
+</li>
+<li><p>v-on:(event)</p>
+<p> <img src="/images/Vue/16.png" alt></p>
+<ul>
+<li><code>v-on:keyup=&quot;txtKeyup($event)&quot;</code> 在这里 <code>$event</code> 为关键字获取事件内容 , 不能修改成其他 </li>
+<li><code>v-on:keyup=&quot;txtKeyup($event)&quot;</code> 和 <code>v-on:keyup=&quot;txtKeyup&quot;</code> 为一样的效果 , 默认为获取事件</li>
+<li><p>v-on:(event) 可简写为 @(event) , 例如 <code>@keyup=&quot;txtkeyup&quot;</code></p>
+<p>  松开按键</p>
+<p>  <img src="/images/Vue/16-1.png" alt></p>
+<p>  点击按钮</p>
+<p>  <img src="/images/Vue/16-2.png" alt></p>
+</li>
+<li><p>修改方法形参不影响结果 , 形参定义成 event 也是便于理解而已 ; <code>v-on:(evenr)</code> 获取了键盘的事件传给方法的形参 , 形参接受了数据在函数里做相应的处理</p>
+<p>  <img src="/images/Vue/16-3.png" alt>   </p>
+</li>
+</ul>
+</li>
+</ol>
 <h3 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h3><p>组件,把当个页面拆分开成各个部件的一种思想,把页面各个部分认为是一个组件,然后操作各个组件元素,最后重新组合为页面;也是一种解耦思想吧</p>
 <p><img src="/images/Vue/05.png" alt></p>
 <ul>
@@ -435,7 +572,7 @@
 <p><img src="/images/Vue/07.png" alt></p>
 <ul>
 <li>和前面 methods 、filters 写法一样 , 差别在于用法</li>
-<li>用法直接在<em>双大括号</em>中写入计算属性的方法名</li>
+<li>用法直接在 <em>双大括号</em>  中写入计算属性的方法名</li>
 </ul>
 <h3 id="Watch"><a href="#Watch" class="headerlink" title="Watch"></a>Watch</h3><p>监听属性,用于监听变量的变化,然后执行相应处理</p>
 <p><img src="/images/Vue/08.png" alt></p>
@@ -454,7 +591,180 @@
 <li>这样就可以在这个Vue对象实例的时候先不给 price 赋值,而在它实例化完成之后再对 price 赋值 , 这样监听属性就能执行一次处理</li>
 </ul>
 <p><img src="/images/Vue/08-4.png" alt></p>
-<h3 id="设置计算属性"><a href="#设置计算属性" class="headerlink" title="设置计算属性"></a>设置计算属性</h3>
+<h3 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h3><p>设置计算属性,之前的计算属性只是单纯的取出数据 get , 这里多了个存数据方法 set</p>
+<p><img src="/images/Vue/09.png" alt></p>
+<ul>
+<li>首先页面初始化时会先读取 price 、priceInTax 、priceChinaRMB 各自的值 ; priceInTax 触发的是 get 方法 , 根据 price 值计算出了 priceInTax 的值</li>
+<li>然后点击事件给计算属性中的 priceInTax 赋予了一个新的值 , 触发 priceInTax 的 set 方法 ,根据 priceInTax 的值 计算出 Price 的 值</li>
+</ul>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><ol>
+<li><p><code>input[type=&quot;text&quot;]</code> : 用  <code>v-model</code> 为表单文本框绑定变量 , 实现数据同步</p>
+<p> <img src="/images/Vue/17.png" alt></p>
+<p> <img src="/images/Vue/17-1.png" alt></p>
+</li>
+<li><p><code>input[type=&quot;checkout&quot;]</code> : 用  <code>v-model</code> 绑定复选框 , 并把选中的复选框的值添加到数组对象中 , 数组内顺序由选中顺序决定 </p>
+<p> <img src="/images/Vue/18.png" alt></p>
+<p> <img src="/images/Vue/18-1.png" alt></p>
+<ul>
+<li><p>取消选中某一元素后 , 数组后一位元素向前移动一位</p>
+<p><img src="/images/Vue/18-2.png" alt></p>
+</li>
+<li><p>需要注意的是 checkedGames 对象为数组对象 [] , 如果修改成变量 “” 就会同时选定 , 且结果是布尔值</p>
+<p><img src="/images/Vue/18-3.png" alt></p>
+<p><img src="/images/Vue/18-4.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p><code>input[type=&quot;radio&quot;]</code> : 用  <code>v-model</code> 绑定单选框 , v-model 的值相同的为一组 , 值对象就用空就行</p>
+<p> <img src="/images/Vue/19.png" alt></p>
+</li>
+<li><p><code>select</code> : 用  <code>v-model</code> 绑定下拉框列表 </p>
+<p> <img src="/images/Vue/20.png" alt></p>
+<ul>
+<li>在 <code>likedNBAStar: &quot;&quot;</code> 这里用 <code>&quot;&quot;</code> 和 <code>null</code> 效果一样</li>
+<li><p>在 <code>likedNBAStars: []</code> 这里用 <code>null</code> <code>&quot;&quot;</code> <code>{}</code> <code>[]</code> 结果一样都是数组 </p>
+<p><img src="/images/Vue/20-1.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>表单修饰符</p>
+<ol>
+<li><p><code>.lazy</code></p>
+<ul>
+<li><code>用户名：&lt;input v-model.lazy=&quot;username&quot;&gt;</code></li>
+<li>用户输入内容时不做绑定数据的更新处理,在控件的 onchange 事件中更新绑定的变量 </li>
+<li>也就是说用户输入完成后 , 光标离开的瞬间触发 onchange 事件 , 一次性更新内容</li>
+<li>一般的数据双向绑定都是用户输入的同时更新 , 这样做的话有助于提高性能</li>
+</ul>
+</li>
+<li><p><code>.number</code></p>
+<ul>
+<li><code>年龄：&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;</code></li>
+<li>将用户输入的内容转换为数值类型，如果用户输入非数值的时候，则返回NaN</li>
+<li>在页面表现为无法输入非数字类型内容</li>
+</ul>
+</li>
+<li><p><code>.trim</code></p>
+<ul>
+<li><code>意见：&lt;input v-model.trim=&quot;content&quot;&gt;</code></li>
+<li>自动去掉用户输入内容两端的空格</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="/images/Vue/21.png" alt></p>
+<p>总结下来 , 基本就是通过 <code>v-model</code> 绑定 data 中的一个对象 , 至于对象是什么类型 , 取决于需求</p>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ol>
+<li><p>创建全局组件</p>
+<p> <img src="/images/Vue/22.png" alt></p>
+<p> <img src="/images/Vue/22-1.png" alt></p>
+<ul>
+<li>值得注意的是以 <code>Vue.component()</code> 形式创建的是全局组件 , 意思是只要是用到 Vue 对象的地方都可以用到该组件</li>
+</ul>
+</li>
+<li><p>创建局部组件</p>
+<p> <img src="/images/Vue/23.png" alt></p>
+<ul>
+<li>首先声明了一个 Js 对象 WeatherComponent , 然后在该对象内部声明了 template 属性 , 这个 template 为关键字</li>
+<li>然后声明了一个名为 myApp 的 Vue 实例 , 在该实例内部的 components 属性内部写了一个组件名 <code>my-weather</code> , 跟在后面的 <code>WeatherComponent</code> 意思是用到名为 WeatherComponent 的 Js 对象</li>
+<li>这样的过程就是局部注册组件</li>
+<li><p>这样的写法就是 my-weather 这个组件只能在 myApp 这个实例的作用域里面才能生效 , 意思就是 <code>&lt;my-weather/&gt;</code> 只有写在 <code>&lt;div id=&quot;myApp&quot;/&gt;</code> 内部才生效</p>
+<p>  <img src="/images/Vue/23-1.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>表行组件</p>
+<p> 首先观察以下内容</p>
+<p> <img src="/images/Vue/24.png" alt></p>
+<p> <img src="/images/Vue/24-1.png" alt></p>
+<ul>
+<li>由于 <code>&lt;table/&gt;</code> 内部无法识别 <code>&lt;my-row*&gt;</code> , 因此我们定义的组件只能渲染在 table 标签外部</li>
+<li><p>我们定义的组件渲染的顺序排在了 table 之前 , ( 个人应该是页面DOM组织时 Js 的优先级高于原生 HTML ) //这里有待研究</p>
+<p>如果需要让组件内容正常的显示在 table 中 , 需要用这种写法 <code>&lt;tr is=&quot;my-row1&quot;&gt;&lt;/tr&gt;</code></p>
+<p><img src="/images/Vue/24-2.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>数据函数</p>
+<p> <img src="/images/Vue/25.png" alt></p>
+<ul>
+<li>这里需要注意的是 template 属性内的 todayWeather 对象 , 需要在 data 中写成函数形式</li>
+</ul>
+</li>
+<li><p>给组件传递参数</p>
+<p> <img src="/images/Vue/26.png" alt></p>
+<ul>
+<li>这里数据传递的关键在于 test-result 组件标签的 <code>:score</code> 属性通过 v-bind 和组件内部 props 属性值 score 进行了绑定</li>
+<li>这样就组件就可以接受从外部传递过来的参数值</li>
+</ul>
+</li>
+<li><p>给组件传递变量</p>
+<p> <img src="/images/Vue/27.png" alt></p>
+<ul>
+<li>首先是用 v-model 给 input 的值绑定了 myApp 的 data 属性中的 myname 对象 </li>
+<li>然后在自定义的组件中用 <code>:pname</code> 把 myname 对象和组件中的 props 属性中的 pname 值进行绑定</li>
+<li>通过 myname 对象把值传递到 template 属性值的 <em>双大括号中</em></li>
+</ul>
+</li>
+<li><p>参数验证</p>
+<p> <img src="/images/Vue/28.png" alt></p>
+<ul>
+<li>在 component 中的 props 属性不再是之前的数组 , 而是设置成对象 </li>
+<li>分别设置了 name , age , detail 对象 , 在各自的对象中进行了相应的参数校验 </li>
+<li>detail 与 name , age 的不同在于 name , age 为单一的属性对象 , 而 datail 设置了 object 对象 , 便可以在其中描述多个内容 ; 在这里的话设置了默认返回值</li>
+</ul>
+</li>
+<li><p>事件传递</p>
+<ol>
+<li><p>v-on : 侦听组件事件，当组件触发事件后进行事件处理。</p>
+</li>
+<li><p>$emit : 触发事件，并将数据提交给事件侦听者。</p>
+<p><img src="/images/Vue/29.png" alt></p>
+</li>
+</ol>
+<ul>
+<li>首先给组件传递了 a 、 b 值 , 然后点击事件触发 add 方法</li>
+<li>然后在方法内部用 <code>$emit</code> 触发事件 , 给 add_event 事件传递 inResult 参数</li>
+<li>因此组件 <code>&lt;add-method /&gt;</code> 绑定的 add_event 事件被触发 , 然后调用 getAddResult 方法</li>
+<li>将刚才传递过来的 inResult 参数赋给 outResult 参数 , 最终显示在页面 </li>
+</ul>
+</li>
+<li><p>slot </p>
+<p> 主要作用是将自定义组件标签之间的内容保留到指定位置</p>
+<ul>
+<li><p>一般来说没有使用 slot 的情况下 , 组件编译时会忽略组件标签之间的内容</p>
+<p><img src="/images/Vue/30-2.png" alt></p>
+<p><img src="/images/Vue/30.png" alt></p>
+</li>
+<li><p>用法为在 template 中指定位置插入 <code>&lt;slot&gt;&lt;/slot&gt;</code></p>
+</li>
+<li><p>在文章以上的所有内容都是在标签的属性中操作数据显示 , 而这里主要对标签间的内容进行操作</p>
+<p><img src="/images/Vue/30-1.png" alt></p>
+</li>
+<li><p>观察所得 , slot 不仅保留了字符 , 还保留了空格</p>
+</li>
+<li>所以 slot 使用后会对组件标签之间的所有内容进行保留 , 空格当作空字符一起合并</li>
+</ul>
+</li>
+<li><p>组合 slot</p>
+<p> 在上面使用了 slot 之后 , 或许会有点疑问 , 上面是一次性操作了标签内所有的内容 , 要是我想只对局部内容操作该怎么办呢？那就需要为 slot 命名区分开 , 再对其进行处理</p>
+<p> <img src="/images/Vue/31.png" alt></p>
+<ul>
+<li>通过在组件内添加块元素 <code>&lt;span/&gt;</code> 为 slot 命名 , 然后在 template 中 再次通过名称对其进行保留处理</li>
+<li><p>仔细观察 , 这时如果不给 slot 命名的话 , 使用 <code>&lt;slot&gt;&lt;/slot&gt;</code> 也一样会进行保留操作 , 由于这里组件 <code>&lt;nba-all-stars/&gt;</code> 之间无内容 , 所以不显示</p>
+<p><img src="/images/Vue/31-1.png" alt></p>
+</li>
+<li><p>再次观察可知, 标签之间的空格不会被编译器认为是空字符</p>
+<p><img src="/images/Vue/31-1.png" alt></p>
+</li>
+<li><p>但是一旦标签内有字符 , 空格就被认为和空字符 </p>
+</li>
+<li>同时 <code>&lt;span/&gt;</code> 标签占据的位置也会被认为是空字符</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     
@@ -474,7 +784,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://www.orekiyuta.cn/archives/EasytoVue/" title="Easy to Vue">http://www.orekiyuta.cn/archives/EasytoVue/</a>
+    <a href="http://www.orekiyuta.cn/archives/LearnToUseVue/" title="Learn to use Vue.js">http://www.orekiyuta.cn/archives/LearnToUseVue/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -933,7 +1243,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-use-Vue-js"><span class="nav-number">1.</span> <span class="nav-text">How to use Vue.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if-v-for"><span class="nav-number">2.</span> <span class="nav-text">v-if , v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">3.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-on"><span class="nav-number">4.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component"><span class="nav-number">5.</span> <span class="nav-text">Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filters"><span class="nav-number">6.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computed"><span class="nav-number">7.</span> <span class="nav-text">Computed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Watch"><span class="nav-number">8.</span> <span class="nav-text">Watch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置计算属性"><span class="nav-number">9.</span> <span class="nav-text">设置计算属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-use-Vue-js"><span class="nav-number">1.</span> <span class="nav-text">How to use Vue.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if-、-v-for"><span class="nav-number">2.</span> <span class="nav-text">v-if 、 v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show"><span class="nav-number">3.</span> <span class="nav-text">v-show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">4.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind-class"><span class="nav-number">5.</span> <span class="nav-text">v-bind:class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-on"><span class="nav-number">6.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Component"><span class="nav-number">7.</span> <span class="nav-text">Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filters"><span class="nav-number">8.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computed"><span class="nav-number">9.</span> <span class="nav-text">Computed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Watch"><span class="nav-number">10.</span> <span class="nav-text">Watch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setter"><span class="nav-number">11.</span> <span class="nav-text">setter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单"><span class="nav-number">12.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">13.</span> <span class="nav-text">组件</span></a></li></ol></div>
             
 
           </div>
@@ -967,7 +1277,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.9k</span>
+    <span title="Site words total count">9.3k</span>
   
 </div>
 
