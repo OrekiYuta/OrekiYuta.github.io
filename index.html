@@ -590,6 +590,251 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/NiceToUseVue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/NiceToUseVue/" itemprop="url">Nice to use Vue.js</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-09T15:51:26+08:00">
+                2019-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.2k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a><center>Start</center></h2><h3 id="Vue-cli-版本"><a href="#Vue-cli-版本" class="headerlink" title="Vue-cli 版本"></a>Vue-cli 版本</h3><p>先查看一下 Vue-cli 项目构建工具版本信息并安装 Vue-cli</p>
+<ul>
+<li><code>npm show vue-cli</code>  查看 Vue-cli 的版本信息</li>
+<li><code>npm install -g vue-cli@2.9.6</code> 选择最新版本</li>
+<li><code>vue -V</code> 版本确认</li>
+<li><code>vue -h</code> 查看帮助</li>
+</ul>
+<h3 id="Vue-cli-模板"><a href="#Vue-cli-模板" class="headerlink" title="Vue-cli 模板"></a>Vue-cli 模板</h3><p>由于用 Vue-cli 工具初始化项目是基于某些模板下初始化的 , 所以先查看下官方推荐的模板 👉<a href="https://github.com/vuejs-templates" target="_blank" rel="noopener">vuejs-templates</a></p>
+<p><img src="/images/Vue2/01.png" alt></p>
+<ul>
+<li>这里就采用生态较好的 webpack  👉<a href="http://vuejs-templates.github.io/webpack/" target="_blank" rel="noopener">官方说明文档</a></li>
+</ul>
+<h3 id="Vue-cli-初始化项目"><a href="#Vue-cli-初始化项目" class="headerlink" title="Vue-cli 初始化项目"></a>Vue-cli 初始化项目</h3><p>查看下如何初始化</p>
+<p><img src="/images/Vue2/01.png" alt></p>
+<ul>
+<li>两种方式初始化 : 一种是基于官方模板 , 另一种基于第三方模板</li>
+</ul>
+<h2 id="创建-webpack-工程"><a href="#创建-webpack-工程" class="headerlink" title="创建 webpack 工程"></a><center>创建 webpack 工程</center></h2><h3 id="安装选项"><a href="#安装选项" class="headerlink" title="安装选项"></a>安装选项</h3><p><img src="/images/Vue2/03.png" alt></p>
+<ul>
+<li><p><code>Runtime + Compiler</code> 一般选择这个 , 安装运行时和编译器 , 一般有很多动态组件 , 只安装运行时的话不能动态编译</p>
+<p>  <img src="/images/Vue2/03-1.png" alt></p>
+</li>
+<li><p><code>Install vue-router</code> 路由</p>
+</li>
+<li><code>Use ESLint to lint your code</code> ES语法检测器</li>
+<li><code>Set up unit tests</code> 单元测试</li>
+<li><code>Setup e2e tests with Nightwatch</code> e2e测试</li>
+<li><code>Should we run npm install for you after the project has been created</code> 选择包管理器</li>
+</ul>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── build/                      <span class="comment"># webpack config files</span></span><br><span class="line">│   └── ...</span><br><span class="line">├── config/</span><br><span class="line">│   ├── index.js                <span class="comment"># main project config</span></span><br><span class="line">│   └── ...</span><br><span class="line">├── src/</span><br><span class="line">│   ├── main.js                 <span class="comment"># app entry file</span></span><br><span class="line">│   ├── App.vue                 <span class="comment"># main app component</span></span><br><span class="line">│   ├── components/             <span class="comment"># ui components</span></span><br><span class="line">│   │   └── ...</span><br><span class="line">│   └── assets/                 <span class="comment"># module assets (processed by webpack)</span></span><br><span class="line">│       └── ...</span><br><span class="line">├── static/                     <span class="comment"># pure static assets (directly copied)</span></span><br><span class="line">├── test/</span><br><span class="line">│   └── unit/                   <span class="comment"># unit tests</span></span><br><span class="line">│   │   ├── specs/              <span class="comment"># test spec files</span></span><br><span class="line">│   │   ├── eslintrc            <span class="comment"># config file for eslint with extra settings only for unit tests</span></span><br><span class="line">│   │   ├── index.js            <span class="comment"># test build entry file</span></span><br><span class="line">│   │   ├── jest.conf.js        <span class="comment"># Config file when using Jest for unit tests</span></span><br><span class="line">│   │   └── karma.conf.js       <span class="comment"># test runner config file when using Karma for unit tests</span></span><br><span class="line">│   │   ├── setup.js            <span class="comment"># file that runs before Jest runs your unit tests</span></span><br><span class="line">│   └── e2e/                    <span class="comment"># e2e tests</span></span><br><span class="line">│   │   ├── specs/              <span class="comment"># test spec files</span></span><br><span class="line">│   │   ├── custom-assertions/  <span class="comment"># custom assertions for e2e tests</span></span><br><span class="line">│   │   ├── runner.js           <span class="comment"># test runner script</span></span><br><span class="line">│   │   └── nightwatch.conf.js  <span class="comment"># test runner config file</span></span><br><span class="line">├── .babelrc                    <span class="comment"># babel config</span></span><br><span class="line">├── .editorconfig               <span class="comment"># indentation, spaces/tabs and similar settings for your editor</span></span><br><span class="line">├── .eslintrc.js                <span class="comment"># eslint config</span></span><br><span class="line">├── .eslintignore               <span class="comment"># eslint ignore rules</span></span><br><span class="line">├── .gitignore                  <span class="comment"># sensible defaults for gitignore</span></span><br><span class="line">├── .postcssrc.js               <span class="comment"># postcss config</span></span><br><span class="line">├── index.html                  <span class="comment"># index.html template</span></span><br><span class="line">├── package.json                <span class="comment"># build scripts and dependencies</span></span><br><span class="line">└── README.md                   <span class="comment"># Default README file</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>更多详细可查看官方文档 👉<a href="http://vuejs-templates.github.io/webpack/" target="_blank" rel="noopener">webpack</a></li>
+</ul>
+<h2 id="运行与发布-webpack"><a href="#运行与发布-webpack" class="headerlink" title="运行与发布 webpack"></a><center>运行与发布 webpack</center></h2><h3 id="npm-run-dev-npm-start"><a href="#npm-run-dev-npm-start" class="headerlink" title="npm run dev / npm start"></a>npm run dev / npm start</h3><p><img src="/images/Vue2/04.png" alt></p>
+<ul>
+<li><p><code>npm run dev</code> 只是个简写形式 , 实际运行的命令写在项目根目录下的 package.json 中</p>
+<p>  <img src="/images/Vue2/04-1.png" alt></p>
+</li>
+<li><p>可见 <code>npm run dev</code> 和 <code>npm start</code> 是一个效果</p>
+<p>  <img src="/images/Vue2/04-5.png" alt>   </p>
+</li>
+</ul>
+<h3 id="设置依赖"><a href="#设置依赖" class="headerlink" title="设置依赖"></a>设置依赖</h3><p>设置生产环境的依赖列表、指定 vue 和 vue-router 版本依赖</p>
+<p><img src="/images/Vue2/04-2.png" alt></p>
+<ul>
+<li><p>可修改为当前最新版本 v2.6.10 (2019.12.09)</p>
+</li>
+<li><p><code>^</code> 符号的意思是使依赖包向后兼容</p>
+<ul>
+<li><p>比如当前我的依赖为 <code>&quot;vue&quot;: &quot;^2.6.10&quot;</code> </p>
+</li>
+<li><p>然后过了一个月 , 假设 vue 的版本更新到了 2.8.10</p>
+</li>
+<li><p>当我们再次执行 <code>npm install</code> 的时候 , 它会更新 <strong>小版本号</strong>  和 <strong>补丁版本号</strong>  , 依赖就变成了 <code>&quot;vue&quot;:&quot;2.8.10&quot;</code></p>
+</li>
+<li><p>然后过了半年 , 假设 vue 的版本更新到了 3.1.0 , 而它的 2.0 版本最后的版本号为 2.9.10</p>
+</li>
+<li><p>同样执行 <code>npm install</code> , 依赖变成 <code>&quot;vue&quot;:&quot;2.9.10&quot;</code></p>
+</li>
+<li><p><strong>大版本号</strong> 不会改变</p>
+</li>
+<li><p>去掉 <code>^</code> 符号可精确指定版本 , 避免版本更新影响</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="npm-版本号规范"><a href="#npm-版本号规范" class="headerlink" title="npm 版本号规范"></a>npm 版本号规范</h3><p>如果一个项目打算与别人分享，应该从 1.0.0 版本开始。以后要升级版本应该遵循以下标准：</p>
+<ul>
+<li><p>补丁版本(修订版本) : 解决了 Bug 或者一些较小的更改，增加最后一位数字，比如 1.0.1</p>
+</li>
+<li><p>小版本(次版本) : 增加了新特性，同时不会影响之前的版本，增加中间一位数字，比如 1.1.0</p>
+</li>
+<li><p>大版本(主版本) : 大改版，无法兼容之前的，增加第一位数字，比如 2.0.0</p>
+<p>  <img src="/images/Vue2/04-3.png" alt></p>
+</li>
+</ul>
+<p>了解了提供者的版本规范后， npm 包使用者就可以针对自己的需要填写依赖包的版本规则。</p>
+<p>作为使用者，我们可以在 package.json 文件中写明我们可以接受这个包的更新程度（假设当前依赖的是 2.6.1 版本）:</p>
+<ul>
+<li><p>如果只打算接受补丁版本的更新（也就是最后一位的改变），就可以这么写：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2.6</span><br><span class="line">2.6.x</span><br><span class="line">~2.6.1   //波浪号只会更新补丁版本号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果接受小版本的更新（第二位的改变），就可以这么写：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2.x</span><br><span class="line">^2.0.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果可以接受大版本的更新（自然接受小版本和补丁版本的改变），就可以这么写：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>总的来说、三种版本变化类型，接受依赖包哪种类型的更新，就把版本号准确写到前一位。</p>
+<h3 id="浏览页面"><a href="#浏览页面" class="headerlink" title="浏览页面"></a>浏览页面</h3><p><code>npm run dev</code> 运行查看一下</p>
+<p><img src="/images/Vue2/04-4.png" alt></p>
+<h3 id="npm-run-build"><a href="#npm-run-build" class="headerlink" title="npm run build"></a>npm run build</h3><p><code>npm run build</code> 打包发布</p>
+<p><img src="/images/Vue2/05.png" alt></p>
+<ul>
+<li><p>这个执行过程 把在开发环境写好的<strong>代码</strong> <strong>编译</strong>并<strong>加密</strong>后 打包成 前端页面的<strong>静态文件</strong></p>
+</li>
+<li><p>打包完成的文件在项目根目录下的 dist文件夹内</p>
+<p>  <img src="/images/Vue2/05-1.png" alt></p>
+</li>
+<li><p><code>code .</code>  VScode 打开当前目录命令</p>
+</li>
+</ul>
+<h2 id="吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱"><a href="#吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱" class="headerlink" title="吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱"></a><center>吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱吱</center></h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+     <div>
+      
+     </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/LearnToUseVue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -681,67 +926,27 @@
 
       
         
-          <h3 id="How-to-use-Vue-js"><a href="#How-to-use-Vue-js" class="headerlink" title="How to use Vue.js"></a>How to use Vue.js</h3><p>初步使用 Vue</p>
-<p><img src="/images/Vue/01.png" alt></p>
+          <h2 id="How-to-use-Vue-js"><a href="#How-to-use-Vue-js" class="headerlink" title=" How to use Vue.js "></a><center> How to use Vue.js </center></h2><h3 id="引入-Vue-js"><a href="#引入-Vue-js" class="headerlink" title="引入 Vue.js"></a>引入 Vue.js</h3><p><img src="/images/Vue/01.png" alt></p>
 <ul>
-<li>引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字</li>
-<li>el 相当于元素选择器 element，这里 <code>#App</code> 选择了 <code>id=&quot;App&quot;</code> 的元素</li>
-<li>data 里面定义任意名称字段，然后在 <em>双大括号</em>  中显示</li>
-</ul>
-<h3 id="v-if-、-v-for"><a href="#v-if-、-v-for" class="headerlink" title="v-if 、 v-for"></a>v-if 、 v-for</h3><ol>
-<li><p>基础用法</p>
-<p> <img src="/images/Vue/02.png" alt></p>
-<ul>
-<li><code>v-if=&quot;seen&quot;</code>中的 seen 关联了 data 中 seen , v-if 中的参数为 true 则显示,反之</li>
-<li><code>v-for=&quot;fruit in fruits&quot;</code> 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在 <em>双大括号</em>  取 fruit 对象中的值</li>
-</ul>
+<li><p>引入Vue.js , 实例化一个对象 myApp,里面的 el , data 为关键字</p>
 </li>
-<li><p>v-if 、v-else-if 、v-else</p>
-<p> <img src="/images/Vue/12.png" alt></p>
-<ul>
-<li><p>这个比较容易理解 , 直接在后面写入表达式 , 然后根据结果真假进行显示与否</p>
-<p><img src="/images/Vue/12-1.png" alt></p>
+<li><p>el 相当于元素选择器 element，这里 <code>#App</code> 选择了 <code>id=&quot;App&quot;</code> 的元素</p>
+</li>
+<li><p>data 里面定义任意名称字段，然后在 <em>双大括号</em>  中显示</p>
 </li>
 </ul>
-</li>
-<li><p>数组列表渲染-添加索引</p>
-<p> <img src="/images/Vue/14.png" alt></p>
+<h2 id="v-if-、-v-for"><a href="#v-if-、-v-for" class="headerlink" title=" v-if 、 v-for "></a><center> v-if 、 v-for </center></h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p><img src="/images/Vue/02.png" alt></p>
 <ul>
-<li><p>这里对比前面的循环多了个索引 index , 主要表示了当前对象在数组列表中的位置</p>
-<p><img src="/images/Vue/14-1.png" alt></p>
+<li><p><code>v-if=&quot;seen&quot;</code>中的 seen 关联了 data 中 seen , v-if 中的参数为 true 则显示,反之</p>
+</li>
+<li><p><code>v-for=&quot;fruit in fruits&quot;</code> 中的 fruits 关联了 data 中的 fruits , 遍历fruits 数组中的内容赋给 fruit , 最后在 <em>双大括号</em>  取 fruit 对象中的值</p>
 </li>
 </ul>
-</li>
-<li><p>对象迭代</p>
-<p> <img src="/images/Vue/15.png" alt></p>
+<h3 id="v-if-、v-else-if-、v-else"><a href="#v-if-、v-else-if-、v-else" class="headerlink" title="v-if 、v-else-if 、v-else"></a>v-if 、v-else-if 、v-else</h3><p><img src="/images/Vue/12.png" alt></p>
 <ul>
-<li><p>取出 mygame 对象中的键值对</p>
-<p>  <img src="/images/Vue/15-1.png" alt></p>
-</li>
-<li><p>值得注意的是 <code>(value, key) in mygame</code> 中键值对的顺序 , 前者必定是值 , 后者必定是键 , 这是设计初就定义好的。</p>
-</li>
-<li><p>命名 value 和 key 只是为了提高可读性而已 , 其实取什么名都不影响结果</p>
-<p>  <img src="/images/Vue/15-2.png" alt></p>
-<p>  <img src="/images/Vue/15-3.png" alt></p>
-</li>
+<li>这个比较容易理解 , 直接在后面写入表达式 , 然后根据结果真假进行显示与否</li>
 </ul>
-</li>
-</ol>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>设置元素状态为显示</p>
-<p><img src="/images/Vue/13.png" alt></p>
-<ul>
-<li>这个也好理解 , 根据 result 对象的布尔值进行显示或隐藏</li>
-<li>这个与 v-if 的区别在于 v-if 是对 DOM 进行操作的 , 而 v-show 只是设置了标签的 display 属性而已 , 并没有操作 DOM</li>
-</ul>
-<p><img src="/images/Vue/13-1.png" alt></p>
-<p><img src="/images/Vue/13-2.png" alt></p>
-<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>为元素进行数据绑定</p>
-<p><img src="/images/Vue/03.png" alt></p>
-<ul>
-<li>首先 data 中的 myName 的值是双向绑定到了 <code></code> 中 , 初始文本为 myName 的值</li>
-<li>然后我想修改 <code></code> 的值怎么办,那就为一个元素设置 <code>v-model</code> 属性,属性值就设为想要绑定的那个字段名即可,这里就设置为 <code>v-model=&quot;myName&quot;</code></li>
-<li>最终在input中输入的结果会呈现在 <em>双大括号</em>  中</li>
-</ul>
+<p><img src="/images/Vue/12-1.png" alt><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/archives/LearnToUseVue/#more" rel="contents">
@@ -751,7 +956,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1051,7 +1256,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  235
+                  283
                 </span>
               
 
@@ -1077,9 +1282,12 @@
 
       
         
-          <h3 id="安装Git-Node"><a href="#安装Git-Node" class="headerlink" title="安装Git,Node"></a>安装Git,Node</h3><p><img src="/images/Hexo-IM/01.png" alt></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>先创建一个文件夹，然后cd到这个目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli  //安装</span><br><span class="line">hexo -v   //查看版本</span><br></pre></td></tr></table></figure>
+          <h2 id="安装Git-Node"><a href="#安装Git-Node" class="headerlink" title="安装Git , Node"></a><center>安装Git , Node</center></h2><p><img src="/images/Hexo-IM/01.png" alt></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><center>安装Hexo</center></h2><ul>
+<li>先创建一个文件夹，然后cd到这个目录下</li>
+<li><code>npm install -g hexo-cli</code>    安装hexo项目构建工具</li>
+<li><code>hexo -v</code>     查看版本</li>
+</ul>
 <p><img src="/images/Hexo-IM/02.png" alt></p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1155,7 +1363,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/archives/Git-flow/" itemprop="url">Git flow</a></h1>
+                <a class="post-title-link" href="/archives/Git-flow/" itemprop="url">Git low</a></h1>
         
 
         <div class="post-meta">
@@ -1201,7 +1409,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2k
+                  2.1k
                 </span>
               
 
@@ -1227,22 +1435,32 @@
 
       
         
-          <h3 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a>Git工作流</h3><p>Git flow : </p>
-<p>for ( =&gt; local-code =&gt; submit to local-repository =&gt; submit to server-repository =&gt; from remote-repository update code =&gt; )</p>
-<p>Detail : </p>
-<p>localfolder -&gt; git Stage -&gt; git local -&gt; git remote</p>
+          <h2 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a><center>Git工作流<center></center></center></h2><h3 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h3><pre>
+for ( =>local-code => 
+        submit to local-repository => 
+        submit to server-repository => 
+        from remote-repository update code => 
+    )
+</pre>
+
+<h3 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h3><p>localfolder -&gt; git Stage -&gt; git local -&gt; git remote</p>
 <p>本地工作文件夹 -&gt; 索引区 -&gt; 本地库 -&gt; 远程库（服务器端）</p>
-<hr>
-<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p><code>git init</code>        //初始化</p>
-<p><code>git config -l</code>  //查看配置信息</p>
-<p><code>git config --global user.name &quot;XXX&quot;</code></p>
-<p><code>git config --global user.email &quot;xxx@zz.com&quot;</code></p>
-<p>//查看帮助信息</p>
-<p><code>git config --help</code></p>
-<p><code>git help config</code></p>
-<p><code>git help commit</code></p>
-<p><code>git help ...</code> </p>
-<hr>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a><center>基础配置</center></h2><ul>
+<li><p><code>git init</code>         初始化</p>
+</li>
+<li><p><code>git config -l</code>   查看配置信息</p>
+</li>
+<li><p><code>git config --global user.name &quot;XXX&quot;</code></p>
+</li>
+<li><p><code>git config --global user.email &quot;xxx@zz.com&quot;</code></p>
+</li>
+<li><p><code>git config --help</code>    查看帮助信息</p>
+</li>
+<li><p><code>git help config</code></p>
+</li>
+<li><p><code>git help commit</code></p>
+</li>
+<li><p><code>git help ...</code> </p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/archives/Git-flow/#more" rel="contents">
@@ -1252,7 +1470,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
@@ -1390,14 +1608,21 @@
       
         
           <ol>
-<li><code>ssh root@xx.xxx.xxx.xxx</code>   //通过SSH连接服务器</li>
-<li><code>svn</code>                      //先查看是否安装了svn</li>
-<li><code>yum install svn</code>         //安装svn</li>
-<li><code>svn --version</code>          //查看svn版本</li>
-<li>输入<code>svn</code>按Tab补全  ; 会出现很多以svn开头的,可以选择使用</li>
-<li><code>svnadmin create /opt/svn/916213802</code>      //在根目录下创建SVN仓库</li>
-<li><code>svnserve -d -r /opt/svn/916213802/</code>   //启动svn服务</li>
-<li><code>ps -ef | grep svnserve</code>   //查看svnserve 是否启动
+<li><p><code>ssh root@xx.xxx.xxx.xxx</code>   //通过SSH连接服务器</p>
+</li>
+<li><p><code>svn</code>                      //先查看是否安装了svn</p>
+</li>
+<li><p><code>yum install svn</code>         //安装svn</p>
+</li>
+<li><p><code>svn --version</code>          //查看svn版本</p>
+</li>
+<li><p>输入<code>svn</code>按Tab补全  ; 会出现很多以svn开头的,可以选择使用</p>
+</li>
+<li><p><code>svnadmin create /opt/svn/916213802</code>      //在根目录下创建SVN仓库</p>
+</li>
+<li><p><code>svnserve -d -r /opt/svn/916213802/</code>   //启动svn服务</p>
+</li>
+<li><p><code>ps -ef | grep svnserve</code>   //查看svnserve 是否启动</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/archives/CentOS-SVNConfigure/#more" rel="contents">
@@ -1544,8 +1769,8 @@
 
       
         
-          <h3 id="Create-a-project"><a href="#Create-a-project" class="headerlink" title="Create a project"></a>Create a project</h3><p>Create New Project =&gt; Maven =&gt; Next =&gt; for (Fill in information =&gt; Next) =&gt; Finish<br> <img src="/images/Java-AS/0x011.png" alt><br> <img src="/images/Java-AS/0x012.png" alt><br> <img src="/images/Java-AS/0x013.png" alt><br> <img src="/images/Java-AS/0x014.png" alt></p>
-<h3 id="Environment-and-Tools"><a href="#Environment-and-Tools" class="headerlink" title="Environment and Tools"></a>Environment and Tools</h3><ol>
+          <h2 id="Create-a-project"><a href="#Create-a-project" class="headerlink" title="Create a project"></a><center>Create a project</center></h2><p>Create New Project =&gt; Maven =&gt; Next =&gt; for (Fill in information =&gt; Next) =&gt; Finish<br> <img src="/images/Java-AS/0x011.png" alt><br> <img src="/images/Java-AS/0x012.png" alt><br> <img src="/images/Java-AS/0x013.png" alt><br> <img src="/images/Java-AS/0x014.png" alt></p>
+<h2 id="Environment-and-Tools"><a href="#Environment-and-Tools" class="headerlink" title="Environment and Tools"></a><center>Environment and Tools</center></h2><ol>
 <li>Java环境 JDK <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">下载</a></li>
 <li>IDEA  <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">下载</a></li>
 <li>准备好ChromeDriver <a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">下载</a><br>选择好对应版本(我这里选择的是74.0.3729.68 win)</li>
@@ -2051,156 +2276,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/jnote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Orekiyuta">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Canoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/jnote/" itemprop="url">インデックス</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-01T22:03:23+08:00">
-                2019-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  42
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;きょうはれいわがんねんのはじまりで、しがもしよにちである。<br>ずつとまえからブログをがこうとおもつでいましたが、<br>あまりにもなまけでいたので、ながながはちめられませんでした。<br>このいちがけつがん、おおくのネットちしきをしり、<br>さいこにGitHubにでんがいするというがたちになりました。<br>このようなけいしきはわたしのサーバーのしげんをせつやくしました、<br>がんりもべんりでし。<br>このブロクをかくのはじつはおもなどうりょくはやはりしごとをさがすためです、<br>りれきしよにてんじできるがらです。<br>プログラムぎじゅつをがくいがいに、ここでじぶんのしゅみをがきます。<br>じぶんのせいかつのいちぶをここにきるくしで、<br>こんかいはちゅうとはんばではないこをねがいます。<br>わたしはなにもてんじできるものがなくで、<br>せいこうしたけいけんがありません。<br>ものごころがつくから、しっぱいばかりでした。<br>つまり、いまのわたしはしっぱいしゃです。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/jnote/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-     <div>
-      
-     </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2513,7 +2595,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2600,7 +2682,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.3k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 

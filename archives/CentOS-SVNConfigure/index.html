@@ -90,22 +90,22 @@
 
 
 
-<meta name="description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器 svn                      //先查看是否安装了svn yum install svn         //安装svn svn --version          //查看svn版本 输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用 svnadmin create /opt/">
+<meta name="description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器  svn                      //先查看是否安装了svn  yum install svn         //安装svn  svn --version          //查看svn版本  输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用  svnadmin create">
 <meta name="keywords" content="CentOS,Linux,SVN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS:SVN Configure">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/CentOS-SVNConfigure/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器 svn                      //先查看是否安装了svn yum install svn         //安装svn svn --version          //查看svn版本 输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用 svnadmin create /opt/">
+<meta property="og:description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器  svn                      //先查看是否安装了svn  yum install svn         //安装svn  svn --version          //查看svn版本  输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用  svnadmin create">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/CentOSSVNConfigure/01.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/CentOSSVNConfigure/02.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/CentOSSVNConfigure/03.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/CentOSSVNConfigure/04.png">
-<meta property="og:updated_time" content="2019-12-03T13:56:10.077Z">
+<meta property="og:updated_time" content="2019-12-09T12:05:26.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS:SVN Configure">
-<meta name="twitter:description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器 svn                      //先查看是否安装了svn yum install svn         //安装svn svn --version          //查看svn版本 输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用 svnadmin create /opt/">
+<meta name="twitter:description" content="ssh root@xx.xxx.xxx.xxx   //通过SSH连接服务器  svn                      //先查看是否安装了svn  yum install svn         //安装svn  svn --version          //查看svn版本  输入svn按Tab补全  ; 会出现很多以svn开头的,可以选择使用  svnadmin create">
 <meta name="twitter:image" content="http://www.orekiyuta.cn/images/CentOSSVNConfigure/01.png">
 
 
@@ -383,23 +383,44 @@
 
       
         <ol>
-<li><code>ssh root@xx.xxx.xxx.xxx</code>   //通过SSH连接服务器</li>
-<li><code>svn</code>                      //先查看是否安装了svn</li>
-<li><code>yum install svn</code>         //安装svn</li>
-<li><code>svn --version</code>          //查看svn版本</li>
-<li>输入<code>svn</code>按Tab补全  ; 会出现很多以svn开头的,可以选择使用</li>
-<li><code>svnadmin create /opt/svn/916213802</code>      //在根目录下创建SVN仓库</li>
-<li><code>svnserve -d -r /opt/svn/916213802/</code>   //启动svn服务</li>
-<li><code>ps -ef | grep svnserve</code>   //查看svnserve 是否启动<a id="more"></a></li>
-<li><code>netstat -an | grep 3690</code>   //3690是svn默认端口,查看是否开放</li>
-<li>由于阿里云安全组不开放该端口,所以要去阿里云服务器开启<em>3690</em> 端口<br><img src="/images/CentOSSVNConfigure/01.png" alt></li>
-<li><code>cd /opt/svn/916213802/conf/</code>  //进入仓库查看配置文件        </li>
-<li><code>vim authz</code>   //设置用户<br><img src="/images/CentOSSVNConfigure/02.png" alt></li>
-<li><code>vim passwd</code>  //设置用户和密码<br><img src="/images/CentOSSVNConfigure/03.png" alt></li>
-<li><code>vim svnserve.conf</code>  //设置其他参数<br><img src="/images/CentOSSVNConfigure/04.png" alt></li>
-<li><code>killall svn</code>   //关闭svn进程也可以在12的基础上<code>killall pid</code></li>
-<li><code>svnserve -d -r /opt/svn/916213802</code>  //再次启动svnserve服务</li>
-<li><code>svn checkout svn://47.107.xxx.xxx/916213802 --username 91621380205 --password 91621380205</code><br>//本地连接服务器SVN ,执行后下载svn上的项目到本地当前目录,可不用–username和–password</li>
+<li><p><code>ssh root@xx.xxx.xxx.xxx</code>   //通过SSH连接服务器</p>
+</li>
+<li><p><code>svn</code>                      //先查看是否安装了svn</p>
+</li>
+<li><p><code>yum install svn</code>         //安装svn</p>
+</li>
+<li><p><code>svn --version</code>          //查看svn版本</p>
+</li>
+<li><p>输入<code>svn</code>按Tab补全  ; 会出现很多以svn开头的,可以选择使用</p>
+</li>
+<li><p><code>svnadmin create /opt/svn/916213802</code>      //在根目录下创建SVN仓库</p>
+</li>
+<li><p><code>svnserve -d -r /opt/svn/916213802/</code>   //启动svn服务</p>
+</li>
+<li><p><code>ps -ef | grep svnserve</code>   //查看svnserve 是否启动</p>
+<a id="more"></a></li>
+<li><p><code>netstat -an | grep 3690</code>   //3690是svn默认端口,查看是否开放</p>
+</li>
+<li><p>由于阿里云安全组不开放该端口,所以要去阿里云服务器开启<em>3690</em> 端口 </p>
+<p><img src="/images/CentOSSVNConfigure/01.png" alt></p>
+</li>
+<li><p><code>cd /opt/svn/916213802/conf/</code>  //进入仓库查看配置文件        </p>
+</li>
+<li><p><code>vim authz</code>   //设置用户</p>
+<p><img src="/images/CentOSSVNConfigure/02.png" alt></p>
+</li>
+<li><p><code>vim passwd</code>  //设置用户和密码</p>
+<p><img src="/images/CentOSSVNConfigure/03.png" alt></p>
+</li>
+<li><p><code>vim svnserve.conf</code>  //设置其他参数</p>
+<p><img src="/images/CentOSSVNConfigure/04.png" alt></p>
+</li>
+<li><p><code>killall svn</code>   //关闭svn进程也可以在12的基础上<code>killall pid</code></p>
+</li>
+<li><p><code>svnserve -d -r /opt/svn/916213802</code>  //再次启动svnserve服务</p>
+</li>
+<li><p><code>svn checkout svn://47.107.xxx.xxx/916213802 --username 91621380205 --password 91621380205</code><br>//本地连接服务器SVN ,执行后下载svn上的项目到本地当前目录,可不用–username和–password</p>
+</li>
 </ol>
 <hr>
 <ul>
@@ -407,8 +428,8 @@
 <li><code>cd /</code>  //进入根目录</li>
 <li><code>ls</code> 查看当前目录下文件</li>
 <li><code>ll</code> 查看当前目录下文件</li>
-<li>执行第<em>7</em> 步后,再执行第<em>17</em> 步测试连接,如果连接得上就不用操作步骤<em>8-10</em> ;</li>
-<li>部署项目的话把项目放在本地checkout下来的文件夹里,<em>同步</em> 上去就可以了.</li>
+<li>执行第<strong>7</strong>步后,再执行第<strong>17</strong>步测试连接,如果连接得上就不用操作步骤<strong>8-10</strong> ;</li>
+<li>部署项目的话把项目放在本地checkout下来的文件夹里,<strong>同步</strong> 上去就可以了.</li>
 </ul>
 
       
@@ -480,8 +501,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/Git-flow/" rel="prev" title="Git flow">
-                Git flow <i class="fa fa-chevron-right"></i>
+              <a href="/archives/Git-flow/" rel="prev" title="Git low">
+                Git low <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -819,7 +840,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -906,7 +927,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.3k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 
