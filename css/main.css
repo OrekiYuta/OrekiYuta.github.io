@@ -1841,7 +1841,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #093b8c;
+  background: #d5ffec;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3147,6 +3147,12 @@ pre .javascript .function {
 }
 .post-block {
   background: rgba(225,222,222,0.478);
+}
+.pagination {
+  background-color: rgba(139,137,137,0.761);
+}
+.posts-expand .post-meta {
+  color: rgba(0,0,0,0.71);
 }
 div#posts.posts-expand .tag-cloud a {
   background-color: rgba(0,0,0,0.671);
