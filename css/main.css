@@ -1063,7 +1063,7 @@ pre .javascript .function {
   right: 30px;
   z-index: 1050;
   padding: 0 6px;
-  width: 24px;
+  width: initial;
   background: #222;
   font-size: 12px;
   opacity: 0.6;
@@ -1841,7 +1841,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d5ffec;
+  background: #03f647;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3214,6 +3214,15 @@ a:hover {
   width: 20px;
   height: 80px;
   background: url("../images/boll.png"); /*可以添加滚动条样式*/
+}
+.fa-arrow-up:before {
+  content: "";
+}
+#scrollpercent {
+  position: absolute;
+  top: 0;
+  left: calc(-150px);
+  font-size: -webkit-xxx-large;
 }
 .back-to-top.back-to-top-on {
   bottom: unset;

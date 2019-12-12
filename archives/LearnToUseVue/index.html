@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme-corner-indicator.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -174,7 +174,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -329,7 +329,8 @@
 
 
 
- </div>
+ 
+      </div>
     </header>
 
     <main id="main" class="main">
@@ -869,6 +870,10 @@
     
     <div class="sidebar-inner">
 
+      
+          <div id="scrollpercent"><span>0</span>%</div>
+      
+
       <div style>
   <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
 </div>
@@ -1153,7 +1158,9 @@ if(canvas.getContext){
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
             
-              <img class="site-author-image" itemprop="image" src="/images/uploads/avatar.png" alt="Orekiyuta">
+              <a href="/">
+                <img class="site-author-image" itemprop="image" src="/images/uploads/avatar.png" alt="Orekiyuta">
+              </a>
             
               <p class="site-author-name" itemprop="name">Orekiyuta</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -1314,6 +1321,8 @@ function setzero(i) {
 show_date_time();
 </script>
 
+
+
         
 
 
@@ -1327,11 +1336,9 @@ show_date_time();
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+      <div class="back-to-top"></div>
     
+
 
     
 
@@ -1355,8 +1362,6 @@ show_date_time();
 
   
 
-
-  
 
 
 
@@ -1396,11 +1401,6 @@ show_date_time();
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1804,6 +1804,9 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 
