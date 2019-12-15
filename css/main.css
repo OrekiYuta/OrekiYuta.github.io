@@ -1841,7 +1841,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #03f647;
+  background: #e08f57;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3153,31 +3153,6 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   color: rgba(0,0,0,0.71);
-}
-div#posts.posts-expand .tag-cloud a {
-  background-color: rgba(0,0,0,0.671);
-  border-radius: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 18px;
-  color: #000;
-}
-.tag-cloud a {
-  background-color: #f5f7f1;
-  border-radius: 4px;
-  padding-right: 5px;
-  padding-left: 5px;
-  margin-right: 5px;
-  margin-left: 0px;
-  color: #000;
-  margin-top: 8px;
-  margin-bottom: 0px;
-}
-.tag-cloud a:before {
-  content: "🔖";
-}
-a:hover {
-  border-color: #008000;
 }
 ::-webkit-scrollbar {
   width: 20px;
