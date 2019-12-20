@@ -289,6 +289,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/PreliminaryUseMongodb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/PreliminaryUseMongodb/" itemprop="url">Preliminary use Mongodb</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-19T19:56:48+08:00">
+                2019-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  176
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a><center>基本操作</center></h3><h4 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a>安装启动</h4><ul>
+<li><code>docker pull mongo</code></li>
+<li><code>docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo</code></li>
+<li><code>docker exec -it mymongo mongo</code></li>
+</ul>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><center>常用命令</center></h3><h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
+<li><code>show dbs</code></li>
+<li><code>use elias</code> 建立数据库 elias</li>
+<li><code>db</code> 当前所在数据库</li>
+<li><code>db.dropDatabase()</code>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/PreliminaryUseMongodb/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+     <div>
+      
+     </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/DockerNote/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -308,7 +464,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/archives/DockerNote/" itemprop="url">DockerNote</a></h1>
+                <a class="post-title-link" href="/archives/DockerNote/" itemprop="url">Docker Note</a></h1>
         
 
         <div class="post-meta">
@@ -354,7 +510,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  43
+                  516
                 </span>
               
 
@@ -380,18 +536,36 @@
 
       
         
-          
-            <h3 id="修改镜像源"><a href="#修改镜像源" class="headerlink" title="修改镜像源"></a><center>修改镜像源</center></h3><ul>
-<li><p>在阿里云找到镜像加速器</p>
-<p>  <img src="/images/DockerNote/01.png" alt></p>
-</li>
-<li><p>在服务器 <code>/etc/docker</code> 下 , 新建 daemon.json , 添加镜像地址</p>
-  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://0f2b6859.mirror.aliyuncs.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/DockerNote/02.png" alt></p>
-</li>
+          <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><center>常用命令</center></h3><ul>
+<li><code>docker version</code></li>
+<li><code>systemctl start docker</code></li>
 </ul>
-
-          
+<h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><ul>
+<li><code>docker image ls</code></li>
+<li><code>docker image rm [imageName]</code></li>
+<li><code>docker image pull [imageName]</code></li>
+<li><code>docker inspect [imageName]</code> 获取元数据</li>
+</ul>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><ul>
+<li><code>docker container run [imageName]</code></li>
+<li><code>docker container run -it [imageName] bash</code></li>
+<li><code>docker container kill [containerID]</code> id不用填完整 , 能够唯一定位到即可</li>
+<li><code>docker container ls</code></li>
+<li><code>docker container ls --all</code></li>
+<li><code>docker container rm [containerID]</code></li>
+<li><code>docker container stop [containerID]</code>  //container 可省略</li>
+<li><code>docker container start [containerID]</code></li>
+<li><code>docker container logs [containerID]</code></li>
+<li><code>docker container exec -it [containerID] /bin/bash</code></li>
+<li><code>docker container inspect [containerID/Name]</code></li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/DockerNote/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -531,8 +705,7 @@
 
       
         
-          
-            <h3 id="一图理清浏览器脚本语言"><a href="#一图理清浏览器脚本语言" class="headerlink" title="一图理清浏览器脚本语言"></a><center>一图理清浏览器脚本语言</center></h3><p><img src="/images/SortOutJSESTS/01.png" alt></p>
+          <h3 id="一图理清浏览器脚本语言"><a href="#一图理清浏览器脚本语言" class="headerlink" title="一图理清浏览器脚本语言"></a><center>一图理清浏览器脚本语言</center></h3><p><img src="/images/SortOutJSESTS/01.png" alt></p>
 <ul>
 <li><p>简而言之 , 就是 js 设计之处有很多缺陷,然后为了弥补缺陷不断的更新 ES 标准 , js 不断的实现新标准修复缺陷 , 这样下去越来越麻烦 , 其他开发者看不下去了就直接按照 ES 标准实现自己的编译器和语言 , 最后转成 js </p>
 </li>
@@ -541,14 +714,13 @@
 <li><p>现有新的技术不转成 js , 自己去兼容浏览器打破 js 垄断浏览器。例如: Dart</p>
 </li>
 </ul>
-<p>参考内容:</p>
-<ul>
-<li><a href="https://www.zhihu.com/question/361303428" target="_blank" rel="noopener">es,js,ts三者有什么关系？</a></li>
-<li><a href="https://www.jianshu.com/p/1cd0b2cb3ec4" target="_blank" rel="noopener">JavaScript的历史</a></li>
-<li><a href="http://javascript.ruanyifeng.com/introduction/history.html" target="_blank" rel="noopener">JavaScript语言的历史</a></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/SortOutJSESTS/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1391,6 +1563,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/TmuxManual/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/TmuxManual/" itemprop="url">Tmux Manual</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-28T00:08:43+08:00">
+                2019-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  179
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="启动会话"><a href="#启动会话" class="headerlink" title="启动会话"></a>启动会话</h3><ul>
+<li><code>tmux</code> 匿名会话</li>
+<li><code>tmux new -s &lt;session-name&gt;</code></li>
+</ul>
+<h3 id="退出会话"><a href="#退出会话" class="headerlink" title="退出会话"></a>退出会话</h3><ul>
+<li><code>exit</code></li>
+<li>Ctrl + d</li>
+</ul>
+<h3 id="前缀"><a href="#前缀" class="headerlink" title="前缀"></a>前缀</h3><ul>
+<li>Ctrl + b</li>
+<li>Ctrl + b + ?  帮助信息</li>
+<li>ESC / q   退出帮助</li>
+</ul>
+<h3 id="分离会话"><a href="#分离会话" class="headerlink" title="分离会话"></a>分离会话</h3><ul>
+<li><code>tmux detach</code></li>
+<li>Ctrl + b + d</li>
+</ul>
+<h3 id="查看会话列表"><a href="#查看会话列表" class="headerlink" title="查看会话列表"></a>查看会话列表</h3><ul>
+<li><code>tmux ls</code></li>
+<li>Ctrl + b + s</li>
+</ul>
+<h3 id="接入会话"><a href="#接入会话" class="headerlink" title="接入会话"></a>接入会话</h3><ul>
+<li><code>tmux a</code> </li>
+<li><code>tmux attach -t &lt;session-name&gt;</code></li>
+</ul>
+<h3 id="关闭会话"><a href="#关闭会话" class="headerlink" title="关闭会话"></a>关闭会话</h3><ul>
+<li><code>tmux kill-session -t &lt;session-name&gt;</code></li>
+</ul>
+<h3 id="切换会话"><a href="#切换会话" class="headerlink" title="切换会话"></a>切换会话</h3><ul>
+<li><code>tmux switch -t &lt;session-name&gt;</code></li>
+</ul>
+<h3 id="重命名会话"><a href="#重命名会话" class="headerlink" title="重命名会话"></a>重命名会话</h3><ul>
+<li><code>tmux rename-session -t &lt;old-name&gt; &lt;new-name&gt;</code></li>
+<li>Ctrl + b + $</li>
+</ul>
+<h3 id="窗格操作"><a href="#窗格操作" class="headerlink" title="窗格操作"></a>窗格操作</h3><h4 id="划分上下窗口"><a href="#划分上下窗口" class="headerlink" title="划分上下窗口"></a>划分上下窗口</h4><ul>
+<li>Ctrl + b + “</li>
+</ul>
+<h4 id="划分左右窗口"><a href="#划分左右窗口" class="headerlink" title="划分左右窗口"></a>划分左右窗口</h4><ul>
+<li>Ctrl + b + %</li>
+</ul>
+<h4 id="移动光标到其他窗格"><a href="#移动光标到其他窗格" class="headerlink" title="移动光标到其他窗格"></a>移动光标到其他窗格</h4><ul>
+<li>Ctrl + b + ↑↓←→键</li>
+</ul>
+<h4 id="调整窗格大小"><a href="#调整窗格大小" class="headerlink" title="调整窗格大小"></a>调整窗格大小</h4><ul>
+<li>Ctrl + b + Ctrl + ↑↓←→</li>
+</ul>
+<h4 id="窗格内容上下滚动"><a href="#窗格内容上下滚动" class="headerlink" title="窗格内容上下滚动"></a>窗格内容上下滚动</h4><ul>
+<li>Ctrl + b + [ + ↑↓   </li>
+</ul>
+<hr>
+<h3 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h3><ul>
+<li><a href="http://louiszhai.github.io/2017/09/30/tmux/" target="_blank" rel="noopener">Tmux 使用手册</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html" target="_blank" rel="noopener">Tmux 使用教程</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+     <div>
+      
+     </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/Ark-exploit-log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1535,331 +1904,6 @@
         
       
     </li></ul></li></ul></div>
-    
-    
-    
-
-    
-
-    
-
-    
-     <div>
-      
-     </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/Hexo-Install-Migrate/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Orekiyuta">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Canoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/Hexo-Install-Migrate/" itemprop="url">Hexo-Install+Migrate</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T19:20:12+08:00">
-                2019-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  283
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="安装Git-Node"><a href="#安装Git-Node" class="headerlink" title="安装Git , Node"></a><center>安装Git , Node</center></h2><p><img src="/images/Hexo-IM/01.png" alt></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><center>安装Hexo</center></h2><ul>
-<li>先创建一个文件夹，然后cd到这个目录下</li>
-<li><code>npm install -g hexo-cli</code>    安装hexo项目构建工具</li>
-<li><code>hexo -v</code>     查看版本</li>
-</ul>
-<p><img src="/images/Hexo-IM/02.png" alt></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/Hexo-Install-Migrate/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-     <div>
-      
-     </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/Git-flow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Orekiyuta">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Canoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/Git-flow/" itemprop="url">Git flow</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-28T01:29:36+08:00">
-                2019-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2.1k
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a><center>Git工作流<center></center></center></h2><h3 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h3><pre>
-for ( =>local-code => 
-        submit to local-repository => 
-        submit to server-repository => 
-        from remote-repository update code => 
-    )
-</pre>
-
-<h3 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h3><p>localfolder -&gt; git Stage -&gt; git local -&gt; git remote</p>
-<p>本地工作文件夹 -&gt; 索引区 -&gt; 本地库 -&gt; 远程库（服务器端）</p>
-<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a><center>基础配置</center></h2><ul>
-<li><p><code>git init</code>         初始化</p>
-</li>
-<li><p><code>git config -l</code>   查看配置信息</p>
-</li>
-<li><p><code>git config --global user.name &quot;XXX&quot;</code></p>
-</li>
-<li><p><code>git config --global user.email &quot;xxx@zz.com&quot;</code></p>
-</li>
-<li><p><code>git config --help</code>    查看帮助信息</p>
-</li>
-<li><p><code>git help config</code></p>
-</li>
-<li><p><code>git help commit</code></p>
-</li>
-<li><p><code>git help ...</code> </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/Git-flow/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
     
     
     
@@ -2217,7 +2261,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2230,7 +2274,7 @@ if(canvas.getContext){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2304,7 +2348,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19k</span>
+    <span title="Site words total count">19.8k</span>
   
 </div>
 
