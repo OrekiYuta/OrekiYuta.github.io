@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="基本操作安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  常用命令数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
+<meta name="description" content="安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
 <meta name="keywords" content="Mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Preliminary use Mongodb">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/PreliminaryUseMongodb/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="基本操作安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  常用命令数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
+<meta property="og:description" content="安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-20T08:39:49.935Z">
+<meta property="og:updated_time" content="2019-12-20T13:30:42.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Preliminary use Mongodb">
-<meta name="twitter:description" content="基本操作安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  常用命令数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
+<meta name="twitter:description" content="安装启动 docker pull mongo docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo docker exec -it mymongo mongo  数据库 show dbs use elias 建立数据库 elias db 当前所在数据库 db.dropDatabase()">
 
 
 
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  176
+                  610
                 </span>
               
 
@@ -378,43 +378,86 @@
       
 
       
-        <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a><center>基本操作</center></h3><h4 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a>安装启动</h4><ul>
+        <h3 id="安装启动"><a href="#安装启动" class="headerlink" title="安装启动"></a><center>安装启动</center></h3><ul>
 <li><code>docker pull mongo</code></li>
 <li><code>docker run -d -p 127.0.0.1:27017:27017 --name mymongo mongo</code></li>
 <li><code>docker exec -it mymongo mongo</code></li>
 </ul>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><center>常用命令</center></h3><h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a><center>数据库</center></h3><ul>
 <li><code>show dbs</code></li>
 <li><code>use elias</code> 建立数据库 elias</li>
 <li><code>db</code> 当前所在数据库</li>
-<li><code>db.dropDatabase()</code><a id="more"></a>
-<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4></li>
-<li><code>db.createCollection(&quot;post&quot;)</code> 建集合(表) post 👉<a href="https://www.runoob.com/mongodb/mongodb-databases-documents-collections.html" target="_blank" rel="noopener">MongoDB 概念解析</a></li>
-<li><code>show collections</code></li>
-<li><p><code>db.[collectionsName].drop()</code></p>
+<li><code>db.dropDatabase()</code></li>
+</ul>
+<a id="more"></a>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a><center>集合</center></h3><ul>
+<li><p><code>db.createCollection(&quot;post&quot;)</code> 建集合(表) post 👉<a href="https://www.runoob.com/mongodb/mongodb-databases-documents-collections.html" target="_blank" rel="noopener">MongoDB 概念解析</a></p>
 </li>
-<li><p><code>db.[collectionsName].insert({[key]:&quot;[value]&quot;})</code></p>
-<ul>
-<li>也可以把数据先赋给变量,再插入变量  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document=(&#123;tiltle:&quot;20191220&quot;,by:&apos;elias&apos;,tag:&apos;note&apos;&#125;)</span><br><span class="line">db.[collectionsName].insert(document)</span><br></pre></td></tr></table></figure>
+<li><p><code>show collections</code></p>
+</li>
+<li><code>db.[collectionsName].drop()</code></li>
+</ul>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a><center>文档</center></h3><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ul>
+<li><code>db.[collectionsName].insertOne()</code></li>
+<li><code>db.[collectionsName].insert({key:&quot;value&quot;})</code></li>
+<li>也可以把数据先赋给变量 , 再插入变量  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document=(&#123;tiltle:&quot;20191220&quot;,by:&apos;elias&apos;,tag:&apos;note&apos;&#125;)</span><br><span class="line">db.[collectionsName].insert(document)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><ul>
+<li><p><code>db.[collectionName].updateOne({key:&quot;value&quot;} , {$set:{key:&quot;Newvalue&quot;} )</code> 符合 key=value 的文档的 key 的 value 修改为 Newvalue ; $set 如果该文档没有该域(字段) , 则会追加上去</p>
 </li>
-<li><p><code>db.[collectionsName].find()</code> 查看插入的文档</p>
+<li><p><code>db.[collectionName].updateOne({key:&quot;value&quot;} , {$set:{key:&quot;Newvalue&quot;} , {multi:true})</code> 修改多条符合条件的值</p>
 </li>
-<li><code>db.[collectionsName].find().pretty()</code></li>
-<li><code>db.[collectionsName].insertOne()</code></li>
-<li>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.[collectionName].updateOne(&#123;&#123;[key]:&quot;[value]&quot;&#125;,&#123;$set:&#123;key:&quot;[Newvalue]&quot;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<li><p><code>db.[collectionName].updateOne({key:&quot;value&quot;} , {$unset:{key:&quot;Newvalue&quot;} )</code>  删除符合 key=value 的文档的 key 域(字段)</p>
 </li>
 <li><p><code>db.[collectionName].updateMany()</code></p>
 </li>
+<li><p><code>db.[collectionName].update( {key:&quot;value&quot;},{$inc: {key2:2}} )</code> 符合 key=value 的文档的 key2 的 value 加 2</p>
+</li>
+<li><p><code>db.[collectionName].update( {key:&quot;value&quot;},{$mul: {key2:2}} )</code> 符合 key=value 的文档的 key2 的 value 乘 2</p>
+</li>
+<li><p><code>db.[collectionName].update( {key:&quot;value&quot;},{$rename: {key2:key3}} )</code> 符合 key=value 的文档的 key2 改名为 </p>
+</li>
+<li><p><code>db.[collectionName].updateOne({key:&quot;value&quot;} ,{key:&quot;value&quot;,key2:&quot;value2&quot;,...} , {upsert:true})</code> 有符合条件文档的就更新 , 没有则插入该文档</p>
+</li>
+</ul>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><ul>
 <li><code>db.[collectionName].deleteOne()</code></li>
 <li><code>db.[collectionName].deleteMany()</code></li>
 </ul>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ul>
+<li><code>db.[collectionsName].find()</code> 查看文档</li>
+<li><code>db.[collectionsName].find().pretty()</code> </li>
+<li><code>db.[collectionsName].find()</code></li>
+<li><code>db.[collectionsName].findOne()</code></li>
+<li><code>db.[collectionsName].find({},{_id:0})</code> 0 查询结果不包含id , 1 反之</li>
+<li><code>db.[collectionsName].find({key:&quot;value&quot;})</code></li>
+<li><code>db.[collectionsName].find({key:{$gte:3}})</code> 大于等于3 <strong>$gte</strong></li>
+<li><code>db.[collectionsName].find({key:{$gt:3}})</code> 大于 <strong>$gt</strong></li>
+<li><code>db.[collectionsName].find({key:{$lte:3}})</code> 小于等于 <strong>$lte</strong></li>
+<li><code>db.[collectionsName].find({key:{$lt:3}})</code> 小于 <strong>$lt</strong></li>
+<li><code>db.[collectionsName].find({key:{$regex:&quot; &quot;}})</code> 正则表达式</li>
+<li><code>db.[collectionsName].find({key:/ /})</code></li>
+<li><p><code>db.[collectionsName].find({key:{$regex:&quot; &quot;},key2:{$gt:3},...,...})</code> 复合条件,筛选同时符合条件的数据</p>
+</li>
+<li><p><code>db.[collectionsName].find({ $or: [{key:/ /},{key2:{$gt:3}}] })</code>  筛选符合 key 或者 key2 的数据</p>
+</li>
+<li><p><code>db.[collectionsName].find({key:{$in : [..,..,..]}})</code> 和 select in 一样</p>
+</li>
+<li><code>db.[collectionsName].distinct(&quot;key&quot;)</code> 取出键所含的内容</li>
+<li><code>db.[collectionsName].find({...}).sort({key:1})</code> 1 升序 , -1 降序</li>
+<li><code>db.[collectionsName].find({...}).limit(3)</code> 提取前三条文档</li>
+<li><code>db.[collectionsName].find({...}).skip(3)</code> 跳过三条文档</li>
+</ul>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a><center>索引</center></h3><ul>
+<li><code>db.[collectionsName].getIndexes()</code> 默认索引</li>
+<li><code>db.[collectionsName].createIndex({key:1})</code> 以 key 升序建立索引 ; -1 降序</li>
+<li><code>db.[collectionsName].dropIndex({key:1})</code> 删除索引</li>
+<li><code>db.[collectionsName].createIndex({key:1},{unique:true})</code> 升序唯一索引 , 之后新建文档的 key 的 value 不能与前面的重复</li>
+</ul>
 <h3 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h3><ul>
-<li><p><a href="https://hub.docker.com/_/mongo/?tab=description" target="_blank" rel="noopener">mongo - Docker Hub</a></p>
-</li>
-<li><p><a href="https://docs.mongodb.com/manual/reference/command/" target="_blank" rel="noopener">Database Commands-MongoDB Manual</a></p>
-</li>
+<li><a href="https://hub.docker.com/_/mongo/?tab=description" target="_blank" rel="noopener">mongo - Docker Hub</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/command/" target="_blank" rel="noopener">Database Commands - MongoDB Manual</a></li>
 </ul>
 
       
@@ -901,7 +944,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装启动"><span class="nav-number">1.1.</span> <span class="nav-text">安装启动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库"><span class="nav-number">2.1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">2.2.</span> <span class="nav-text">集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考内容"><span class="nav-number">3.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装启动"><span class="nav-number">1.</span> <span class="nav-text">安装启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">3.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档"><span class="nav-number">4.</span> <span class="nav-text">文档</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入"><span class="nav-number">4.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新"><span class="nav-number">4.2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">4.3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">4.4.</span> <span class="nav-text">查询</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">5.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考内容"><span class="nav-number">6.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
             
 
           </div>
@@ -935,7 +978,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.8k</span>
+    <span title="Site words total count">20.2k</span>
   
 </div>
 
