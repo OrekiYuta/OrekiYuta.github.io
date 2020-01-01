@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.orekiyuta.cn/archives/PreliminaryUseMongodb/</loc>
-    <lastmod>2019-12-20</lastmod>
+    <lastmod>2020-01-01</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/Ark-exploit-log/</loc>
+    <lastmod>2019-12-25</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/SortOutJSESTS/</loc>
     <lastmod>2019-12-20</lastmod>
@@ -47,9 +50,6 @@
     <lastmod>2019-12-09</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/CentOS-SVNConfigure/</loc>
-    <lastmod>2019-12-09</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/Ark-exploit-log/</loc>
     <lastmod>2019-12-09</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/AzureLaneCrack/</loc>
