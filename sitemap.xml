@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.orekiyuta.cn/archives/Sakizaki/</loc>
+    <loc>http://www.orekiyuta.cn/archives/Ark-exploit-log/</loc>
     
-    <lastmod>2020-05-21T06:40:02.099Z</lastmod>
+    <lastmod>2020-05-27T07:36:44.280Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.orekiyuta.cn/archives/Ark-exploit-log/</loc>
+    <loc>http://www.orekiyuta.cn/archives/TmuxManual/</loc>
     
-    <lastmod>2020-05-21T06:03:24.058Z</lastmod>
+    <lastmod>2020-05-26T14:45:57.007Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/Sakizaki/</loc>
+    
+    <lastmod>2020-05-21T14:54:19.999Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
     
     <lastmod>2019-12-20T08:36:26.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/TmuxManual/</loc>
-    
-    <lastmod>2019-12-20T05:46:22.373Z</lastmod>
     
   </url>
   
