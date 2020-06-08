@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/HeadFirstJava/</loc>
+    
+    <lastmod>2020-06-08T15:12:07.038Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/HowProgramWorks/</loc>
+    
+    <lastmod>2020-06-06T17:15:57.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
     
     <lastmod>2020-05-30T04:39:00.405Z</lastmod>
