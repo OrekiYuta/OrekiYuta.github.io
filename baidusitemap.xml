@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.orekiyuta.cn/archives/HowProgramWorks/</loc>
-    <lastmod>2020-06-17</lastmod>
-  </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/HeadFirstJava/</loc>
-    <lastmod>2020-06-11</lastmod>
+    <lastmod>2020-06-23</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/HowProgramWorks/</loc>
+    <lastmod>2020-06-23</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/NiceToUseVue/</loc>
+    <lastmod>2020-06-23</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/MySQLCrashCourse/</loc>
+    <lastmod>2020-06-23</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
     <lastmod>2020-05-30</lastmod>
@@ -42,9 +48,6 @@
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/ThinkingShift/</loc>
     <lastmod>2019-12-15</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/NiceToUseVue/</loc>
-    <lastmod>2019-12-12</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/LearnToUseVue/</loc>
     <lastmod>2019-12-11</lastmod>
