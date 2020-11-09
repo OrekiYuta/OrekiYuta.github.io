@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.orekiyuta.cn/archives/JavaReview/</loc>
+    <lastmod>2020-11-09</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/CSSFiveClassicLayouts/</loc>
+    <lastmod>2020-11-09</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
+    <lastmod>2020-11-09</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/CSS3KnowledegePoint/</loc>
+    <lastmod>2020-11-09</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
+    <lastmod>2020-10-23</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/Git-flow/</loc>
+    <lastmod>2020-06-23</lastmod>
+  </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/HeadFirstJava/</loc>
     <lastmod>2020-06-23</lastmod>
   </url>  <url>
@@ -12,9 +30,6 @@
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/MySQLCrashCourse/</loc>
     <lastmod>2020-06-23</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
-    <lastmod>2020-05-30</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/Ark-exploit-log/</loc>
     <lastmod>2020-05-27</lastmod>
@@ -31,20 +46,11 @@
     <loc>http://www.orekiyuta.cn/archives/SortOutJSESTS/</loc>
     <lastmod>2019-12-20</lastmod>
   </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
-    <lastmod>2019-12-20</lastmod>
-  </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/FieldworkDaily/</loc>
     <lastmod>2019-12-17</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/jnote/</loc>
     <lastmod>2019-12-17</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/CSS3KnowledegePoint/</loc>
-    <lastmod>2019-12-17</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/Git-flow/</loc>
-    <lastmod>2019-12-16</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/ThinkingShift/</loc>
     <lastmod>2019-12-15</lastmod>

@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/JavaReview/</loc>
+    
+    <lastmod>2020-11-09T14:46:22.395Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/CSSFiveClassicLayouts/</loc>
+    
+    <lastmod>2020-11-09T14:44:29.766Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
+    
+    <lastmod>2020-11-09T14:40:02.759Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/CSS3KnowledegePoint/</loc>
+    
+    <lastmod>2020-11-09T13:36:15.321Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
+    
+    <lastmod>2020-10-23T15:37:03.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/Git-flow/</loc>
+    
+    <lastmod>2020-06-23T14:38:19.702Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/HeadFirstJava/</loc>
     
     <lastmod>2020-06-23T14:36:44.060Z</lastmod>
@@ -26,13 +68,6 @@
     <loc>http://www.orekiyuta.cn/archives/MySQLCrashCourse/</loc>
     
     <lastmod>2020-06-23T14:33:15.275Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
-    
-    <lastmod>2020-05-30T04:39:00.405Z</lastmod>
     
   </url>
   
@@ -79,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
-    
-    <lastmod>2019-12-20T08:36:26.180Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.orekiyuta.cn/archives/FieldworkDaily/</loc>
     
     <lastmod>2019-12-17T10:28:26.260Z</lastmod>
@@ -96,20 +124,6 @@
     <loc>http://www.orekiyuta.cn/archives/jnote/</loc>
     
     <lastmod>2019-12-17T10:28:02.589Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/CSS3KnowledegePoint/</loc>
-    
-    <lastmod>2019-12-17T07:49:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/Git-flow/</loc>
-    
-    <lastmod>2019-12-16T14:35:33.911Z</lastmod>
     
   </url>
   
