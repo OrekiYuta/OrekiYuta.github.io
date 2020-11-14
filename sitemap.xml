@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/tags/index.html</loc>
+    
+    <lastmod>2020-11-14T10:39:04.376Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
+    
+    <lastmod>2020-11-14T09:19:42.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
+    
+    <lastmod>2020-11-12T14:49:31.586Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/JavaGenericTypes/</loc>
     
     <lastmod>2020-11-11T15:41:09.337Z</lastmod>
@@ -33,13 +54,6 @@
     <loc>http://www.orekiyuta.cn/archives/CSS3KnowledegePoint/</loc>
     
     <lastmod>2020-11-09T13:36:15.321Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/Usakizaki/</loc>
-    
-    <lastmod>2020-10-23T15:37:03.993Z</lastmod>
     
   </url>
   
@@ -89,13 +103,6 @@
     <loc>http://www.orekiyuta.cn/archives/TmuxManual/</loc>
     
     <lastmod>2020-05-26T14:45:57.007Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/tags/index.html</loc>
-    
-    <lastmod>2020-05-21T05:44:58.937Z</lastmod>
     
   </url>
   

@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2020-11-11T15:41:09.337Z</updated>
+  <updated>2020-11-14T09:19:42.898Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows Setting</title>
+    <link href="http://www.orekiyuta.cn/archives/WindowsSetting/"/>
+    <id>http://www.orekiyuta.cn/archives/WindowsSetting/</id>
+    <published>2020-11-14T08:49:01.000Z</published>
+    <updated>2020-11-14T09:19:42.898Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Win10-LTSB-Add-MicrosoftStore"><a href="#Win10-LTSB-Add-MicrosoftStore" class="headerlink" title="Win10 LTSB Add MicrosoftStore"></a>Win10 LTSB Add MicrosoftStore</h3><ul><li>To : <a href="https://github.com/kkkgo/LTSB-Add-MicrosoftStore" target="_blank" rel="noopener">LTSB-Add-MicrosoftStore</a></li><li>Run: Add-Store.cmd</li></ul><p><img src="/images/Windows/Win10LTSBAddMicrosoftStore/Snipaste_2020-11-14_16-53-39.png" alt></p><h3 id="Windows-show-Windows-File"><a href="#Windows-show-Windows-File" class="headerlink" title="Windows show Windows/File"></a>Windows show Windows/File</h3><ul><li><code>explorer .</code></li><li><code>explorer ..</code></li><li><code>explorer [dirName]</code><br><img src="/images/Windows/Explorer/Snipaste_2020-11-14_17-06-31.png" alt></li></ul><p>### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Win10-LTSB-Add-MicrosoftStore&quot;&gt;&lt;a href=&quot;#Win10-LTSB-Add-MicrosoftStore&quot; class=&quot;headerlink&quot; title=&quot;Win10 LTSB Add MicrosoftStore&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Windows" scheme="http://www.orekiyuta.cn/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Java GenericTypes</title>
@@ -204,9 +228,9 @@
     <link href="http://www.orekiyuta.cn/archives/Usakizaki/"/>
     <id>http://www.orekiyuta.cn/archives/Usakizaki/</id>
     <published>2020-05-21T06:04:24.000Z</published>
-    <updated>2020-10-23T15:37:03.993Z</updated>
+    <updated>2020-11-12T14:49:31.586Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>この長い長い旅のその意味を 希望をつなぐため</p></li><li><p>今隣に座るきみは 以前より少し大人に見えるよ</p></li><li><p>でも目覚めた朝 谁も居ないんだね</p></li></ul><a id="more"></a><ul><li><p>炎天下 愿った少年 「あの顷」に立っていたんだ</p></li><li><p>期待ハズレの世界の隙間 予報外れの雨が降ってきた</p></li><li><p>夢を見せたくせに 叶えれる力を与えてくれないなんて</p></li><li><p>宵街を行く人だかりは 嬉しそうだったり 寂しそうだったり</p></li><li><p>君はどんな颜だっけ　なぜだろう 思い出せないな</p></li><li><p>キミは泣いた後笑える はずだからって言ったんだ</p></li><li><p>あの日から 変わらず いつまでも変わらずに  いられなかったこと 悔しくて 指を离す</p></li><li><p>逃げ出したいと思うこの気持ちに 見つめられると呼吸もできない</p></li><li><p>振り返ってみても いないのは分かってる</p></li><li><p>空が変わり果て 星は巡ってゆく 目覚めたらすぐに 今日も歩きだそう</p></li><li><p>待っているよ 月が綺麗な夜に会おう ここにいるよ あの日のまま</p></li><li><p>いつも见ていた　近いようで远くて いつだって　届かない</p></li><li><p>言叶を知らないままならば この瞳を闭じることも 简単だったのに</p></li><li><p>少し前に进んでみよう まなざしを高く上げて</p></li><li><p>翼消えて 見えなくなっても あなたのいるところに 私がいる</p></li><li><p>飾った写真達が 笑ったまま 止めどない明日に変わらない僕たちを</p></li><li><p>と過ごせる今が このまま続けばなんて</p></li><li><p>この季節が迎えに来たら 君の姿もう探す事も 出来なくなっちゃうんだね</p></li><li><p>けど そんな出会いを 别れを 缲り返して 「今の私」よりも すてきになっていますか</p></li><li><p>君が描いた未来の世界は いつかの空に導かれて</p></li><li><p>君の描く未来に 私はいるのかな 同じ空を 同じ想いで 見上げていたいよ</p></li><li><p>见送った 手を振った ありがとう</p></li><li><p>恐いものなんかない 例え化け物になろうとも 成し遂げる</p></li><li><p>また嫌いなトコがふえた 解ってんだよ　言叶は自分自身だ</p></li><li><p>何もかも失くしても 捧げるものがあるの</p></li><li><p>いつも新しい 空を見せてあげよう</p></li><li><p>曖昧な世界を照らすような</p></li><li><p>人たちはこの空飛ぶことは叶わないけど その代わりいま流す涙は天に昇りまた 雨となり還る</p></li><li><p>この場所に ただいま言うからね</p></li><li><p>见せてやる  本当は強かった ときのこと</p></li><li><p>永遠なんて望みはしない たとえちっぽけでも構わない</p></li><li><p>でも僕は君じゃないから 伝えることしか出来なくて</p></li><li><p>そう 解っている答えなど 捨ててしまえ</p></li><li><p>孤独を捨てたって 君は君だから</p></li><li><p>目を閉じてたら気付けない事が 沢山あるんだ</p></li><li><p>小さく揺れた向日葵 サヨナラも言えないまま</p></li><li><p>離れてても 同じ空見上げて</p></li><li><p>通り過ぎていった時間の捉え方で 「現在」が変わっていく</p></li><li><p>あの瞬間 あの場面が キミにとって特別なら 過去は離れて 行くものなんかじゃなくて</p></li><li><p>振り返るともうない  僕らは何も何もまだ知らぬ</p></li><li><p>何も言はず泣けだらいいね 涙か涸れだら終わり もっと僕が强くなぃなきゃ 悲しみは自立への一步</p></li><li><p>何年前のことでしょう 二度と戻れないあの場所に 置いてきてしまったぼくの心さ</p></li><li><p>今も何度でもボクは夏の面影の中 繰り返すよ</p></li><li><p>鮮やかすぎる 君がいない夏 あの声 あの仕草が 広がってく</p></li><li><p>どしゃぶりでもかまわないと ずぶぬれでもかまわないと しぶきあげるきみが消えてく</p></li><li><p>涙がかわくまでは もう少し この雨に打たれていたくて</p></li><li><p>溢れ出したこの痛みは 全て一人で抱き締める</p></li><li><p>もういいか そんなこと 笑ってよ 終わるその日には</p></li><li><p>理想なんて もう 燃え尽きてしまったの 弱虫の耳鸣りはやまない</p></li><li><p>時の風に 流されて 落ちていく</p></li><li><p>泣いたままで あなたの頬を叩く</p></li><li><p>僕にはわかるんだ 嘘をついている君が 泣いていいよ ここにずっといるから</p></li><li><p>無邪気な時には戻れない もう二度と</p></li><li><p>心押し殺すこと それひとつだけ</p></li><li><p>アタシは弱い 弱い 弱い 涙の行方を貴方は知らない</p></li><li><p>君とあの日に残した 約束の果てに私は 透明になっていくのだろう 今更善意なんて 似合わないと思うけど</p></li><li><p>やっと見つけた　新しい朝は　月日が邪魔をする 向かう先は　次じゃなくて 過ばかり追いかけた</p></li><li><p>過去を知りたがらない瞳    洗い流してくれる指</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>この長い長い旅のその意味を 希望をつなぐため</p></li><li><p>今隣に座るきみは 以前より少し大人に見えるよ</p></li><li><p>でも目覚めた朝 谁も居ないんだね</p></li></ul><a id="more"></a><ul><li><p>炎天下 愿った少年 「あの顷」に立っていたんだ</p></li><li><p>期待ハズレの世界の隙間 予報外れの雨が降ってきた</p></li><li><p>夢を見せたくせに 叶えれる力を与えてくれないなんて</p></li><li><p>宵街を行く人だかりは 嬉しそうだったり 寂しそうだったり</p></li><li><p>君はどんな颜だっけ　なぜだろう 思い出せないな</p></li><li><p>キミは泣いた後笑える はずだからって言ったんだ</p></li><li><p>あの日から 変わらず いつまでも変わらずに  いられなかったこと 悔しくて 指を离す</p></li><li><p>逃げ出したいと思うこの気持ちに 見つめられると呼吸もできない</p></li><li><p>振り返ってみても いないのは分かってる</p></li><li><p>空が変わり果て 星は巡ってゆく 目覚めたらすぐに 今日も歩きだそう</p></li><li><p>待っているよ 月が綺麗な夜に会おう ここにいるよ あの日のまま</p></li><li><p>いつも见ていた　近いようで远くて いつだって　届かない</p></li><li><p>言叶を知らないままならば この瞳を闭じることも 简単だったのに</p></li><li><p>少し前に进んでみよう まなざしを高く上げて</p></li><li><p>翼消えて 見えなくなっても あなたのいるところに 私がいる</p></li><li><p>飾った写真達が 笑ったまま 止めどない明日に変わらない僕たちを</p></li><li><p>と過ごせる今が このまま続けばなんて</p></li><li><p>この季節が迎えに来たら 君の姿もう探す事も 出来なくなっちゃうんだね</p></li><li><p>けど そんな出会いを 别れを 缲り返して 「今の私」よりも すてきになっていますか</p></li><li><p>君が描いた未来の世界は いつかの空に導かれて</p></li><li><p>君の描く未来に 私はいるのかな 同じ空を 同じ想いで 見上げていたいよ</p></li><li><p>见送った 手を振った ありがとう</p></li><li><p>恐いものなんかない 例え化け物になろうとも 成し遂げる</p></li><li><p>また嫌いなトコがふえた 解ってんだよ　言叶は自分自身だ</p></li><li><p>何もかも失くしても 捧げるものがあるの</p></li><li><p>いつも新しい 空を見せてあげよう</p></li><li><p>曖昧な世界を照らすような</p></li><li><p>人たちはこの空飛ぶことは叶わないけど その代わりいま流す涙は天に昇りまた 雨となり還る</p></li><li><p>この場所に ただいま言うからね</p></li><li><p>见せてやる  本当は強かった ときのこと</p></li><li><p>永遠なんて望みはしない たとえちっぽけでも構わない</p></li><li><p>でも僕は君じゃないから 伝えることしか出来なくて</p></li><li><p>そう 解っている答えなど 捨ててしまえ</p></li><li><p>孤独を捨てたって 君は君だから</p></li><li><p>目を閉じてたら気付けない事が 沢山あるんだ</p></li><li><p>小さく揺れた向日葵 サヨナラも言えないまま</p></li><li><p>離れてても 同じ空見上げて</p></li><li><p>通り過ぎていった時間の捉え方で 「現在」が変わっていく</p></li><li><p>あの瞬間 あの場面が キミにとって特別なら 過去は離れて 行くものなんかじゃなくて</p></li><li><p>振り返るともうない  僕らは何も何もまだ知らぬ</p></li><li><p>何も言はず泣けだらいいね 涙か涸れだら終わり もっと僕が强くなぃなきゃ 悲しみは自立への一步</p></li><li><p>何年前のことでしょう 二度と戻れないあの場所に 置いてきてしまったぼくの心さ</p></li><li><p>今も何度でもボクは夏の面影の中 繰り返すよ</p></li><li><p>鮮やかすぎる 君がいない夏 あの声 あの仕草が 広がってく</p></li><li><p>どしゃぶりでもかまわないと ずぶぬれでもかまわないと しぶきあげるきみが消えてく</p></li><li><p>涙がかわくまでは もう少し この雨に打たれていたくて</p></li><li><p>溢れ出したこの痛みは 全て一人で抱き締める</p></li><li><p>もういいか そんなこと 笑ってよ 終わるその日には</p></li><li><p>理想なんて もう 燃え尽きてしまったの 弱虫の耳鸣りはやまない</p></li><li><p>時の風に 流されて 落ちていく</p></li><li><p>泣いたままで あなたの頬を叩く</p></li><li><p>僕にはわかるんだ 嘘をついている君が 泣いていいよ ここにずっといるから</p></li><li><p>無邪気な時には戻れない もう二度と</p></li><li><p>心押し殺すこと それひとつだけ</p></li><li><p>アタシは弱い 弱い 弱い 涙の行方を貴方は知らない</p></li><li><p>君とあの日に残した 約束の果てに私は 透明になっていくのだろう 今更善意なんて 似合わないと思うけど</p></li><li><p>やっと見つけた　新しい朝は　月日が邪魔をする 向かう先は　次じゃなくて 過ばかり追いかけた</p></li><li><p>過去を知りたがらない瞳　洗い流してくれる指</p></li></ul>]]></content>
     
     <summary type="html">
     
@@ -296,39 +320,6 @@
     
     
       <category term="Docker" scheme="http://www.orekiyuta.cn/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>What is JS? ES? TS?</title>
-    <link href="http://www.orekiyuta.cn/archives/SortOutJSESTS/"/>
-    <id>http://www.orekiyuta.cn/archives/SortOutJSESTS/</id>
-    <published>2019-12-17T09:21:02.000Z</published>
-    <updated>2019-12-20T08:36:39.794Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="一图理清浏览器脚本语言"><a href="#一图理清浏览器脚本语言" class="headerlink" title="一图理清浏览器脚本语言"></a><center>一图理清浏览器脚本语言</center></h3><p><img src="/images/SortOutJSESTS/01.png" alt></p><ul><li><p>简而言之 , 就是 js 设计之处有很多缺陷,然后为了弥补缺陷不断的更新 ES 标准 , js 不断的实现新标准修复缺陷 , 这样下去越来越麻烦 , 其他开发者看不下去了就直接按照 ES 标准实现自己的编译器和语言 , 最后转成 js </p></li><li><p>按照这样发展下去 , js 有发展成浏览器的汇编趋势</p></li><li><p>现有新的技术不转成 js , 自己去兼容浏览器打破 js 垄断浏览器。例如: Dart</p></li></ul><a id="more"></a><h3 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h3><ul><li><a href="https://www.zhihu.com/question/361303428" target="_blank" rel="noopener">es,js,ts三者有什么关系？</a></li><li><a href="https://www.jianshu.com/p/1cd0b2cb3ec4" target="_blank" rel="noopener">JavaScript的历史</a></li><li><a href="http://javascript.ruanyifeng.com/introduction/history.html" target="_blank" rel="noopener">JavaScript语言的历史</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;一图理清浏览器脚本语言&quot;&gt;&lt;a href=&quot;#一图理清浏览器脚本语言&quot; class=&quot;headerlink&quot; title=&quot;一图理清浏览器脚本语言&quot;&gt;&lt;/a&gt;&lt;center&gt;一图理清浏览器脚本语言&lt;/center&gt;&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/SortOutJSESTS/01.png&quot; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;简而言之 , 就是 js 设计之处有很多缺陷,然后为了弥补缺陷不断的更新 ES 标准 , js 不断的实现新标准修复缺陷 , 这样下去越来越麻烦 , 其他开发者看不下去了就直接按照 ES 标准实现自己的编译器和语言 , 最后转成 js &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;按照这样发展下去 , js 有发展成浏览器的汇编趋势&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;现有新的技术不转成 js , 自己去兼容浏览器打破 js 垄断浏览器。例如: Dart&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="JavaScript" scheme="http://www.orekiyuta.cn/tags/JavaScript/"/>
-    
-      <category term="ECMAScript" scheme="http://www.orekiyuta.cn/tags/ECMAScript/"/>
-    
-      <category term="TypeScript" scheme="http://www.orekiyuta.cn/tags/TypeScript/"/>
     
   </entry>
   
