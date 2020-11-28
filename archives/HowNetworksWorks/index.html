@@ -230,7 +230,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/HowNetworksWorks/127.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/HowNetworksWorks/128.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/HowNetworksWorks/last.png">
-<meta property="og:updated_time" content="2020-11-27T14:30:36.571Z">
+<meta property="og:updated_time" content="2020-11-28T08:22:48.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How Networks Works &#x2F; After reading">
 <meta name="twitter:description" content="浏览器生成消息—浏览器内部 生成 HTTP 请求消息解析 URL URL:Uniform Resource Locator FTP:File Transfer Protocol    协议：通信操作的规则 URL 开头部分，表示浏览器应当使用的方法；比如：http,ftp,file,mailto Web浏览器解析 URL 过程">
@@ -496,7 +496,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  25.8k
+                  30.1k
                 </span>
               
 
@@ -2100,7 +2100,208 @@
 </ul>
 </li>
 </ul>
-<h3 id="使用缓存服务器分担负载"><a href="#使用缓存服务器分担负载" class="headerlink" title="使用缓存服务器分担负载"></a>使用缓存服务器分担负载</h3><h3 id="内容分发服务"><a href="#内容分发服务" class="headerlink" title="内容分发服务"></a>内容分发服务</h3><h2 id="请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"><a href="#请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点" class="headerlink" title="请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"></a>请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点</h2><h2 id="网络包的路途"><a href="#网络包的路途" class="headerlink" title="网络包的路途"></a>网络包的路途</h2><p><img src="/images/HowNetworksWorks/last.png" alt></p>
+<h3 id="使用缓存服务器分担负载"><a href="#使用缓存服务器分担负载" class="headerlink" title="使用缓存服务器分担负载"></a>使用缓存服务器分担负载</h3><h4 id="缓存服务器基本思路"><a href="#缓存服务器基本思路" class="headerlink" title="缓存服务器基本思路"></a>缓存服务器基本思路</h4><ul>
+<li><p>除了使用多台功能相同的 Web 服务器分担负载之外，还有另外一种方法，就是将整个系统按功能分成不同的服务器</p>
+<ul>
+<li>如 Web 服务器、数据库服务器</li>
+<li>缓存服务器就是一种按功能来分担负载的方法</li>
+</ul>
+</li>
+<li><p>缓存服务器是一台通过代理机制对数据进行缓存的服务器</p>
+<ul>
+<li>代理介于Web 服务器和客户端之间，具有对 Web 服务器访问进行中转的功能</li>
+<li>当进行中转时，它可以将 Web 服务器返回的数据保存在磁盘中，并可以代替Web 服务器将磁盘中的数据返回给客户端</li>
+<li>这种保存的数据称为缓存，缓存服务器指的也就是这样的功能</li>
+</ul>
+</li>
+<li>Web 服务器需要执行检查网址和访问权限，以及在页面上填充数据等内部操作过程，因此将页面数据返回客户端所需的时间较长</li>
+<li>相对地，缓存服务器只要将保存在磁盘上的数据读取出来发送给客户端就可以了，因此可以比 Web 服务器更快地返回数据<ul>
+<li>其实就是缓存服务器把 Web 服务器的部分工作给分离出来了，减轻了 Web 服务器的工作量</li>
+</ul>
+</li>
+<li>不过，如果在缓存了数据之后，Web 服务器更新了数据，那么缓存的数据就不能用了，因此缓存并不是永久可用的 <ul>
+<li>此外，CGI 程序等产生的页面数据每次都不同，这些数据也无法缓存</li>
+</ul>
+</li>
+<li>无论如何，在来自客户端的访问中，总有一部分访问可以无需经过 Web 服务器，而由缓存服务器直接处理。</li>
+<li>即便只有这一部分操作通过缓存服务器提高了速度，整体性能也可以得到改善</li>
+<li>此外，通过让缓存服务器处理一部分请求，也可以减轻 Web服务器的负担，从而缩短 Web 服务器的处理时间</li>
+</ul>
+<h4 id="缓存服务器通过更新实际管理内容"><a href="#缓存服务器通过更新实际管理内容" class="headerlink" title="缓存服务器通过更新实际管理内容"></a>缓存服务器通过更新实际管理内容</h4><p><a href="/images/HowNetworksWorks/133.png"></a></p>
+<p><a href="/images/HowNetworksWorks/134.png"></a></p>
+<ul>
+<li>如果一台缓存服务器对应多台 Web 服务器，就需要根据请求信息的URI中的目录进行判断<ul>
+<li>然后缓存服务器充当客户端的身份去向目标Web服务器发送请求信息</li>
+<li>它会先创建套接字，然后连接到Web服务器的套接字，并发送请求</li>
+<li>接着缓存服务器会在响应消息中加上 Via 头部字段，表示这个消息是经过缓存服务器中转的</li>
+<li>最后缓存服务器充当了Web服务器的身份向客户端发送响应消息<ul>
+<li>同时，缓存服务器会将响应消息保存在缓存中，并记录保存时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在这个过程中充当了中间人的方式就是代理的基本原则</li>
+<li>在中转消息的过程中，缓存服务器还会顺便将页面数据保存下来，随着缓存数据的积累，用户访问的数据命中缓存的几率也会提高</li>
+</ul>
+<p><a href="/images/HowNetworksWorks/135.png"></a></p>
+<ul>
+<li>如果缓存服务器中已有缓存信息的话<ul>
+<li>缓存服务器会添加一个 If-Modified-Since 头部字段并将请求转发给 Web 服务器</li>
+<li>询问 Web 服务器用户请求的数据是否已经发生变化<ul>
+<li>这时， Web 服务器只要查询一下数据的最后更新时间就好了，比返回页面数据的负担要小一些；而且返回的响应消息也比较短，能相应地减少负担</li>
+</ul>
+</li>
+<li>然后，Web 服务器会根据 If-Modified-Since 的值与服务器上的页面数据的最后更新时间进行比较</li>
+<li>如果在指定时间内数据没有变化，就会返回一个像上图一样的表示没有变化的响应消息</li>
+<li>接下来，返回消息到达缓存服务器，然后缓存服务器就会知道 Web 服务器上的数据和本地缓存中的数据是一样的，于是就会将缓存的数据返回给客户端</li>
+</ul>
+</li>
+</ul>
+<h4 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h4><ul>
+<li>上面将的是在Web服务器一端部署一个代理，然后利用其缓存功能来改善服务器性能</li>
+<li>还有另一种方法是在客户端一侧部署缓存服务器</li>
+<li>实际上，缓存服务器使用的代理机制最早就是放在客户端一侧的，这才是代理的原型，称为正向代理（forward proxy）<ul>
+<li>正向代理刚刚出现的时候，其目的之一就是缓存，这个目的和服务器端的缓存服务器相同</li>
+<li>不过，当时的正向代理还有另外一个目的，那就是用来实现防火墙</li>
+</ul>
+</li>
+</ul>
+<p><a href="/images/HowNetworksWorks/136.png"></a></p>
+<ul>
+<li>代理在转发过程可以查看请求的内容，可以根据内容判断是否允许访问<ul>
+<li>包过滤方式的防火墙只能根据IP地址和端口号判断，因此无法实现这一目标</li>
+</ul>
+</li>
+</ul>
+<p><a href="/images/HowNetworksWorks/137.png"></a></p>
+<ul>
+<li><p>在使用正向代理时，一般需要在浏览器的设置窗口中的“代理服务器”一栏中填写正向代理的 IP 地址，浏览器发送请求消息的过程也会发生相应的变化</p>
+<ul>
+<li>在没有设置正向代理的情况下，浏览器会根据网址栏中输入的http://… 字符串判断 Web 服务器的域名，并向其发送请求消息</li>
+<li>当设置了正向代理时，浏览器会忽略网址栏的内容，直接将所有请求发送给正向代理</li>
+<li>请求消息的内容也会有一些不同<ul>
+<li>没有正向代理时，浏览器会从网址中提取出 Web 服务器域名后面的文件名或目录名，然后将其作为请求的URI 进行发送</li>
+<li>而有正向代理时，浏览器会像图 5.9 这样，在请求的 URI字段中填写完整的 http://… 网址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用正向代理时，URI 部分为http://… 这样的完整网址，因此可以根据这个网址来转发，不需要像服务器端的缓存服务器一样实现设置好转发目标 Web 服务器，而且可以发给任意Web 服务器；而服务器端的缓存服务器只能向事先设置好的目标进行转发。</p>
+</li>
+</ul>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><ul>
+<li>通过将请求消息中的 URI 中的目录名与 Web 服务器进行关联，使得代理能够转发一般的不包含完整网址的请求消息</li>
+<li>前面所说的服务器端的缓存服务器采用的就是这种方式，这种方式称为反向代理</li>
+</ul>
+<h4 id="透明代理"><a href="#透明代理" class="headerlink" title="透明代理"></a>透明代理</h4><ul>
+<li>前面说过缓存服务器对应多台Web服务器时，一种方式是根据请求信息的URI中的目录进行判断转发目标</li>
+<li>另一种方式是查看请求信息的包头部，根据接受方的IP地址去访问目标，这种方式称为透明代理</li>
+<li>这种方法也可以转发一般的请求消息，因此不需要像正向代理一样设置浏览器参数，也不需要在缓存服务器上设置转发目标，可以将请求转发给任意 Web 服务器</li>
+<li><p>透明代理集合了正向代理和反向代理的优点，是一个非常方便的方式，但也需要注意一点，那就是如何才能让请求消息到达透明代理</p>
+<ul>
+<li>由于透明代理不需要设置在浏览器中，那么浏览器还是照常向 Web 服务器发送请求消息</li>
+<li><p>反向代理采用的是通过 DNS 服务器解析引导的方法，但透明代理是不能采用这种方法的，否则透明代理本身就变成了访问目标，也就无法通过接收方 IP 地址判断转发目标了，这就失去了透明代理的意义</p>
+</li>
+<li><p>于是，我们必须将透明代理放在请求消息从浏览器传输到 Web 服务器的路径中，当消息经过时进行拦截</p>
+</li>
+<li>如果请求消息有多条路径可以到达 Web 服务器，那么就必须在这些路径上都放置透明代理，因此一般是将网络设计成只有一条路可以走的结构，然后在这一条路径上放置透明代理</li>
+<li>连接互联网的接入网就是这样一个关口，因此可以在接入网的入口处放置反向代理</li>
+</ul>
+</li>
+<li>使用透明代理时，用户不会察觉到代理的存在，也不会注意到 HTTP 消息是如何被转发的，因此大家更倾向于将透明代理说成是缓存 <ul>
+<li>最近有很多场合中已经将透明代理直接叫作“缓存”而不是“代理”了，不过无论叫什么名字，其内部结构是相同的</li>
+</ul>
+</li>
+</ul>
+<h3 id="内容分发服务"><a href="#内容分发服务" class="headerlink" title="内容分发服务"></a>内容分发服务</h3><h4 id="利用内容分发服务分担负载"><a href="#利用内容分发服务分担负载" class="headerlink" title="利用内容分发服务分担负载"></a>利用内容分发服务分担负载</h4><p><a href="/images/HowNetworksWorks/138.png"></a></p>
+<ul>
+<li>将缓存服务器部署在距离用户很近的地方，同时Web 服务器运营者还可以控制这些服务器，但这种方式也有问题</li>
+<li>对于在互联网上公开的服务器来说，任何地方的人都可以来访问它，因此如果真的要实现这个方式，必须在所有的运营商 POP 中都部署缓存服务器才行，这个数量太大了，非常不现实<ul>
+<li>要解决这个问题也有一些办法<ul>
+<li>首先，我们可以筛选出一些主要的运营商，这样可以减少缓存服务器的数量</li>
+<li>尽管这样做可能会导致有些用户访问到缓存服务器还是要经过很长的距离，但总比直接访问 Web 服务器的路径要短多了，因此还是可以产生一定的效果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>即便减少了数量，作为一个 Web 服务器运营者，如果自己和这些运营商签约并部署缓存服务器，无论是费用还是精力都是吃不消的</li>
+<li><p>为了解决这个问题，一些专门从事相关服务的厂商出现了，他们来部署缓存服务器，并租借给 Web 服务器运营者</p>
+<ul>
+<li>这种服务称为内容分发服务 CDS (Content Delivery Service)</li>
+<li>现在更常用的名字叫 CDN (Content Delivery Network / Content Distribution Network)</li>
+</ul>
+</li>
+<li><p>提供 CDS 服务的厂商称为 CDSP（Content Delivery Service Provider）</p>
+<ul>
+<li>他们会与主要的供应商签约，并部署很多台缓存服务器 </li>
+<li>另一方面，CDSP 会与 Web 服务器运营者签约，使得 CDSP 的缓存服务器配合 Web 服务器工作</li>
+</ul>
+</li>
+<li>只要 Web 服务器与缓存服务器建立关联，那么当客户端访问 Web 服务器时，实际上就是在访问 CDSP 的缓存服务器了</li>
+<li>缓存服务器可以缓存多个网站的数据，因此 CDSP 的缓存服务器就可以提供给多个 Web 服务器的运营者共享。<ul>
+<li>这样一来，每个网站运营者的平均成本就降低了，从而减少了网站运营者的负担</li>
+<li>而且，和运营商之间的签约工作也由 CDSP 统一负责，网站运营者也节省了精力</li>
+</ul>
+</li>
+<li>总之，依然是采用了解耦的思想，把部分工作给分担出去了</li>
+</ul>
+<h4 id="寻找最近的缓存服务器"><a href="#寻找最近的缓存服务器" class="headerlink" title="寻找最近的缓存服务器"></a>寻找最近的缓存服务器</h4><p><a href="/images/HowNetworksWorks/139.png"></a></p>
+<ul>
+<li>如何从众多的缓存服务器中找到离客户端最近的一个，并让客户端去访问那台服务器</li>
+<li><p>第一个方法是像负载均衡一样用 DNS 服务器来分配访问</p>
+<ul>
+<li><p>可以在 DNS 服务器返回 Web 服务器 IP 地址时，对返回的内容进行一些加工，使其能够返回距离客户端最近的缓存服务器的 IP 地址</p>
+<p><a href="/images/HowNetworksWorks/140.png"></a></p>
+</li>
+<li><p>如果按照 DNS 服务器的一般工作方式来看，它只能以轮询方式按顺序返回 IP 地址，完全不考虑客户端与缓存服务器的远近，因此可能会返回离客户端较远的缓存服务器 IP 地址</p>
+</li>
+<li>如果要让用户访问最近的缓存服务器，则不应采用轮询方式，而是应该判断客户端与缓存服务器的距离，并返回距离客户端最近的缓存服务器IP 地址</li>
+</ul>
+</li>
+</ul>
+<p><a href="/images/HowNetworksWorks/141.png"></a></p>
+<ul>
+<li>首先需要事先从缓存服务器部署地点的路由器收集路由信息</li>
+<li>接下来，DNS 服务器根据路由表查询从本机到 DNS 查询消息的发送方，也就是客户端 DNS 服务器的路由信息</li>
+<li>例如，根据上图路由器 A的路由表，可以查出路由器 A 到客户端 DNS 服务器的路由。</li>
+<li>通过互联网内部的路由表中的路由信息可以知道先通过运营商 X，然后通过运营商 Y，最后到达运营商 Z 这样的信息，通过这样的信息可以大致估算出距离</li>
+<li>依次查询所有路由器的路由表之后，我们就可以通过比较找出哪一台路由器距离客户端 DNS 服务器最近<ul>
+<li>提供路由表的路由器位于缓存服务器的位置，而客户端 DNS 服务器也应该和客户端在同一位置，这样就等于估算出了缓存服务器与客户端之间的距离，从而能够判断出哪台缓存服务器距离客户端最近了</li>
+<li>实际上，客户端 DNS 服务器不一定和客户端在同一位置，因此可能无法得出准确的距离，但依然可以达到相当的精度</li>
+</ul>
+</li>
+</ul>
+<h4 id="重定向服务器分配访问目标"><a href="#重定向服务器分配访问目标" class="headerlink" title="重定向服务器分配访问目标"></a>重定向服务器分配访问目标</h4><p><a href="/images/HowNetworksWorks/142.png"></a></p>
+<ul>
+<li>另一个让客户端访问最近的缓存服务器的方法<ul>
+<li>HTTP 规格中定义了很多头部字段，其中有一个叫作 Location 的字段</li>
+<li>当 Web 服务器数据转移到其他服务器时可以使用这个字段，它的意思是“您要访问的数据在另一台服务器上，请访问那台服务器吧。”这种将客户端访问引导到另一台Web 服务器的操作称为重定向，通过这种方法也可以将访问目标分配到最近的缓存服务器<br><a href="/images/HowNetworksWorks/143.png"></a></li>
+</ul>
+</li>
+<li>使用重定向告知客户端最近的缓存服务器时，首先需要将重定向服务器注册到 Web 服务器端的 DNS 服务器上<ul>
+<li>这样一来，客户端会将 HTTP请求消息发送到重定向服务器上</li>
+<li>重定向服务器和刚才一种方法中的 DNS服务器一样，收集了来自各个路由器的路由信息，并根据这些信息找到最近的缓存服务器，然后将缓存服务器的地址放到 Location 字段中返回响应</li>
+</ul>
+</li>
+<li>这种方法的缺点在于增加了 HTTP 消息的交互次数，相应的开销也比较大，但它也有优点<ul>
+<li>对 DNS 服务器进行扩展的方法是估算客户端 DNS 服务器到缓存服务器之间的距离，因此精度较差；相对而言，重定向的方法是根据客户端发送来的 HTTP 消息的发送方 IP 地址来估算距离的，因此精度较高</li>
+</ul>
+</li>
+</ul>
+<h4 id="缓存的更新方法会影响性能"><a href="#缓存的更新方法会影响性能" class="headerlink" title="缓存的更新方法会影响性能"></a>缓存的更新方法会影响性能</h4><ul>
+<li>还有一个因素会影响缓存服务器的效率，那就是缓存内容的更新方法</li>
+<li>缓存本来的思路是将曾经访问过的数据保存下来，然后当再次访问时拿出来用，以提高访问操作的效率</li>
+<li>不过，这种方法对于第一次访问是无效的，而且后面的每次访问都需要向原始服务器查询数据有没有发生变化，如果遇到网络拥塞，就会使响应时间恶化</li>
+<li>要改善这一点，有一种方法是让 Web 服务器在原始数据发生更新时，立即通知缓存服务器，使得缓存服务器上的数据一直保持最新状态，这样就不需要每次确认原始数据是否有变化了，而且从第一次访问就可以发挥缓存的效果<ul>
+<li>内容分发服务采用的缓存服务器就具备这样的功能</li>
+</ul>
+</li>
+<li>此外，除了事先编写好内容的静态页面之外，还有一些在收到请求后由 CGI 程序生成的动态页面，这种动态页面是不能保存在缓存服务器上的<ul>
+<li>这种情况下，我们可以不保存整个页面，而是将应用程序生成的部分，也就是每次内容都会发生变化的动态部分，与内容不会发生变化的静态部分分开，只将静态部分保存在缓存中</li>
+</ul>
+</li>
+</ul>
+<h2 id="请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"><a href="#请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点" class="headerlink" title="请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"></a>请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点</h2><h3 id="服务器概览"><a href="#服务器概览" class="headerlink" title="服务器概览"></a>服务器概览</h3><h3 id="服务器的接收操作"><a href="#服务器的接收操作" class="headerlink" title="服务器的接收操作"></a>服务器的接收操作</h3><h3 id="Web-服务器程序解释请求消息并作出响应"><a href="#Web-服务器程序解释请求消息并作出响应" class="headerlink" title="Web 服务器程序解释请求消息并作出响应"></a>Web 服务器程序解释请求消息并作出响应</h3><h3 id="浏览器接收响应消息并显示内容"><a href="#浏览器接收响应消息并显示内容" class="headerlink" title="浏览器接收响应消息并显示内容"></a>浏览器接收响应消息并显示内容</h3><h2 id="网络包的路途"><a href="#网络包的路途" class="headerlink" title="网络包的路途"></a>网络包的路途</h2><p><img src="/images/HowNetworksWorks/last.png" alt></p>
 
       
     </div>
@@ -2590,7 +2791,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器生成消息—浏览器内部"><span class="nav-number">1.</span> <span class="nav-text">浏览器生成消息—浏览器内部</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成-HTTP-请求消息"><span class="nav-number">1.1.</span> <span class="nav-text">生成 HTTP 请求消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解析-URL"><span class="nav-number">1.1.1.</span> <span class="nav-text">解析 URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL-省略"><span class="nav-number">1.1.2.</span> <span class="nav-text">URL 省略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-基本思路"><span class="nav-number">1.1.3.</span> <span class="nav-text">HTTP 基本思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向-DNS-服务器查询-Web-服务器的-IP-地址"><span class="nav-number">1.2.</span> <span class="nav-text">向 DNS 服务器查询 Web 服务器的 IP 地址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP-结构思路"><span class="nav-number">1.2.1.</span> <span class="nav-text">TCP/IP 结构思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-由来"><span class="nav-number">1.2.2.</span> <span class="nav-text">DNS 由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-解析器"><span class="nav-number">1.2.3.</span> <span class="nav-text">DNS 解析器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全世界-DNS-服务器的大接力"><span class="nav-number">1.3.</span> <span class="nav-text">全世界 DNS 服务器的大接力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-基本工作"><span class="nav-number">1.3.1.</span> <span class="nav-text">DNS 基本工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名层次结构"><span class="nav-number">1.3.2.</span> <span class="nav-text">域名层次结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#委托协议栈发送信息"><span class="nav-number">1.4.</span> <span class="nav-text">委托协议栈发送信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据收发操作概览"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据收发操作概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建套接字阶段"><span class="nav-number">1.4.2.</span> <span class="nav-text">创建套接字阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接阶段"><span class="nav-number">1.4.3.</span> <span class="nav-text">连接阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信阶段"><span class="nav-number">1.4.4.</span> <span class="nav-text">通信阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#断开阶段"><span class="nav-number">1.4.5.</span> <span class="nav-text">断开阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用电信号传输-TCP-IP-数据—协议栈、网卡"><span class="nav-number">2.</span> <span class="nav-text">用电信号传输 TCP/IP 数据—协议栈、网卡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建套接字"><span class="nav-number">2.1.</span> <span class="nav-text">创建套接字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接服务器"><span class="nav-number">2.2.</span> <span class="nav-text">连接服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收发数据"><span class="nav-number">2.3.</span> <span class="nav-text">收发数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将-HTTP-请求信息交给协议栈"><span class="nav-number">2.3.1.</span> <span class="nav-text">将 HTTP 请求信息交给协议栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拆分较大的数据"><span class="nav-number">2.3.2.</span> <span class="nav-text">拆分较大的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-ACK-号确认网络包已收到"><span class="nav-number">2.3.3.</span> <span class="nav-text">使用 ACK 号确认网络包已收到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据网络包平均往返时间调整-ACK-号等待时间"><span class="nav-number">2.3.4.</span> <span class="nav-text">根据网络包平均往返时间调整 ACK 号等待时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用窗口有效管理-ACK-号"><span class="nav-number">2.3.5.</span> <span class="nav-text">使用窗口有效管理 ACK 号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ACK-与-窗口的合并"><span class="nav-number">2.3.6.</span> <span class="nav-text">ACK 与 窗口的合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收-HTTP-响应消息"><span class="nav-number">2.3.7.</span> <span class="nav-text">接收 HTTP 响应消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断开服务器并删除套接字"><span class="nav-number">2.4.</span> <span class="nav-text">断开服务器并删除套接字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据发送完毕后断开连接"><span class="nav-number">2.4.1.</span> <span class="nav-text">数据发送完毕后断开连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除套接字"><span class="nav-number">2.4.2.</span> <span class="nav-text">删除套接字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-整体流程"><span class="nav-number">2.4.3.</span> <span class="nav-text">TCP 整体流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-与以太网的包收发操作"><span class="nav-number">2.5.</span> <span class="nav-text">IP 与以太网的包收发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#包的基本结构"><span class="nav-number">2.5.1.</span> <span class="nav-text">包的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的收发操作"><span class="nav-number">2.5.2.</span> <span class="nav-text">包的收发操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成包含接受方-IP-地址的-IP-头部"><span class="nav-number">2.5.3.</span> <span class="nav-text">生成包含接受方 IP 地址的 IP 头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成以太网用的-MAC-头部"><span class="nav-number">2.5.4.</span> <span class="nav-text">生成以太网用的 MAC 头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过-ARP-查询目标路由器的-MAC-地址"><span class="nav-number">2.5.5.</span> <span class="nav-text">通过 ARP 查询目标路由器的 MAC 地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网的结构"><span class="nav-number">2.5.6.</span> <span class="nav-text">以太网的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-IP-包转换成电或光信号发送出去"><span class="nav-number">2.5.7.</span> <span class="nav-text">将 IP 包转换成电或光信号发送出去</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给网络包再加3个控制数据"><span class="nav-number">2.5.8.</span> <span class="nav-text">给网络包再加3个控制数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向集线器发送网络包"><span class="nav-number">2.5.9.</span> <span class="nav-text">向集线器发送网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收网络包"><span class="nav-number">2.5.10.</span> <span class="nav-text">接收网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将服务器的响应包从-IP-传递给-TCP"><span class="nav-number">2.5.11.</span> <span class="nav-text">将服务器的响应包从 IP 传递给 TCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP协议的收发操作"><span class="nav-number">2.6.</span> <span class="nav-text">UDP协议的收发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不需要重发的数据用-UDP-发送更高效"><span class="nav-number">2.6.1.</span> <span class="nav-text">不需要重发的数据用 UDP 发送更高效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制用的短数据"><span class="nav-number">2.6.2.</span> <span class="nav-text">控制用的短数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从网线到网络设备—集线器、交换机、路由器"><span class="nav-number">3.</span> <span class="nav-text">从网线到网络设备—集线器、交换机、路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号在网线和集线器中传输"><span class="nav-number">3.1.</span> <span class="nav-text">信号在网线和集线器中传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机的包转发操作"><span class="nav-number">3.2.</span> <span class="nav-text">交换机的包转发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机根据地址表进行转发"><span class="nav-number">3.2.1.</span> <span class="nav-text">交换机根据地址表进行转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MAC-地址表的维护"><span class="nav-number">3.2.2.</span> <span class="nav-text">MAC 地址表的维护</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊情况"><span class="nav-number">3.2.3.</span> <span class="nav-text">特殊情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全双工模式可以同时进行发送和接收"><span class="nav-number">3.2.4.</span> <span class="nav-text">全双工模式可以同时进行发送和接收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动协商：确定最优传输速率"><span class="nav-number">3.2.5.</span> <span class="nav-text">自动协商：确定最优传输速率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机可以同时执行多个转发操作"><span class="nav-number">3.2.6.</span> <span class="nav-text">交换机可以同时执行多个转发操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器的包转发操作"><span class="nav-number">3.3.</span> <span class="nav-text">路由器的包转发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的基本结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">路由器的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由表中的信息"><span class="nav-number">3.3.2.</span> <span class="nav-text">路由表中的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的包收发操作"><span class="nav-number">3.3.3.</span> <span class="nav-text">路由器的包收发操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询路由表确定输出端口"><span class="nav-number">3.3.4.</span> <span class="nav-text">查询路由表确定输出端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找不到匹配路由时选择默认路由"><span class="nav-number">3.3.5.</span> <span class="nav-text">找不到匹配路由时选择默认路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的有效期"><span class="nav-number">3.3.6.</span> <span class="nav-text">包的有效期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过分片功能拆分大网络包"><span class="nav-number">3.3.7.</span> <span class="nav-text">通过分片功能拆分大网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的发送操作和计算机相同"><span class="nav-number">3.3.8.</span> <span class="nav-text">路由器的发送操作和计算机相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器和交换机的关系"><span class="nav-number">3.3.9.</span> <span class="nav-text">路由器和交换机的关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器的附加功能"><span class="nav-number">3.4.</span> <span class="nav-text">路由器的附加功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#地址转换的原理"><span class="nav-number">3.4.1.</span> <span class="nav-text">地址转换的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改写端口号的原因"><span class="nav-number">3.4.2.</span> <span class="nav-text">改写端口号的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从互联网访问公司内网"><span class="nav-number">3.4.3.</span> <span class="nav-text">从互联网访问公司内网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的包过滤功能"><span class="nav-number">3.4.4.</span> <span class="nav-text">路由器的包过滤功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过接入网进入互联网内部—接入网、网络运营商"><span class="nav-number">4.</span> <span class="nav-text">通过接入网进入互联网内部—接入网、网络运营商</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADSL-接入网的结构和工作方式"><span class="nav-number">4.1.</span> <span class="nav-text">ADSL 接入网的结构和工作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ADSL-Modem-工作方式"><span class="nav-number">4.1.1.</span> <span class="nav-text">ADSL Modem 工作方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光纤接入网（FTTH）"><span class="nav-number">4.2.</span> <span class="nav-text">光纤接入网（FTTH）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#光纤的基本结构"><span class="nav-number">4.2.1.</span> <span class="nav-text">光纤的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单模和多模"><span class="nav-number">4.2.2.</span> <span class="nav-text">单模和多模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过光纤分路来降低成本"><span class="nav-number">4.2.3.</span> <span class="nav-text">通过光纤分路来降低成本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接入网中使用-PPP-和隧道"><span class="nav-number">4.3.</span> <span class="nav-text">接入网中使用 PPP 和隧道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户认证和配置下发"><span class="nav-number">4.3.1.</span> <span class="nav-text">用户认证和配置下发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在以太网上传输-PPP-消息"><span class="nav-number">4.3.2.</span> <span class="nav-text">在以太网上传输 PPP 消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过隧道将网络包发送给运营商"><span class="nav-number">4.3.3.</span> <span class="nav-text">通过隧道将网络包发送给运营商</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接入网的整体工作过程"><span class="nav-number">4.3.4.</span> <span class="nav-text">接入网的整体工作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不分配-IP-地址的无编号端口"><span class="nav-number">4.3.5.</span> <span class="nav-text">不分配 IP 地址的无编号端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网接入路由器将私有地址转换成公有地址"><span class="nav-number">4.3.6.</span> <span class="nav-text">互联网接入路由器将私有地址转换成公有地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#除-PPPoE-之外的其他方式"><span class="nav-number">4.3.7.</span> <span class="nav-text">除 PPPoE 之外的其他方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络运营商的内部"><span class="nav-number">4.4.</span> <span class="nav-text">网络运营商的内部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POP-和-NOC"><span class="nav-number">4.5.</span> <span class="nav-text">POP 和 NOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#室外通信线路的连接"><span class="nav-number">4.5.1.</span> <span class="nav-text">室外通信线路的连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨越网络运营商的网络包"><span class="nav-number">4.6.</span> <span class="nav-text">跨越网络运营商的网络包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运营商之间的路由器信息交换"><span class="nav-number">4.6.1.</span> <span class="nav-text">运营商之间的路由器信息交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与公司网络中自动更新路由表机制的区别"><span class="nav-number">4.6.2.</span> <span class="nav-text">与公司网络中自动更新路由表机制的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IX-的必要性"><span class="nav-number">4.6.3.</span> <span class="nav-text">IX 的必要性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运营商如何通过-IX-互相连接"><span class="nav-number">4.6.4.</span> <span class="nav-text">运营商如何通过 IX 互相连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的局域网运作方式"><span class="nav-number">5.</span> <span class="nav-text">服务器端的局域网运作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-服务器的部署地点"><span class="nav-number">5.1.</span> <span class="nav-text">Web 服务器的部署地点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙的结构和原理"><span class="nav-number">5.2.</span> <span class="nav-text">防火墙的结构和原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置包过滤的规则"><span class="nav-number">5.2.1.</span> <span class="nav-text">设置包过滤的规则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负载均衡"><span class="nav-number">5.3.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用缓存服务器分担负载"><span class="nav-number">5.4.</span> <span class="nav-text">使用缓存服务器分担负载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容分发服务"><span class="nav-number">5.5.</span> <span class="nav-text">内容分发服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"><span class="nav-number">6.</span> <span class="nav-text">请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络包的路途"><span class="nav-number">7.</span> <span class="nav-text">网络包的路途</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器生成消息—浏览器内部"><span class="nav-number">1.</span> <span class="nav-text">浏览器生成消息—浏览器内部</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成-HTTP-请求消息"><span class="nav-number">1.1.</span> <span class="nav-text">生成 HTTP 请求消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解析-URL"><span class="nav-number">1.1.1.</span> <span class="nav-text">解析 URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#URL-省略"><span class="nav-number">1.1.2.</span> <span class="nav-text">URL 省略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-基本思路"><span class="nav-number">1.1.3.</span> <span class="nav-text">HTTP 基本思路</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向-DNS-服务器查询-Web-服务器的-IP-地址"><span class="nav-number">1.2.</span> <span class="nav-text">向 DNS 服务器查询 Web 服务器的 IP 地址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP-结构思路"><span class="nav-number">1.2.1.</span> <span class="nav-text">TCP/IP 结构思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-由来"><span class="nav-number">1.2.2.</span> <span class="nav-text">DNS 由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-解析器"><span class="nav-number">1.2.3.</span> <span class="nav-text">DNS 解析器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全世界-DNS-服务器的大接力"><span class="nav-number">1.3.</span> <span class="nav-text">全世界 DNS 服务器的大接力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-基本工作"><span class="nav-number">1.3.1.</span> <span class="nav-text">DNS 基本工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名层次结构"><span class="nav-number">1.3.2.</span> <span class="nav-text">域名层次结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#委托协议栈发送信息"><span class="nav-number">1.4.</span> <span class="nav-text">委托协议栈发送信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据收发操作概览"><span class="nav-number">1.4.1.</span> <span class="nav-text">数据收发操作概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建套接字阶段"><span class="nav-number">1.4.2.</span> <span class="nav-text">创建套接字阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接阶段"><span class="nav-number">1.4.3.</span> <span class="nav-text">连接阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信阶段"><span class="nav-number">1.4.4.</span> <span class="nav-text">通信阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#断开阶段"><span class="nav-number">1.4.5.</span> <span class="nav-text">断开阶段</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用电信号传输-TCP-IP-数据—协议栈、网卡"><span class="nav-number">2.</span> <span class="nav-text">用电信号传输 TCP/IP 数据—协议栈、网卡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建套接字"><span class="nav-number">2.1.</span> <span class="nav-text">创建套接字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接服务器"><span class="nav-number">2.2.</span> <span class="nav-text">连接服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收发数据"><span class="nav-number">2.3.</span> <span class="nav-text">收发数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将-HTTP-请求信息交给协议栈"><span class="nav-number">2.3.1.</span> <span class="nav-text">将 HTTP 请求信息交给协议栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拆分较大的数据"><span class="nav-number">2.3.2.</span> <span class="nav-text">拆分较大的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-ACK-号确认网络包已收到"><span class="nav-number">2.3.3.</span> <span class="nav-text">使用 ACK 号确认网络包已收到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据网络包平均往返时间调整-ACK-号等待时间"><span class="nav-number">2.3.4.</span> <span class="nav-text">根据网络包平均往返时间调整 ACK 号等待时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用窗口有效管理-ACK-号"><span class="nav-number">2.3.5.</span> <span class="nav-text">使用窗口有效管理 ACK 号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ACK-与-窗口的合并"><span class="nav-number">2.3.6.</span> <span class="nav-text">ACK 与 窗口的合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收-HTTP-响应消息"><span class="nav-number">2.3.7.</span> <span class="nav-text">接收 HTTP 响应消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断开服务器并删除套接字"><span class="nav-number">2.4.</span> <span class="nav-text">断开服务器并删除套接字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据发送完毕后断开连接"><span class="nav-number">2.4.1.</span> <span class="nav-text">数据发送完毕后断开连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除套接字"><span class="nav-number">2.4.2.</span> <span class="nav-text">删除套接字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-整体流程"><span class="nav-number">2.4.3.</span> <span class="nav-text">TCP 整体流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-与以太网的包收发操作"><span class="nav-number">2.5.</span> <span class="nav-text">IP 与以太网的包收发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#包的基本结构"><span class="nav-number">2.5.1.</span> <span class="nav-text">包的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的收发操作"><span class="nav-number">2.5.2.</span> <span class="nav-text">包的收发操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成包含接受方-IP-地址的-IP-头部"><span class="nav-number">2.5.3.</span> <span class="nav-text">生成包含接受方 IP 地址的 IP 头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成以太网用的-MAC-头部"><span class="nav-number">2.5.4.</span> <span class="nav-text">生成以太网用的 MAC 头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过-ARP-查询目标路由器的-MAC-地址"><span class="nav-number">2.5.5.</span> <span class="nav-text">通过 ARP 查询目标路由器的 MAC 地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网的结构"><span class="nav-number">2.5.6.</span> <span class="nav-text">以太网的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-IP-包转换成电或光信号发送出去"><span class="nav-number">2.5.7.</span> <span class="nav-text">将 IP 包转换成电或光信号发送出去</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给网络包再加3个控制数据"><span class="nav-number">2.5.8.</span> <span class="nav-text">给网络包再加3个控制数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向集线器发送网络包"><span class="nav-number">2.5.9.</span> <span class="nav-text">向集线器发送网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接收网络包"><span class="nav-number">2.5.10.</span> <span class="nav-text">接收网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将服务器的响应包从-IP-传递给-TCP"><span class="nav-number">2.5.11.</span> <span class="nav-text">将服务器的响应包从 IP 传递给 TCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP协议的收发操作"><span class="nav-number">2.6.</span> <span class="nav-text">UDP协议的收发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不需要重发的数据用-UDP-发送更高效"><span class="nav-number">2.6.1.</span> <span class="nav-text">不需要重发的数据用 UDP 发送更高效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制用的短数据"><span class="nav-number">2.6.2.</span> <span class="nav-text">控制用的短数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从网线到网络设备—集线器、交换机、路由器"><span class="nav-number">3.</span> <span class="nav-text">从网线到网络设备—集线器、交换机、路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号在网线和集线器中传输"><span class="nav-number">3.1.</span> <span class="nav-text">信号在网线和集线器中传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机的包转发操作"><span class="nav-number">3.2.</span> <span class="nav-text">交换机的包转发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机根据地址表进行转发"><span class="nav-number">3.2.1.</span> <span class="nav-text">交换机根据地址表进行转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MAC-地址表的维护"><span class="nav-number">3.2.2.</span> <span class="nav-text">MAC 地址表的维护</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊情况"><span class="nav-number">3.2.3.</span> <span class="nav-text">特殊情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全双工模式可以同时进行发送和接收"><span class="nav-number">3.2.4.</span> <span class="nav-text">全双工模式可以同时进行发送和接收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动协商：确定最优传输速率"><span class="nav-number">3.2.5.</span> <span class="nav-text">自动协商：确定最优传输速率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机可以同时执行多个转发操作"><span class="nav-number">3.2.6.</span> <span class="nav-text">交换机可以同时执行多个转发操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器的包转发操作"><span class="nav-number">3.3.</span> <span class="nav-text">路由器的包转发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的基本结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">路由器的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由表中的信息"><span class="nav-number">3.3.2.</span> <span class="nav-text">路由表中的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的包收发操作"><span class="nav-number">3.3.3.</span> <span class="nav-text">路由器的包收发操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询路由表确定输出端口"><span class="nav-number">3.3.4.</span> <span class="nav-text">查询路由表确定输出端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找不到匹配路由时选择默认路由"><span class="nav-number">3.3.5.</span> <span class="nav-text">找不到匹配路由时选择默认路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包的有效期"><span class="nav-number">3.3.6.</span> <span class="nav-text">包的有效期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过分片功能拆分大网络包"><span class="nav-number">3.3.7.</span> <span class="nav-text">通过分片功能拆分大网络包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的发送操作和计算机相同"><span class="nav-number">3.3.8.</span> <span class="nav-text">路由器的发送操作和计算机相同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器和交换机的关系"><span class="nav-number">3.3.9.</span> <span class="nav-text">路由器和交换机的关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器的附加功能"><span class="nav-number">3.4.</span> <span class="nav-text">路由器的附加功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#地址转换的原理"><span class="nav-number">3.4.1.</span> <span class="nav-text">地址转换的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改写端口号的原因"><span class="nav-number">3.4.2.</span> <span class="nav-text">改写端口号的原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从互联网访问公司内网"><span class="nav-number">3.4.3.</span> <span class="nav-text">从互联网访问公司内网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由器的包过滤功能"><span class="nav-number">3.4.4.</span> <span class="nav-text">路由器的包过滤功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过接入网进入互联网内部—接入网、网络运营商"><span class="nav-number">4.</span> <span class="nav-text">通过接入网进入互联网内部—接入网、网络运营商</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADSL-接入网的结构和工作方式"><span class="nav-number">4.1.</span> <span class="nav-text">ADSL 接入网的结构和工作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ADSL-Modem-工作方式"><span class="nav-number">4.1.1.</span> <span class="nav-text">ADSL Modem 工作方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光纤接入网（FTTH）"><span class="nav-number">4.2.</span> <span class="nav-text">光纤接入网（FTTH）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#光纤的基本结构"><span class="nav-number">4.2.1.</span> <span class="nav-text">光纤的基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单模和多模"><span class="nav-number">4.2.2.</span> <span class="nav-text">单模和多模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过光纤分路来降低成本"><span class="nav-number">4.2.3.</span> <span class="nav-text">通过光纤分路来降低成本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接入网中使用-PPP-和隧道"><span class="nav-number">4.3.</span> <span class="nav-text">接入网中使用 PPP 和隧道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户认证和配置下发"><span class="nav-number">4.3.1.</span> <span class="nav-text">用户认证和配置下发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在以太网上传输-PPP-消息"><span class="nav-number">4.3.2.</span> <span class="nav-text">在以太网上传输 PPP 消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过隧道将网络包发送给运营商"><span class="nav-number">4.3.3.</span> <span class="nav-text">通过隧道将网络包发送给运营商</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接入网的整体工作过程"><span class="nav-number">4.3.4.</span> <span class="nav-text">接入网的整体工作过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不分配-IP-地址的无编号端口"><span class="nav-number">4.3.5.</span> <span class="nav-text">不分配 IP 地址的无编号端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互联网接入路由器将私有地址转换成公有地址"><span class="nav-number">4.3.6.</span> <span class="nav-text">互联网接入路由器将私有地址转换成公有地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#除-PPPoE-之外的其他方式"><span class="nav-number">4.3.7.</span> <span class="nav-text">除 PPPoE 之外的其他方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络运营商的内部"><span class="nav-number">4.4.</span> <span class="nav-text">网络运营商的内部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POP-和-NOC"><span class="nav-number">4.5.</span> <span class="nav-text">POP 和 NOC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#室外通信线路的连接"><span class="nav-number">4.5.1.</span> <span class="nav-text">室外通信线路的连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨越网络运营商的网络包"><span class="nav-number">4.6.</span> <span class="nav-text">跨越网络运营商的网络包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运营商之间的路由器信息交换"><span class="nav-number">4.6.1.</span> <span class="nav-text">运营商之间的路由器信息交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与公司网络中自动更新路由表机制的区别"><span class="nav-number">4.6.2.</span> <span class="nav-text">与公司网络中自动更新路由表机制的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IX-的必要性"><span class="nav-number">4.6.3.</span> <span class="nav-text">IX 的必要性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运营商如何通过-IX-互相连接"><span class="nav-number">4.6.4.</span> <span class="nav-text">运营商如何通过 IX 互相连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端的局域网运作方式"><span class="nav-number">5.</span> <span class="nav-text">服务器端的局域网运作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-服务器的部署地点"><span class="nav-number">5.1.</span> <span class="nav-text">Web 服务器的部署地点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙的结构和原理"><span class="nav-number">5.2.</span> <span class="nav-text">防火墙的结构和原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置包过滤的规则"><span class="nav-number">5.2.1.</span> <span class="nav-text">设置包过滤的规则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负载均衡"><span class="nav-number">5.3.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用缓存服务器分担负载"><span class="nav-number">5.4.</span> <span class="nav-text">使用缓存服务器分担负载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存服务器基本思路"><span class="nav-number">5.4.1.</span> <span class="nav-text">缓存服务器基本思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存服务器通过更新实际管理内容"><span class="nav-number">5.4.2.</span> <span class="nav-text">缓存服务器通过更新实际管理内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正向代理"><span class="nav-number">5.4.3.</span> <span class="nav-text">正向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向代理"><span class="nav-number">5.4.4.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明代理"><span class="nav-number">5.4.5.</span> <span class="nav-text">透明代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容分发服务"><span class="nav-number">5.5.</span> <span class="nav-text">内容分发服务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用内容分发服务分担负载"><span class="nav-number">5.5.1.</span> <span class="nav-text">利用内容分发服务分担负载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#寻找最近的缓存服务器"><span class="nav-number">5.5.2.</span> <span class="nav-text">寻找最近的缓存服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向服务器分配访问目标"><span class="nav-number">5.5.3.</span> <span class="nav-text">重定向服务器分配访问目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存的更新方法会影响性能"><span class="nav-number">5.5.4.</span> <span class="nav-text">缓存的更新方法会影响性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求到达-Web-服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点"><span class="nav-number">6.</span> <span class="nav-text">请求到达 Web 服务器，响应返回浏览器—短短几秒的“漫长旅途”迎来终点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器概览"><span class="nav-number">6.1.</span> <span class="nav-text">服务器概览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器的接收操作"><span class="nav-number">6.2.</span> <span class="nav-text">服务器的接收操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-服务器程序解释请求消息并作出响应"><span class="nav-number">6.3.</span> <span class="nav-text">Web 服务器程序解释请求消息并作出响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器接收响应消息并显示内容"><span class="nav-number">6.4.</span> <span class="nav-text">浏览器接收响应消息并显示内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络包的路途"><span class="nav-number">7.</span> <span class="nav-text">网络包的路途</span></a></li></ol></div>
             
 
           </div>
@@ -2624,7 +2825,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63.5k</span>
+    <span title="Site words total count">67.8k</span>
   
 </div>
 
