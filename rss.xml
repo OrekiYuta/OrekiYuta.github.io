@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2020-11-29T13:05:28.968Z</updated>
+  <updated>2020-11-30T13:29:50.566Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS margin:auto;How it Works</title>
+    <link href="http://www.orekiyuta.cn/archives/css-margin-auto/"/>
+    <id>http://www.orekiyuta.cn/archives/css-margin-auto/</id>
+    <published>2020-11-30T02:53:25.000Z</published>
+    <updated>2020-11-30T13:29:50.566Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>margin:auto 通常用作元素水平居中</li><li>首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化<ul><li>在 margins 中，auto 可以占用可用空间或者占用 0 px</li></ul></li></ul><h2 id="margin-水平空间"><a href="#margin-水平空间" class="headerlink" title="margin 水平空间"></a>margin 水平空间</h2><ul><li>对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心</li><li><p>但是它们也仅仅适用于水平 margins , 并不能和带有 float、inline 的元素共用；也不适用在 absolute 和 fixed position 的元素中</p></li><li><p>当只给 margin 其中一边设置为 auto 时，该元素会向另一边倾向</p><ul><li>当 margin-left:auto 时，元素的左边会空出一定的空间，而右边空间被元素占完<a id="more"></a></li></ul></li><li><p>正如前面所说， auto 无法使用在 floated ,inline 和 absolute的元素中，因为它们的布局已经被决定了，所以无法用 margin:auto 使元素居中</p><ul><li>如果设置 margin:auto 的话，结果就为 margin:0px</li></ul></li><li><p>auto 对于没有宽度的 block 元素也不起作用</p></li></ul><h2 id="margin-垂直空间"><a href="#margin-垂直空间" class="headerlink" title="margin 垂直空间"></a>margin 垂直空间</h2><ul><li>auto 在 margin 的 top 和 bottom 上始终计算为 0px (除了 absolute 元素)</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">W3C spec says it like this:</span><br><span class="line"></span><br><span class="line">“If “margin-top” or “margin-bottom” is “auto”, their used value is 0″</span><br></pre></td></tr></table></figure><ul><li><p>👉<a href="https://www.w3.org/TR/CSS21/visudet.html#Computing_heights_and_margins" target="_blank" rel="noopener">10 Visual formatting model details</a></p></li><li><p>也可能是垂直页面流的原因，使得元素在页面垂直方向上不居中，因为页面大小会随着高度方向增加</p></li><li>但是 absolute 元素可以使得该元素沿着整个页面的高度垂直居中</li></ul><h2 id="绝对元素居中定位"><a href="#绝对元素居中定位" class="headerlink" title="绝对元素居中定位"></a>绝对元素居中定位</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">This is where another W3C spec comes in:</span><br><span class="line"></span><br><span class="line">&quot;If all three of “left”, “width”, and “right” are “auto”: First set any “auto” values for “margin-left” and “margin-right” to 0… &quot;</span><br><span class="line"></span><br><span class="line">&quot;If none of the three is “auto”: If both “margin-left” and “margin-right” are “auto”, solve the equation under the extra constraint that the two margins get equal values&quot;</span><br></pre></td></tr></table></figure><ul><li>说明水平 auto margins 要占用一样的空间，它们的left,width和right都不应该是 auto</li><li>因此我们要在一个绝对定位的元素中给它们一些值，使得水平居中</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The spec also mentions something similar for vertical margins.</span><br><span class="line"></span><br><span class="line">“If all three of “top”, “height”, and “bottom” are auto, set “top” to the static position…”</span><br><span class="line"></span><br><span class="line">“If none of the three are “auto”: If both “margin-top” and “margin-bottom” are “auto”, solve the equation under the extra constraint that the two margins get equal values…”</span><br></pre></td></tr></table></figure><ul><li>要使得绝对元素垂直居中，它的 top,height,bottom的值都不能为 auto</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul><li>如果想要某个元素向左或者向右靠，可以设置另一边的 margin:auto</li><li><p>可以将某个元素转为绝对定位使其垂直居中，但是这不是个好方法</p><ul><li>用 flexbox 和 CSS transform 可能更适合</li></ul></li><li><p>👉<a href="https://www.hongkiat.com/blog/css-margin-auto/" target="_blank" rel="noopener">https://www.hongkiat.com/blog/css-margin-auto/</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;margin:auto 通常用作元素水平居中&lt;/li&gt;
+&lt;li&gt;首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化&lt;ul&gt;
+&lt;li&gt;在 margins 中，auto 可以占用可用空间或者占用 0 px&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;margin-水平空间&quot;&gt;&lt;a href=&quot;#margin-水平空间&quot; class=&quot;headerlink&quot; title=&quot;margin 水平空间&quot;&gt;&lt;/a&gt;margin 水平空间&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;但是它们也仅仅适用于水平 margins , 并不能和带有 float、inline 的元素共用；也不适用在 absolute 和 fixed position 的元素中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当只给 margin 其中一边设置为 auto 时，该元素会向另一边倾向&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 margin-left:auto 时，元素的左边会空出一定的空间，而右边空间被元素占完
+    
+    </summary>
+    
+    
+    
+      <category term="CSS" scheme="http://www.orekiyuta.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java Notes</title>
     <link href="http://www.orekiyuta.cn/archives/JavaNotes/"/>
     <id>http://www.orekiyuta.cn/archives/JavaNotes/</id>
     <published>2020-11-27T13:01:21.000Z</published>
-    <updated>2020-11-29T13:05:28.968Z</updated>
+    <updated>2020-11-29T13:09:16.950Z</updated>
     
     <content type="html"><![CDATA[<h3 id="数组内存分配和引用"><a href="#数组内存分配和引用" class="headerlink" title="数组内存分配和引用"></a>数组内存分配和引用</h3><ul><li><img src="/images/JavaNotes/1.png" alt></li><li><img src="/images/JavaNotes/2.png" alt></li><li><img src="/images/JavaNotes/3.png" alt></li><li><img src="/images/JavaNotes/4.png" alt></li><li><img src="/images/JavaNotes/5.png" alt></li><li><img src="/images/JavaNotes/6.png" alt></li><li><img src="/images/JavaNotes/7.png" alt></li><li><img src="/images/JavaNotes/8.png" alt></li></ul>]]></content>
     
@@ -277,32 +311,6 @@
     
     
       <category term="OS" scheme="http://www.orekiyuta.cn/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>さきざき</title>
-    <link href="http://www.orekiyuta.cn/archives/Usakizaki/"/>
-    <id>http://www.orekiyuta.cn/archives/Usakizaki/</id>
-    <published>2020-05-21T06:04:24.000Z</published>
-    <updated>2020-11-12T14:49:31.586Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><p>この長い長い旅のその意味を 希望をつなぐため</p></li><li><p>今隣に座るきみは 以前より少し大人に見えるよ</p></li><li><p>でも目覚めた朝 谁も居ないんだね</p></li></ul><a id="more"></a><ul><li><p>炎天下 愿った少年 「あの顷」に立っていたんだ</p></li><li><p>期待ハズレの世界の隙間 予報外れの雨が降ってきた</p></li><li><p>夢を見せたくせに 叶えれる力を与えてくれないなんて</p></li><li><p>宵街を行く人だかりは 嬉しそうだったり 寂しそうだったり</p></li><li><p>君はどんな颜だっけ　なぜだろう 思い出せないな</p></li><li><p>キミは泣いた後笑える はずだからって言ったんだ</p></li><li><p>あの日から 変わらず いつまでも変わらずに  いられなかったこと 悔しくて 指を离す</p></li><li><p>逃げ出したいと思うこの気持ちに 見つめられると呼吸もできない</p></li><li><p>振り返ってみても いないのは分かってる</p></li><li><p>空が変わり果て 星は巡ってゆく 目覚めたらすぐに 今日も歩きだそう</p></li><li><p>待っているよ 月が綺麗な夜に会おう ここにいるよ あの日のまま</p></li><li><p>いつも见ていた　近いようで远くて いつだって　届かない</p></li><li><p>言叶を知らないままならば この瞳を闭じることも 简単だったのに</p></li><li><p>少し前に进んでみよう まなざしを高く上げて</p></li><li><p>翼消えて 見えなくなっても あなたのいるところに 私がいる</p></li><li><p>飾った写真達が 笑ったまま 止めどない明日に変わらない僕たちを</p></li><li><p>と過ごせる今が このまま続けばなんて</p></li><li><p>この季節が迎えに来たら 君の姿もう探す事も 出来なくなっちゃうんだね</p></li><li><p>けど そんな出会いを 别れを 缲り返して 「今の私」よりも すてきになっていますか</p></li><li><p>君が描いた未来の世界は いつかの空に導かれて</p></li><li><p>君の描く未来に 私はいるのかな 同じ空を 同じ想いで 見上げていたいよ</p></li><li><p>见送った 手を振った ありがとう</p></li><li><p>恐いものなんかない 例え化け物になろうとも 成し遂げる</p></li><li><p>また嫌いなトコがふえた 解ってんだよ　言叶は自分自身だ</p></li><li><p>何もかも失くしても 捧げるものがあるの</p></li><li><p>いつも新しい 空を見せてあげよう</p></li><li><p>曖昧な世界を照らすような</p></li><li><p>人たちはこの空飛ぶことは叶わないけど その代わりいま流す涙は天に昇りまた 雨となり還る</p></li><li><p>この場所に ただいま言うからね</p></li><li><p>见せてやる  本当は強かった ときのこと</p></li><li><p>永遠なんて望みはしない たとえちっぽけでも構わない</p></li><li><p>でも僕は君じゃないから 伝えることしか出来なくて</p></li><li><p>そう 解っている答えなど 捨ててしまえ</p></li><li><p>孤独を捨てたって 君は君だから</p></li><li><p>目を閉じてたら気付けない事が 沢山あるんだ</p></li><li><p>小さく揺れた向日葵 サヨナラも言えないまま</p></li><li><p>離れてても 同じ空見上げて</p></li><li><p>通り過ぎていった時間の捉え方で 「現在」が変わっていく</p></li><li><p>あの瞬間 あの場面が キミにとって特別なら 過去は離れて 行くものなんかじゃなくて</p></li><li><p>振り返るともうない  僕らは何も何もまだ知らぬ</p></li><li><p>何も言はず泣けだらいいね 涙か涸れだら終わり もっと僕が强くなぃなきゃ 悲しみは自立への一步</p></li><li><p>何年前のことでしょう 二度と戻れないあの場所に 置いてきてしまったぼくの心さ</p></li><li><p>今も何度でもボクは夏の面影の中 繰り返すよ</p></li><li><p>鮮やかすぎる 君がいない夏 あの声 あの仕草が 広がってく</p></li><li><p>どしゃぶりでもかまわないと ずぶぬれでもかまわないと しぶきあげるきみが消えてく</p></li><li><p>涙がかわくまでは もう少し この雨に打たれていたくて</p></li><li><p>溢れ出したこの痛みは 全て一人で抱き締める</p></li><li><p>もういいか そんなこと 笑ってよ 終わるその日には</p></li><li><p>理想なんて もう 燃え尽きてしまったの 弱虫の耳鸣りはやまない</p></li><li><p>時の風に 流されて 落ちていく</p></li><li><p>泣いたままで あなたの頬を叩く</p></li><li><p>僕にはわかるんだ 嘘をついている君が 泣いていいよ ここにずっといるから</p></li><li><p>無邪気な時には戻れない もう二度と</p></li><li><p>心押し殺すこと それひとつだけ</p></li><li><p>アタシは弱い 弱い 弱い 涙の行方を貴方は知らない</p></li><li><p>君とあの日に残した 約束の果てに私は 透明になっていくのだろう 今更善意なんて 似合わないと思うけど</p></li><li><p>やっと見つけた　新しい朝は　月日が邪魔をする 向かう先は　次じゃなくて 過ばかり追いかけた</p></li><li><p>過去を知りたがらない瞳　洗い流してくれる指</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;この長い長い旅のその意味を 希望をつなぐため&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;今隣に座るきみは 以前より少し大人に見えるよ&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;でも目覚めた朝 谁も居ないんだね&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
     
   </entry>
   

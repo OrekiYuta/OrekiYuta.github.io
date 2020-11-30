@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/css-margin-auto/</loc>
+    
+    <lastmod>2020-11-30T13:29:50.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
+    
+    <lastmod>2020-11-30T13:21:59.076Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/JavaNotes/</loc>
     
-    <lastmod>2020-11-29T13:05:28.968Z</lastmod>
+    <lastmod>2020-11-29T13:09:16.950Z</lastmod>
     
   </url>
   
@@ -54,13 +68,6 @@
     <loc>http://www.orekiyuta.cn/archives/CSSFiveClassicLayouts/</loc>
     
     <lastmod>2020-11-09T14:44:29.766Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
-    
-    <lastmod>2020-11-09T14:40:02.759Z</lastmod>
     
   </url>
   

@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CSS,">
 
 
 
@@ -90,13 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Canoe">
-<meta property="og:url" content="http://www.orekiyuta.cn/archives/2019/11/index.html">
+<meta name="description" content="margin:auto 通常用作元素水平居中 首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化 在 margins 中，auto 可以占用可用空间或者占用 0 px    margin 水平空间 对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心 但是它们也仅仅适用于水平 margins , 并不">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS margin:auto;How it Works">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/css-margin-auto/index.html">
 <meta property="og:site_name" content="Canoe">
+<meta property="og:description" content="margin:auto 通常用作元素水平居中 首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化 在 margins 中，auto 可以占用可用空间或者占用 0 px    margin 水平空间 对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心 但是它们也仅仅适用于水平 margins , 并不">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-11-30T13:29:50.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canoe">
+<meta name="twitter:title" content="CSS margin:auto;How it Works">
+<meta name="twitter:description" content="margin:auto 通常用作元素水平居中 首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化 在 margins 中，auto 可以占用可用空间或者占用 0 px    margin 水平空间 对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心 但是它们也仅仅适用于水平 margins , 并不">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/archives/2019/11/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/css-margin-auto/">
 
 
 
@@ -134,7 +139,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>Archive | Canoe</title>
+  <title>CSS margin:auto;How it Works | Canoe</title>
   
 
 
@@ -154,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/OrekiYuta" class="github-corner" aria-label="View source on GitHub" style><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,69 +286,247 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        ともにいこうなまのないかいぶかいぶ___________₍˄·͈༝·͈˄₎◞ ̑̑ 
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/css-margin-auto/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/archives/TmuxManual/" itemprop="url">
-              
-                <span itemprop="name">Tmux Manual</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">CSS margin:auto;How it Works</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-28T00:08:43+08:00" content="2019-11-28">
-          11-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-30T10:53:25+08:00">
+                2020-11-30
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  658
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <ul>
+<li>margin:auto 通常用作元素水平居中</li>
+<li>首先得知道，在定义中 auto 可以随着元素、元素类型和上下文而变化<ul>
+<li>在 margins 中，auto 可以占用可用空间或者占用 0 px</li>
+</ul>
+</li>
+</ul>
+<h2 id="margin-水平空间"><a href="#margin-水平空间" class="headerlink" title="margin 水平空间"></a>margin 水平空间</h2><ul>
+<li>对于 margins , auto 作为 left 和 right 的值的时候，它们会在水平上均分可用空间，因此它们使得元素在中心</li>
+<li><p>但是它们也仅仅适用于水平 margins , 并不能和带有 float、inline 的元素共用；也不适用在 absolute 和 fixed position 的元素中</p>
+</li>
+<li><p>当只给 margin 其中一边设置为 auto 时，该元素会向另一边倾向</p>
+<ul>
+<li>当 margin-left:auto 时，元素的左边会空出一定的空间，而右边空间被元素占完<a id="more"></a></li>
+</ul>
+</li>
+<li><p>正如前面所说， auto 无法使用在 floated ,inline 和 absolute的元素中，因为它们的布局已经被决定了，所以无法用 margin:auto 使元素居中</p>
+<ul>
+<li>如果设置 margin:auto 的话，结果就为 margin:0px</li>
+</ul>
+</li>
+<li><p>auto 对于没有宽度的 block 元素也不起作用</p>
+</li>
+</ul>
+<h2 id="margin-垂直空间"><a href="#margin-垂直空间" class="headerlink" title="margin 垂直空间"></a>margin 垂直空间</h2><ul>
+<li>auto 在 margin 的 top 和 bottom 上始终计算为 0px (除了 absolute 元素)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">W3C spec says it like this:</span><br><span class="line"></span><br><span class="line">“If “margin-top” or “margin-bottom” is “auto”, their used value is 0″</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>👉<a href="https://www.w3.org/TR/CSS21/visudet.html#Computing_heights_and_margins" target="_blank" rel="noopener">10 Visual formatting model details</a></p>
+</li>
+<li><p>也可能是垂直页面流的原因，使得元素在页面垂直方向上不居中，因为页面大小会随着高度方向增加</p>
+</li>
+<li>但是 absolute 元素可以使得该元素沿着整个页面的高度垂直居中</li>
+</ul>
+<h2 id="绝对元素居中定位"><a href="#绝对元素居中定位" class="headerlink" title="绝对元素居中定位"></a>绝对元素居中定位</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">This is where another W3C spec comes in:</span><br><span class="line"></span><br><span class="line">&quot;If all three of “left”, “width”, and “right” are “auto”: First set any “auto” values for “margin-left” and “margin-right” to 0… &quot;</span><br><span class="line"></span><br><span class="line">&quot;If none of the three is “auto”: If both “margin-left” and “margin-right” are “auto”, solve the equation under the extra constraint that the two margins get equal values&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>说明水平 auto margins 要占用一样的空间，它们的left,width和right都不应该是 auto</li>
+<li>因此我们要在一个绝对定位的元素中给它们一些值，使得水平居中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The spec also mentions something similar for vertical margins.</span><br><span class="line"></span><br><span class="line">“If all three of “top”, “height”, and “bottom” are auto, set “top” to the static position…”</span><br><span class="line"></span><br><span class="line">“If none of the three are “auto”: If both “margin-top” and “margin-bottom” are “auto”, solve the equation under the extra constraint that the two margins get equal values…”</span><br></pre></td></tr></table></figure>
+<ul>
+<li>要使得绝对元素垂直居中，它的 top,height,bottom的值都不能为 auto</li>
+</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
+<li>如果想要某个元素向左或者向右靠，可以设置另一边的 margin:auto</li>
+<li><p>可以将某个元素转为绝对定位使其垂直居中，但是这不是个好方法</p>
+<ul>
+<li>用 flexbox 和 CSS transform 可能更适合</li>
+</ul>
+</li>
+<li><p>👉<a href="https://www.hongkiat.com/blog/css-margin-auto/" target="_blank" rel="noopener">https://www.hongkiat.com/blog/css-margin-auto/</a></p>
+</li>
+</ul>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Orekiyuta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.orekiyuta.cn/archives/css-margin-auto/" title="CSS margin:auto;How it Works">http://www.orekiyuta.cn/archives/css-margin-auto/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: black;font-size:15px;margin-top:30px">< - Thanks for reading - ></div>
+    
+</div>
+      
+     </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/JavaNotes/" rel="next" title="Java Notes">
+                <i class="fa fa-chevron-left"></i> Java Notes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -351,6 +534,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -641,8 +828,17 @@ if(canvas.getContext){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -721,6 +917,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#margin-水平空间"><span class="nav-number">1.</span> <span class="nav-text">margin 水平空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin-垂直空间"><span class="nav-number">2.</span> <span class="nav-text">margin 垂直空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绝对元素居中定位"><span class="nav-number">3.</span> <span class="nav-text">绝对元素居中定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">4.</span> <span class="nav-text">结论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -890,6 +1102,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
