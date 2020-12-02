@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/OneLine/</loc>
+    
+    <lastmod>2020-12-02T13:16:33.289Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
+    
+    <lastmod>2020-12-02T12:44:48.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/HowNetworksWorks/</loc>
+    
+    <lastmod>2020-12-01T17:39:00.323Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/JavaNotes/</loc>
     
     <lastmod>2020-12-01T17:26:43.457Z</lastmod>
@@ -30,23 +51,9 @@
   </url>
   
   <url>
-    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
-    
-    <lastmod>2020-11-30T13:32:09.204Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
     
     <lastmod>2020-11-30T13:21:59.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/HowNetworksWorks/</loc>
-    
-    <lastmod>2020-11-29T13:05:26.567Z</lastmod>
     
   </url>
   

@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-35-15.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-40-14.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/Netstat/Snipaste_2020-05-23_13-23-00.png">
-<meta property="og:updated_time" content="2020-11-30T13:32:09.204Z">
+<meta property="og:updated_time" content="2020-12-02T12:44:48.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Setting">
 <meta name="twitter:description" content="Win10 LTSB Add MicrosoftStore To : LTSB-Add-MicrosoftStore Run: Add-Store.cmd">
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  67
+                  253
                 </span>
               
 
@@ -405,7 +405,8 @@
 <h3 id="Windows-show-Windows-File"><a href="#Windows-show-Windows-File" class="headerlink" title="Windows show Windows/File"></a>Windows show Windows/File</h3><ul>
 <li><code>explorer .</code></li>
 <li><code>explorer ..</code></li>
-<li><code>explorer [dirName]</code><br><img src="/images/Windows/Explorer/Snipaste_2020-11-14_17-06-31.png" alt></li>
+<li><code>explorer [dirName]</code></li>
+<li><code>start .</code><br><img src="/images/Windows/Explorer/Snipaste_2020-11-14_17-06-31.png" alt></li>
 </ul>
 <h3 id="Desktop-Context-Menu"><a href="#Desktop-Context-Menu" class="headerlink" title="Desktop Context Menu"></a>Desktop Context Menu</h3><ul>
 <li><code>计算机\HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
@@ -416,10 +417,32 @@
 <h3 id="DOS-Clean"><a href="#DOS-Clean" class="headerlink" title="DOS Clean"></a>DOS Clean</h3><ul>
 <li><code>cls</code></li>
 </ul>
-<h2 id="Netstat-Find-Kill"><a href="#Netstat-Find-Kill" class="headerlink" title="Netstat Find/Kill"></a>Netstat Find/Kill</h2><p><code>netstat -ano|findstr 8000</code>  查看占用8000端口的进程</p>
-<p><code>tasklist | findstr 8608</code> 查看进程的信息</p>
-<p><code>taskkill /pid 8608 /f</code>  关闭进程</p>
+<h3 id="Netstat-Find-Kill"><a href="#Netstat-Find-Kill" class="headerlink" title="Netstat Find/Kill"></a>Netstat Find/Kill</h3><ul>
+<li><p><code>netstat -ano|findstr 8000</code>  查看占用8000端口的进程</p>
+</li>
+<li><p><code>tasklist | findstr 8608</code> 查看进程的信息</p>
+</li>
+<li><p><code>taskkill /pid 8608 /f</code>  关闭进程</p>
+</li>
+</ul>
 <p><img src="/images/Windows/Netstat/Snipaste_2020-05-23_13-23-00.png" alt></p>
+<h3 id="Install-Chocolatey"><a href="#Install-Chocolatey" class="headerlink" title="Install Chocolatey"></a>Install Chocolatey</h3><ul>
+<li>At PowerShell<ul>
+<li><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))</code></li>
+</ul>
+</li>
+<li><a href="https://chocolatey.org/install" target="_blank" rel="noopener">https://chocolatey.org/install</a></li>
+<li>At CMD<ul>
+<li><code>@powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="bat-Get-admin"><a href="#bat-Get-admin" class="headerlink" title=".bat Get admin"></a>.bat Get admin</h3><ul>
+<li><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">NUL</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> REG.exe query "HKU\S-<span class="number">1</span>-<span class="number">5</span>-<span class="number">19</span>" || (</span><br><span class="line">    <span class="built_in">ECHO</span> <span class="built_in">SET</span> UAC = CreateObject^("Shell.Application"^) &gt; "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    <span class="built_in">ECHO</span> UAC.ShellExecute "%~f0", "%<span class="number">1</span>", "", "runas", <span class="number">1</span> &gt;&gt; "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    <span class="built_in">DEL</span> /f /q "<span class="variable">%TEMP%</span>\Getadmin.vbs" <span class="number">2</span>&gt;<span class="built_in">NUL</span></span><br><span class="line">    <span class="keyword">Exit</span> /b</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> "<span class="variable">%SYSTEMROOT%</span>\system32\<span class="built_in">cacls</span>.exe" "<span class="variable">%SYSTEMROOT%</span>\system32\config\system"</span><br><span class="line"><span class="keyword">if</span> '<span class="variable">%errorlevel%</span>' <span class="keyword">NEQ</span> '<span class="number">0</span>' (</span><br><span class="line"><span class="keyword">goto</span> UACPrompt</span><br><span class="line">) <span class="keyword">else</span> ( <span class="keyword">goto</span> gotAdmin )</span><br><span class="line">:UACPrompt</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">Set</span> UAC = CreateObject^("Shell.Application"^) &gt; "<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line"><span class="built_in">echo</span> UAC.ShellExecute "%~s0", "", "", "runas", <span class="number">1</span> &gt;&gt; "<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line">"<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line"><span class="keyword">exit</span> /B</span><br><span class="line">:gotAdmin</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> "<span class="variable">%temp%</span>\getadmin.vbs" ( <span class="built_in">del</span> "<span class="variable">%temp%</span>\getadmin.vbs" )</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -840,7 +863,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -909,7 +932,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number"></span> <span class="nav-text">Netstat Find/Kill</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number">5.</span> <span class="nav-text">Netstat Find/Kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Chocolatey"><span class="nav-number">6.</span> <span class="nav-text">Install Chocolatey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat-Get-admin"><span class="nav-number">7.</span> <span class="nav-text">.bat Get admin</span></a></li></ol></div>
             
 
           </div>
@@ -943,7 +966,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">73k</span>
+    <span title="Site words total count">73.2k</span>
   
 </div>
 
