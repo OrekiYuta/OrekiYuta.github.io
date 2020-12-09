@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-35-15.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-40-14.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/Netstat/Snipaste_2020-05-23_13-23-00.png">
-<meta property="og:updated_time" content="2020-12-02T12:44:48.751Z">
+<meta property="og:updated_time" content="2020-12-09T15:08:34.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Setting">
 <meta name="twitter:description" content="Win10 LTSB Add MicrosoftStore To : LTSB-Add-MicrosoftStore Run: Add-Store.cmd">
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  253
+                  389
                 </span>
               
 
@@ -442,6 +442,23 @@
 </li>
 <li><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> "<span class="variable">%SYSTEMROOT%</span>\system32\<span class="built_in">cacls</span>.exe" "<span class="variable">%SYSTEMROOT%</span>\system32\config\system"</span><br><span class="line"><span class="keyword">if</span> '<span class="variable">%errorlevel%</span>' <span class="keyword">NEQ</span> '<span class="number">0</span>' (</span><br><span class="line"><span class="keyword">goto</span> UACPrompt</span><br><span class="line">) <span class="keyword">else</span> ( <span class="keyword">goto</span> gotAdmin )</span><br><span class="line">:UACPrompt</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">Set</span> UAC = CreateObject^("Shell.Application"^) &gt; "<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line"><span class="built_in">echo</span> UAC.ShellExecute "%~s0", "", "", "runas", <span class="number">1</span> &gt;&gt; "<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line">"<span class="variable">%temp%</span>\getadmin.vbs"</span><br><span class="line"><span class="keyword">exit</span> /B</span><br><span class="line">:gotAdmin</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> "<span class="variable">%temp%</span>\getadmin.vbs" ( <span class="built_in">del</span> "<span class="variable">%temp%</span>\getadmin.vbs" )</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="Nslookup"><a href="#Nslookup" class="headerlink" title="Nslookup"></a>Nslookup</h2><ul>
+<li><code>nslookup www.baidu.com</code> 查看域名当前 IP<h2 id="Net-user"><a href="#Net-user" class="headerlink" title="Net user"></a>Net user</h2></li>
+<li><code>net user</code> 查看当前计算机用户名<h2 id="Arp-a"><a href="#Arp-a" class="headerlink" title="Arp -a"></a>Arp -a</h2></li>
+<li><code>arp -a</code> 查看当前局域网内的所有 IP<h2 id="Net-share"><a href="#Net-share" class="headerlink" title="Net share"></a>Net share</h2></li>
+<li><code>net share</code> 查看本机上的共享资源</li>
+<li><code>net share [name]/delete</code> 删除共享资源</li>
+</ul>
+<h2 id="Netsh-wlan"><a href="#Netsh-wlan" class="headerlink" title="Netsh wlan"></a>Netsh wlan</h2><ul>
+<li><code>netsh wlan show profile [wlanName] key=clear</code> 查看已连接 Wi-Fi 的详细信息，包含密码</li>
+</ul>
+<h2 id><a href="#" class="headerlink" title="|"></a>|</h2><ul>
+<li><code>ipconfig | clip</code> 将结果输出到剪贴板</li>
+</ul>
+<h2 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h2><ul>
+<li><code>ipconfig &amp;&amp; arp -a</code> 连接多个命令，只有前面一个执行成功，后面的才执行</li>
+<li>&amp; 一个一个执行</li>
 </ul>
 
       
@@ -932,7 +949,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number">5.</span> <span class="nav-text">Netstat Find/Kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Chocolatey"><span class="nav-number">6.</span> <span class="nav-text">Install Chocolatey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat-Get-admin"><span class="nav-number">7.</span> <span class="nav-text">.bat Get admin</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number">5.</span> <span class="nav-text">Netstat Find/Kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Chocolatey"><span class="nav-number">6.</span> <span class="nav-text">Install Chocolatey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat-Get-admin"><span class="nav-number">7.</span> <span class="nav-text">.bat Get admin</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Nslookup"><span class="nav-number"></span> <span class="nav-text">Nslookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-user"><span class="nav-number"></span> <span class="nav-text">Net user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arp-a"><span class="nav-number"></span> <span class="nav-text">Arp -a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-share"><span class="nav-number"></span> <span class="nav-text">Net share</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netsh-wlan"><span class="nav-number"></span> <span class="nav-text">Netsh wlan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text">|</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-amp"><span class="nav-number"></span> <span class="nav-text">&amp;&amp;</span></a></li></div>
             
 
           </div>
@@ -966,7 +983,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">74.6k</span>
+    <span title="Site words total count">74.7k</span>
   
 </div>
 

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
+    <lastmod>2020-12-09</lastmod>
+  </url>  <url>
+    <loc>http://www.orekiyuta.cn/archives/AzureLaneCrack/</loc>
+    <lastmod>2020-12-05</lastmod>
+  </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/JSgetter-setter/</loc>
     <lastmod>2020-12-05</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/OneLine/</loc>
-    <lastmod>2020-12-02</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
     <lastmod>2020-12-02</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/HowNetworksWorks/</loc>
@@ -93,8 +96,5 @@
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/CentOS-SVNConfigure/</loc>
     <lastmod>2019-12-09</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/AzureLaneCrack/</loc>
-    <lastmod>2019-11-29</lastmod>
   </url>
 </urlset>
