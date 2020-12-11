@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="RaspberryPi,">
+  <meta name="keywords" content="Linux,RaspberryPi,">
 
 
 
@@ -90,22 +90,29 @@
 
 
 
-<meta name="description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前的本机 ipv4">
-<meta name="keywords" content="RaspberryPi">
+<meta name="description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
+<meta name="keywords" content="Linux,RaspberryPi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I got a Raspberry Pi">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/IgotaRaspberryPi/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前的本机 ipv4">
+<meta property="og:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-11_22-49-28.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-03-18.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-06-54.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-10-14.png">
-<meta property="og:updated_time" content="2020-12-11T15:12:28.872Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_03-05-18.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-29-37.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-39-09.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-41-36.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-42-21.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-45-49.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-49-22.png">
+<meta property="og:updated_time" content="2020-12-11T19:07:46.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
-<meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前的本机 ipv4">
+<meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
 <meta name="twitter:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-11_22-49-28.png">
 
 
@@ -370,7 +377,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  128
+                  266
                 </span>
               
 
@@ -399,9 +406,12 @@
 <li>确保一台能上网的主机</li>
 <li>把已经连接的网络通过想要共享的形式共享出去</li>
 <li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_22-49-28.png" alt></li>
-<li>开启共享前的本机 ipv4</li>
-<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-03-18.png" alt><a id="more"></a></li>
-<li>开启共享后的局域网内 ip 变化<ul>
+<li>开启共享前后的本机 ipv4</li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-03-18.png" alt></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>开启共享前后的局域网内 ip 变化<ul>
 <li>我这里之前是连接过了,有缓存记录了，未连接过的情况下，新分配的 ip 就是新连接的设备所属 ip</li>
 </ul>
 </li>
@@ -411,6 +421,38 @@
 </ul>
 </li>
 <li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-10-14.png" alt></li>
+</ul>
+<h2 id="查看树莓派基本信息"><a href="#查看树莓派基本信息" class="headerlink" title="查看树莓派基本信息"></a>查看树莓派基本信息</h2><ul>
+<li><code>pinout</code> 查看针脚等基本硬件信息</li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_03-05-18.png" alt></li>
+<li><code>vcgencmd measure_temp</code> 查看 cpu 温度</li>
+<li><code>cat /proc/cpuinfo</code> 查看 cpu 信息</li>
+<li><code>lscpu</code></li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-29-37.png" alt></li>
+<li><code>free -h</code> 查看内存</li>
+<li><code>lsblk</code> 查看磁盘</li>
+<li><code>df -hT</code></li>
+<li><code>date</code> 查看时间</li>
+<li><code>cat /proc/device-tree/model</code> 查看树莓派型号</li>
+<li><code>getconf LONG_BIT</code> 查看树莓派系统位数</li>
+<li><code>file /bin/ls</code></li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-39-09.png" alt></li>
+<li><code>lsusb</code> 查看 usb</li>
+<li><code>lsmod</code> 查看其他硬件</li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-41-36.png" alt></li>
+<li><code>vcgencmd get_config arm_freq</code> 查看 CPU 的时钟频率</li>
+<li><code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq</code></li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-42-21.png" alt></li>
+<li><p><code>dmesg | more</code> 查看更多硬件信息</p>
+</li>
+<li><p><code>ifconfig</code> 查看 ip </p>
+</li>
+<li><p><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-45-49.png" alt></p>
+</li>
+<li><p><code>sudo ifconfig wlan0 down</code> 关闭 wlan</p>
+</li>
+<li><code>sudo ifconfig wlan0 up</code></li>
+<li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-49-22.png" alt></li>
 </ul>
 
       
@@ -455,6 +497,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
             <a href="/tags/RaspberryPi/" rel="tag"><i class="fa fa-tag"></i> RaspberryPi</a>
           
         </div>
@@ -477,6 +521,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/Thefriendlyinteractiveshell/" rel="prev" title="Fish:The friendly interactive shell">
+                Fish:The friendly interactive shell <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -828,7 +876,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -841,7 +889,7 @@ if(canvas.getContext){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -897,7 +945,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li></ol></div>
             
 
           </div>
@@ -931,7 +979,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">74.8k</span>
+    <span title="Site words total count">75k</span>
   
 </div>
 
