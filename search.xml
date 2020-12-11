@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>I got a Raspberry Pi</title>
+      <link href="/archives/IgotaRaspberryPi/"/>
+      <url>/archives/IgotaRaspberryPi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="通过网络分享连接树莓派"><a href="#通过网络分享连接树莓派" class="headerlink" title="通过网络分享连接树莓派"></a>通过网络分享连接树莓派</h2><ul><li>确保一台能上网的主机</li><li>把已经连接的网络通过想要共享的形式共享出去</li><li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_22-49-28.png" alt></li><li>开启共享前的本机 ipv4</li><li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-03-18.png" alt><a id="more"></a></li><li>开启共享后的局域网内 ip 变化<ul><li>我这里之前是连接过了,有缓存记录了，未连接过的情况下，新分配的 ip 就是新连接的设备所属 ip</li></ul></li><li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-06-54.png" alt></li><li>然后通过 SSH 连接树莓派即可<ul><li>树莓派默认用户名 pi , 密码 raspberry</li></ul></li><li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-11_23-10-14.png" alt></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RaspberryPi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript get/set</title>
       <link href="/archives/JSgetter-setter/"/>
       <url>/archives/JSgetter-setter/</url>
