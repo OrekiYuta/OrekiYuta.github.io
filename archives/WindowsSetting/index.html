@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-35-15.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/DesktopContextMenu/Snipaste_2020-11-24_22-40-14.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Windows/Netstat/Snipaste_2020-05-23_13-23-00.png">
-<meta property="og:updated_time" content="2020-12-09T15:08:34.954Z">
+<meta property="og:updated_time" content="2020-12-12T15:01:42.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows Setting">
 <meta name="twitter:description" content="Win10 LTSB Add MicrosoftStore To : LTSB-Add-MicrosoftStore Run: Add-Store.cmd">
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  389
+                  439
                 </span>
               
 
@@ -437,6 +437,11 @@
 </ul>
 </li>
 </ul>
+<h2 id="Choco"><a href="#Choco" class="headerlink" title="Choco"></a>Choco</h2><ul>
+<li><code>choco list -lo</code> 查看用 chocolatey 安装的软件</li>
+<li><code>choco list -li</code> 查看所有已安装的软件</li>
+<li><code>choco uninstall [name]</code> 卸载软件</li>
+</ul>
 <h3 id="bat-Get-admin"><a href="#bat-Get-admin" class="headerlink" title=".bat Get admin"></a>.bat Get admin</h3><ul>
 <li><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">NUL</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> REG.exe query "HKU\S-<span class="number">1</span>-<span class="number">5</span>-<span class="number">19</span>" || (</span><br><span class="line">    <span class="built_in">ECHO</span> <span class="built_in">SET</span> UAC = CreateObject^("Shell.Application"^) &gt; "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    <span class="built_in">ECHO</span> UAC.ShellExecute "%~f0", "%<span class="number">1</span>", "", "runas", <span class="number">1</span> &gt;&gt; "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    "<span class="variable">%TEMP%</span>\Getadmin.vbs"</span><br><span class="line">    <span class="built_in">DEL</span> /f /q "<span class="variable">%TEMP%</span>\Getadmin.vbs" <span class="number">2</span>&gt;<span class="built_in">NUL</span></span><br><span class="line">    <span class="keyword">Exit</span> /b</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
@@ -459,6 +464,12 @@
 <h2 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h2><ul>
 <li><code>ipconfig &amp;&amp; arp -a</code> 连接多个命令，只有前面一个执行成功，后面的才执行</li>
 <li>&amp; 一个一个执行</li>
+</ul>
+<h2 id="VS-Code-列编辑"><a href="#VS-Code-列编辑" class="headerlink" title="VS Code 列编辑"></a>VS Code 列编辑</h2><ul>
+<li>Shift + Alt + 左键</li>
+</ul>
+<h2 id="谷歌清缓存"><a href="#谷歌清缓存" class="headerlink" title="谷歌清缓存"></a>谷歌清缓存</h2><ul>
+<li>Shift + ctrl + R</li>
 </ul>
 
       
@@ -949,7 +960,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number">5.</span> <span class="nav-text">Netstat Find/Kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Chocolatey"><span class="nav-number">6.</span> <span class="nav-text">Install Chocolatey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bat-Get-admin"><span class="nav-number">7.</span> <span class="nav-text">.bat Get admin</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Nslookup"><span class="nav-number"></span> <span class="nav-text">Nslookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-user"><span class="nav-number"></span> <span class="nav-text">Net user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arp-a"><span class="nav-number"></span> <span class="nav-text">Arp -a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-share"><span class="nav-number"></span> <span class="nav-text">Net share</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netsh-wlan"><span class="nav-number"></span> <span class="nav-text">Netsh wlan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text">|</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-amp"><span class="nav-number"></span> <span class="nav-text">&amp;&amp;</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Win10-LTSB-Add-MicrosoftStore"><span class="nav-number">1.</span> <span class="nav-text">Win10 LTSB Add MicrosoftStore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-show-Windows-File"><span class="nav-number">2.</span> <span class="nav-text">Windows show Windows/File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Desktop-Context-Menu"><span class="nav-number">3.</span> <span class="nav-text">Desktop Context Menu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-Clean"><span class="nav-number">4.</span> <span class="nav-text">DOS Clean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netstat-Find-Kill"><span class="nav-number">5.</span> <span class="nav-text">Netstat Find/Kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Chocolatey"><span class="nav-number">6.</span> <span class="nav-text">Install Chocolatey</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Choco"><span class="nav-number"></span> <span class="nav-text">Choco</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bat-Get-admin"><span class="nav-number">1.</span> <span class="nav-text">.bat Get admin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nslookup"><span class="nav-number"></span> <span class="nav-text">Nslookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-user"><span class="nav-number"></span> <span class="nav-text">Net user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arp-a"><span class="nav-number"></span> <span class="nav-text">Arp -a</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Net-share"><span class="nav-number"></span> <span class="nav-text">Net share</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Netsh-wlan"><span class="nav-number"></span> <span class="nav-text">Netsh wlan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text">|</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-amp"><span class="nav-number"></span> <span class="nav-text">&amp;&amp;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code-列编辑"><span class="nav-number"></span> <span class="nav-text">VS Code 列编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌清缓存"><span class="nav-number"></span> <span class="nav-text">谷歌清缓存</span></a></li></div>
             
 
           </div>
@@ -983,7 +994,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">75k</span>
+    <span title="Site words total count">75.1k</span>
   
 </div>
 
