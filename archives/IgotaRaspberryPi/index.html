@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-42-21.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-45-49.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-49-22.png">
-<meta property="og:updated_time" content="2020-12-12T14:12:54.206Z">
+<meta property="og:updated_time" content="2020-12-14T14:02:58.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  266
+                  384
                 </span>
               
 
@@ -454,7 +454,27 @@
 <li><code>sudo ifconfig wlan0 up</code></li>
 <li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-12_02-49-22.png" alt></li>
 </ul>
-
+<h2 id="Windows-远程桌面连接"><a href="#Windows-远程桌面连接" class="headerlink" title="Windows 远程桌面连接"></a>Windows 远程桌面连接</h2><ul>
+<li><code>sudo apt-get purge tightvnc xrdp</code> 先删除之前系统自带的 xrdp 和 tightvnc</li>
+<li><code>sudo apt-get install tightvncserver xrdp</code> 重新安装</li>
+<li><p><code>sudo apt update &amp;&amp; sudo apt upgrade</code> 如果有错误可以执行这个</p>
+</li>
+<li><p>然后 Win+r , 输入 mstsc </p>
+</li>
+<li>接着在远程桌面连接窗口输入 树莓派 ip , 账户密码</li>
+</ul>
+<h2 id="开启-SSH"><a href="#开启-SSH" class="headerlink" title="开启 SSH"></a>开启 SSH</h2><h3 id="已连接树莓派"><a href="#已连接树莓派" class="headerlink" title="已连接树莓派"></a>已连接树莓派</h3><ul>
+<li><code>sudo raspi-config</code></li>
+<li>interfacing Options</li>
+</ul>
+<h3 id="未连接树莓派"><a href="#未连接树莓派" class="headerlink" title="未连接树莓派"></a>未连接树莓派</h3><ul>
+<li>在内存卡根目录新建 SSH 文件,无后缀</li>
+</ul>
+<!-- ## 设置静态 IP
+-`sudo nano /etc.dhcpcd.conf`
+- ![](/images/IgotaRaspberryPi/Snipaste_2020-12-14_21-53-29.png)
+- 修改完毕，ctrl+x ， y 保存 
+- `sudo reboot` 重启树莓派，再次 ifconfig 查看 ip -->
       
     </div>
     
@@ -945,7 +965,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -979,7 +999,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">75.6k</span>
+    <span title="Site words total count">75.7k</span>
   
 </div>
 

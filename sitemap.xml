@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/IgotaRaspberryPi/</loc>
+    
+    <lastmod>2020-12-14T14:02:58.832Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/batchNote/</loc>
     
     <lastmod>2020-12-13T09:42:46.429Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.orekiyuta.cn/archives/Thefriendlyinteractiveshell/</loc>
     
     <lastmod>2020-12-12T15:01:37.416Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/IgotaRaspberryPi/</loc>
-    
-    <lastmod>2020-12-12T14:12:54.206Z</lastmod>
     
   </url>
   
