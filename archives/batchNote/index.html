@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式 12for %%i in (?.md) do echo &quot;%%i&quot;pause 上面表示搜索只有一个字符名，且后缀为 md 的文件 以管理员身份执行命令1%1 mshta vbscr">
+<meta name="description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式">
 <meta name="keywords" content="batch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Batch Note">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/batchNote/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式 12for %%i in (?.md) do echo &quot;%%i&quot;pause 上面表示搜索只有一个字符名，且后缀为 md 的文件 以管理员身份执行命令1%1 mshta vbscr">
+<meta property="og:description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-12-13T09:42:46.429Z">
+<meta property="og:updated_time" content="2020-12-15T13:47:54.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Batch Note">
-<meta name="twitter:description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式 12for %%i in (?.md) do echo &quot;%%i&quot;pause 上面表示搜索只有一个字符名，且后缀为 md 的文件 以管理员身份执行命令1%1 mshta vbscr">
+<meta name="twitter:description" content="搜索当前目录下的所有文件12for %%i in (*.*) do echo &quot;%%i&quot;pause 搜索当前目录下被筛选的文件12for %%i in (*.md) do echo &quot;%%i&quot;pause 可用正则表达式">
 
 
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  655
+                  668
                 </span>
               
 
@@ -392,7 +392,7 @@
       
         <h3 id="搜索当前目录下的所有文件"><a href="#搜索当前目录下的所有文件" class="headerlink" title="搜索当前目录下的所有文件"></a>搜索当前目录下的所有文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (*.*) <span class="keyword">do</span> <span class="built_in">echo</span> "<span class="variable">%%i</span>"</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
 <h3 id="搜索当前目录下被筛选的文件"><a href="#搜索当前目录下被筛选的文件" class="headerlink" title="搜索当前目录下被筛选的文件"></a>搜索当前目录下被筛选的文件</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (*.<span class="built_in">md</span>) <span class="keyword">do</span> <span class="built_in">echo</span> "<span class="variable">%%i</span>"</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
-<p>可用正则表达式</p>
+<p>可用正则表达式<br><a id="more"></a></p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="variable">%%i</span> <span class="keyword">in</span> (?.<span class="built_in">md</span>) <span class="keyword">do</span> <span class="built_in">echo</span> "<span class="variable">%%i</span>"</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
 <p>上面表示搜索只有一个字符名，且后缀为 md 的文件</p>
 <h3 id="以管理员身份执行命令"><a href="#以管理员身份执行命令" class="headerlink" title="以管理员身份执行命令"></a>以管理员身份执行命令</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%<span class="number">1</span> mshta vbscript:CreateObject(“Shell.Application”).ShellExecute(“<span class="built_in">cmd</span>.exe”,"/c %~s0 ::","",“runas”,<span class="number">1</span>)(window.close)&amp;&amp;<span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
@@ -414,7 +414,7 @@
 <h3 id="截取字符串"><a href="#截取字符串" class="headerlink" title="截取字符串"></a>截取字符串</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">%date:~0,4%</span></span><br></pre></td></tr></table></figure>
 <p>开始位置 0，截取字符数 4</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> str=<span class="number">123456789</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%str:~3,4%</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="语音读取"><a href="#语音读取" class="headerlink" title="语音读取"></a>语音读取</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mshta vbscript:CreateObject("SAPI.SpVoice").speak("elias")(Window.close)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -899,7 +899,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索当前目录下的所有文件"><span class="nav-number">1.</span> <span class="nav-text">搜索当前目录下的所有文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索当前目录下被筛选的文件"><span class="nav-number">2.</span> <span class="nav-text">搜索当前目录下被筛选的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以管理员身份执行命令"><span class="nav-number">3.</span> <span class="nav-text">以管理员身份执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在指定目录下打开-git-bash"><span class="nav-number">4.</span> <span class="nav-text">在指定目录下打开 git-bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出内容到剪贴板"><span class="nav-number">5.</span> <span class="nav-text">输出内容到剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续执行命令"><span class="nav-number">6.</span> <span class="nav-text">连续执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-java-环境变量"><span class="nav-number">7.</span> <span class="nav-text">配置 java 环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取时间"><span class="nav-number">8.</span> <span class="nav-text">获取时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截取字符串"><span class="nav-number">9.</span> <span class="nav-text">截取字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索当前目录下的所有文件"><span class="nav-number">1.</span> <span class="nav-text">搜索当前目录下的所有文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索当前目录下被筛选的文件"><span class="nav-number">2.</span> <span class="nav-text">搜索当前目录下被筛选的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以管理员身份执行命令"><span class="nav-number">3.</span> <span class="nav-text">以管理员身份执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在指定目录下打开-git-bash"><span class="nav-number">4.</span> <span class="nav-text">在指定目录下打开 git-bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出内容到剪贴板"><span class="nav-number">5.</span> <span class="nav-text">输出内容到剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续执行命令"><span class="nav-number">6.</span> <span class="nav-text">连续执行命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-java-环境变量"><span class="nav-number">7.</span> <span class="nav-text">配置 java 环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取时间"><span class="nav-number">8.</span> <span class="nav-text">获取时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截取字符串"><span class="nav-number">9.</span> <span class="nav-text">截取字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语音读取"><span class="nav-number">10.</span> <span class="nav-text">语音读取</span></a></li></ol></div>
             
 
           </div>
