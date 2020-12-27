@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
+    <loc>http://www.orekiyuta.cn/archives/scrapyLearningLog/</loc>
     
-    <lastmod>2020-12-27T06:24:43.766Z</lastmod>
+    <lastmod>2020-12-27T14:25:20.434Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.orekiyuta.cn/archives/stepIntoScrapy/</loc>
     
-    <lastmod>2020-12-26T14:33:47.716Z</lastmod>
+    <lastmod>2020-12-27T09:56:15.823Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
+    
+    <lastmod>2020-12-27T06:24:43.766Z</lastmod>
     
   </url>
   
