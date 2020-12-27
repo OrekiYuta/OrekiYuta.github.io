@@ -90,20 +90,20 @@
 
 
 
-<meta name="description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件  获取 获取该元素对应的 css 选择器 修改 parse 方法 12345">
+<meta name="description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件">
 <meta name="keywords" content="Python,Scrapy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Step into Scrapy">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/stepIntoScrapy/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件  获取 获取该元素对应的 css 选择器 修改 parse 方法 12345">
+<meta property="og:description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/stepIntoScrapy/Snipaste_2020-12-26_19-36-35.png">
-<meta property="og:updated_time" content="2020-12-26T11:58:47.403Z">
+<meta property="og:updated_time" content="2020-12-26T14:33:47.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Step into Scrapy">
-<meta name="twitter:description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件  获取 获取该元素对应的 css 选择器 修改 parse 方法 12345">
+<meta name="twitter:description" content="配置 pip install scrapy scrapy 查看用法 scrapy startproject getTiobe 新建 scrapy 项目 cd getTiobe\spiders 进入该目录 scrapy genspider tiobe www.tiobe.com/tiobe-index 生成该链接的爬虫文件">
 <meta name="twitter:image" content="http://www.orekiyuta.cn/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png">
 
 
@@ -398,9 +398,8 @@
 <li><code>scrapy</code> 查看用法</li>
 <li><code>scrapy startproject getTiobe</code> 新建 scrapy 项目</li>
 <li><code>cd getTiobe\spiders</code> 进入该目录</li>
-<li><code>scrapy genspider tiobe www.tiobe.com/tiobe-index</code> 生成该链接的爬虫文件<br><img src="/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png" alt></li>
-</ul>
-<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><ul>
+<li><code>scrapy genspider tiobe www.tiobe.com/tiobe-index</code> 生成该链接的爬虫文件<br><img src="/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png" alt><a id="more"></a>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2></li>
 <li>获取该元素对应的 css 选择器<br><img src="/images/stepIntoScrapy/Snipaste_2020-12-26_19-36-35.png" alt></li>
 <li>修改 parse 方法</li>
 <li><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> response.css(<span class="string">'#top20 &gt; tbody &gt; tr'</span>):</span><br><span class="line">    <span class="keyword">yield</span> &#123;</span><br><span class="line">        <span class="string">'rank_this-year'</span>: item.css(<span class="string">'td:nth-child(1)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'rank_last-year'</span>: item.css(<span class="string">'td:nth-child(2)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'programming_language'</span>: item.css(<span class="string">'td:nth-child(4)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'ratings'</span>: item.css(<span class="string">'td:nth-child(5)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'change'</span>: item.css(<span class="string">'td:nth-child(6)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'date'</span>: time.strftime(<span class="string">'%Y/%m/%d %H:%M:%S'</span>, time.localtime(time.time()))</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -942,7 +941,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">76.4k</span>
+    <span title="Site words total count">76.6k</span>
   
 </div>
 
