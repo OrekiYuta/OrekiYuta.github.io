@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/flaskRun/</loc>
+    
+    <lastmod>2020-12-28T15:54:33.559Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/scrapyLearningLog/</loc>
     
     <lastmod>2020-12-27T16:11:10.345Z</lastmod>
