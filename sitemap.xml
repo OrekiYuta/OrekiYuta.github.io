@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/inJupyterNotebook/</loc>
+    
+    <lastmod>2020-12-30T15:08:40.289Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/flaskRun/</loc>
     
     <lastmod>2020-12-28T15:54:33.559Z</lastmod>
