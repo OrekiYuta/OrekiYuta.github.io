@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-24_15-36-11.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-06-33.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
-<meta property="og:updated_time" content="2020-12-25T13:54:15.386Z">
+<meta property="og:updated_time" content="2021-01-04T12:01:04.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  794
+                  866
                 </span>
               
 
@@ -527,6 +527,12 @@
 <li>而新接入的交换机和树莓派的网段为 192 </li>
 <li>需要在网络连接的以太网 ipv4 里设置 192 网段 , 如 192.168.137.1 来访问树莓派</li>
 <li>切换回内网需要切换为 172 网段 或者 设置自动获取ip</li>
+</ul>
+<h2 id="离线安装-pip-包"><a href="#离线安装-pip-包" class="headerlink" title="离线安装 pip 包"></a>离线安装 pip 包</h2><ul>
+<li><code>pip3 freeze &gt;requirements.txt</code> 在已安装好包的设备上导出依赖列表</li>
+<li><code>pip3 download -r requirements.txt -d -d E:\a\</code>  下载到对应目录</li>
+<li>用 FTP 把包传到离线的设备上</li>
+<li><code>pip3 install ./*</code> 进入包目录安装全部或者选择安装</li>
 </ul>
 
       
@@ -1019,7 +1025,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li></ol></div>
             
 
           </div>
@@ -1053,7 +1059,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.4k</span>
+    <span title="Site words total count">77.5k</span>
   
 </div>
 
