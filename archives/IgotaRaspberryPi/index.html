@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-24_15-36-11.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-06-33.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
-<meta property="og:updated_time" content="2021-01-04T12:01:04.580Z">
+<meta property="og:updated_time" content="2021-01-05T17:26:41.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  866
+                  916
                 </span>
               
 
@@ -534,6 +534,13 @@
 <li>用 FTP 把包传到离线的设备上</li>
 <li><code>pip3 install ./*</code> 进入包目录安装全部或者选择安装</li>
 </ul>
+<h2 id="查看-apt-get-已安装的程序"><a href="#查看-apt-get-已安装的程序" class="headerlink" title="查看 apt-get 已安装的程序"></a>查看 apt-get 已安装的程序</h2><ul>
+<li><code>dpkg --get-selections | grep nginx</code></li>
+<li><code>dpkg -i | grep &#39;^ii&#39;</code></li>
+<li><code>sudo apt-get install aptitude</code> 或者使用这个工具</li>
+<li><code>sudo aptitude</code></li>
+</ul>
+<h2 id="彻底卸载-nginx-重新安装"><a href="#彻底卸载-nginx-重新安装" class="headerlink" title="彻底卸载 nginx 重新安装"></a>彻底卸载 nginx 重新安装</h2><p>👉 <a href="https://www.jianshu.com/p/439cd2a7c84e" target="_blank" rel="noopener">linux彻底删除nginx</a></p>
 
       
     </div>
@@ -1025,7 +1032,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彻底卸载-nginx-重新安装"><span class="nav-number">15.</span> <span class="nav-text">彻底卸载 nginx 重新安装</span></a></li></ol></div>
             
 
           </div>
@@ -1059,7 +1066,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.5k</span>
+    <span title="Site words total count">77.6k</span>
   
 </div>
 
