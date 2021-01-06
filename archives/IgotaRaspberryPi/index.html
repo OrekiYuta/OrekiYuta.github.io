@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Linux,RaspberryPi,">
+  <meta name="keywords" content="Linux,RaspberryPi,Nginx,">
 
 
 
@@ -91,7 +91,7 @@
 
 
 <meta name="description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
-<meta name="keywords" content="Linux,RaspberryPi">
+<meta name="keywords" content="Linux,RaspberryPi,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I got a Raspberry Pi">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/IgotaRaspberryPi/index.html">
@@ -115,7 +115,8 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-24_15-36-11.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-06-33.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
-<meta property="og:updated_time" content="2021-01-05T17:26:41.292Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-06_20-58-26.png">
+<meta property="og:updated_time" content="2021-01-06T13:06:34.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -383,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  916
+                  1.2k
                 </span>
               
 
@@ -521,6 +522,7 @@
 <h2 id="Linux-切换用户"><a href="#Linux-切换用户" class="headerlink" title="Linux 切换用户"></a>Linux 切换用户</h2><ul>
 <li><code>sudo su</code> 切换成 root</li>
 <li><code>su [username]</code> 切换成其他用户,如:<code>sudo pi</code></li>
+<li>👉 <a href="https://blog.csdn.net/farYang/article/details/50779767" target="_blank" rel="noopener">初次使用树莓派并启用root管理员</a></li>
 </ul>
 <h2 id="不同网段问题"><a href="#不同网段问题" class="headerlink" title="不同网段问题"></a>不同网段问题</h2><ul>
 <li>当前内网的网段为 172 </li>
@@ -540,7 +542,23 @@
 <li><code>sudo apt-get install aptitude</code> 或者使用这个工具</li>
 <li><code>sudo aptitude</code></li>
 </ul>
-<h2 id="彻底卸载-nginx-重新安装"><a href="#彻底卸载-nginx-重新安装" class="headerlink" title="彻底卸载 nginx 重新安装"></a>彻底卸载 nginx 重新安装</h2><p>👉 <a href="https://www.jianshu.com/p/439cd2a7c84e" target="_blank" rel="noopener">linux彻底删除nginx</a></p>
+<h2 id="Nginx-无法正常工作相关"><a href="#Nginx-无法正常工作相关" class="headerlink" title="Nginx 无法正常工作相关"></a>Nginx 无法正常工作相关</h2><ul>
+<li>树莓派上 apt-get 安装的 nginx 的默认配置文件内容很少，从其他设备安装 nginx 然后把配置文件复制过来</li>
+<li>主要配置就是把通过默认nginx 80 端口的请求转发到自己定义的 upstream 里</li>
+<li><p>添加多个服务，配置权重就可以实现负载均衡，就是请求一个地址，按照权重轮询服务</p>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="NGINX"><figure class="iseeu highlight /nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">upstream</span> hgo &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:5000</span> weight=<span class="number">10</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">127.0.0.1:2021</span> weight=<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span> default_server;</span><br><span class="line">    <span class="attribute">listen</span>       [::]:<span class="number">80</span> default_server;</span><br><span class="line">    <span class="attribute">server_name</span>  _;</span><br><span class="line">    <span class="attribute">root</span>         /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Load configuration files for the default server block.</span></span><br><span class="line">    <span class="attribute">include</span> /etc/nginx/default.d/<span class="regexp">*.conf</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://hgo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">error_page</span> <span class="number">404</span> /<span class="number">404</span>.html;</span><br><span class="line">    <span class="attribute">location</span> = /<span class="number">404</span>.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">error_page</span> <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><img src="/images/IgotaRaspberryPi/Snipaste_2021-01-06_20-58-26.png" alt></p>
+</li>
+<li><p><code>nginx</code> 启动</p>
+</li>
+<li><code>nginx -s reopen</code>重启</li>
+<li><code>nginx -s reload</code> 热加载</li>
+<li><code>nginx -t</code> 检查配置文件是否合法</li>
+<li><code>nano /etc/nginx/nginx.conf</code> 我的树莓派 nginx 配置文件地址</li>
+<li>👉 <a href="https://www.jianshu.com/p/439cd2a7c84e" target="_blank" rel="noopener">linux彻底删除nginx</a></li>
+<li>👉 <a href="https://blog.csdn.net/Rebel_Yangke/article/details/58601731" target="_blank" rel="noopener">Nginx启动报错[emerg] getpwnam(“nginx”) failed</a></li>
+</ul>
 
       
     </div>
@@ -587,6 +605,8 @@
             <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
             <a href="/tags/RaspberryPi/" rel="tag"><i class="fa fa-tag"></i> RaspberryPi</a>
+          
+            <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
           
         </div>
       
@@ -976,7 +996,7 @@ if(canvas.getContext){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1032,7 +1052,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#彻底卸载-nginx-重新安装"><span class="nav-number">15.</span> <span class="nav-text">彻底卸载 nginx 重新安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li></ol></div>
             
 
           </div>
@@ -1066,7 +1086,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.6k</span>
+    <span title="Site words total count">77.8k</span>
   
 </div>
 
