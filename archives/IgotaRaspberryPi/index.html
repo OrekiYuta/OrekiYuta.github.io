@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-06-33.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-06_20-58-26.png">
-<meta property="og:updated_time" content="2021-01-08T13:57:39.501Z">
+<meta property="og:updated_time" content="2021-01-08T19:45:59.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.2k
+                  1.4k
                 </span>
               
 
@@ -556,23 +556,38 @@
 <li><code>nginx -s reload</code> 热加载</li>
 <li><code>nginx -t</code> 检查配置文件是否合法</li>
 <li><code>nano /etc/nginx/nginx.conf</code> 我的树莓派 nginx 配置文件地址</li>
-<li>👉 <a href="https://www.jianshu.com/p/439cd2a7c84e" target="_blank" rel="noopener">linux彻底删除nginx</a></li>
+<li><code>nano /etc/nginx/sites-available/default</code> 这里也有个配置文件</li>
+<li><p>👉 <a href="https://www.jianshu.com/p/439cd2a7c84e" target="_blank" rel="noopener">linux彻底删除nginx</a></p>
+</li>
+<li><p>Nginx启动报错[emerg] getpwnam(“nginx”) failed</p>
+<ul>
 <li><code>groupadd nginx</code> </li>
 <li><code>useradd -g nginx nginx -s /sbin/nologin</code></li>
-<li>👉 <a href="https://blog.csdn.net/Rebel_Yangke/article/details/58601731" target="_blank" rel="noopener">Nginx启动报错[emerg] getpwnam(“nginx”) failed</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="谷歌-chromium-版本更换"><a href="#谷歌-chromium-版本更换" class="headerlink" title="谷歌 chromium 版本更换"></a>谷歌 chromium 版本更换</h2><ul>
 <li>为了使 chromedriver 和 chromium 版本一致</li>
 <li><code>sudo apt-get install chromium-browser</code> 更新最新</li>
 <li><code>chromium-browser --version</code></li>
-<li><p>👉 <a href="https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/pool/main/c/chromium-browser/" target="_blank" rel="noopener">mirrors.tuna.tsinghua.edu.cn</a></p>
-</li>
-<li><p><code>sudo apt-get install chromium-chromedriver</code></p>
-</li>
+<li>👉 <a href="https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/pool/main/c/chromium-browser/" target="_blank" rel="noopener">mirrors.tuna.tsinghua.edu.cn</a></li>
+<li><code>sudo apt-get install chromium-chromedriver</code></li>
 <li><p>👉 <a href="https://launchpad.net/+search?field.text=chromium-chromedriver+armhf" target="_blank" rel="noopener">Launchpad.net</a></p>
 </li>
 <li><p>最终要使两者版本一致</p>
 </li>
+</ul>
+<h2 id="Docker-安装界面"><a href="#Docker-安装界面" class="headerlink" title="Docker 安装界面"></a>Docker 安装界面</h2><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSL https://get.docker.com | sh</span><br><span class="line">sudo docker pull portainer/portainer</span><br><span class="line">sudo docker volume create portainer_data</span><br><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>浏览器输入 ip:9000</li>
+<li>👉 <a href="https://shumeipai.nxez.com/2019/05/20/how-to-install-docker-on-your-raspberry-pi.html" target="_blank" rel="noopener">树莓派上 Docker 的安装和使用</a></li>
+</ul>
+<h2 id="Pi-dashboard-树莓派监控页面"><a href="#Pi-dashboard-树莓派监控页面" class="headerlink" title="Pi dashboard 树莓派监控页面"></a>Pi dashboard 树莓派监控页面</h2><ul>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt install docker</code></li>
+<li><code>sudo docker run -d --name docker-pi-dashboard -e &#39;LISTEN=1024&#39; --net=host ecat/docker-pi-dashboard</code></li>
+<li>浏览器输入 ip:1024</li>
+<li>👉 <a href="https://blog.nocode.site/2018/03/25/docker-pi-dashboard.html" target="_blank" rel="noopener">一行命令部署pi dashboard</a></li>
 </ul>
 
       
@@ -1067,7 +1082,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装界面"><span class="nav-number">17.</span> <span class="nav-text">Docker 安装界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pi-dashboard-树莓派监控页面"><span class="nav-number">18.</span> <span class="nav-text">Pi dashboard 树莓派监控页面</span></a></li></ol></div>
             
 
           </div>
@@ -1101,7 +1116,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77.9k</span>
+    <span title="Site words total count">78k</span>
   
 </div>
 
