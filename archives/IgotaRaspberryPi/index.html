@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-06_20-58-26.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-19_22-13-01.png">
-<meta property="og:updated_time" content="2021-01-19T14:13:57.884Z">
+<meta property="og:updated_time" content="2021-01-19T14:32:18.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.5k
                 </span>
               
 
@@ -606,6 +606,13 @@
 <li><code>sudo reboot</code></li>
 <li>进入桌面设置 wifi 连接</li>
 <li><img src="/images/IgotaRaspberryPi/Snipaste_2021-01-19_22-13-01.png" alt></li>
+<li>👉 <a href="https://raspberrypi.stackexchange.com/questions/46622/raspberry-pi-3-wifi-stopped-working-how-to-debug-and-fix-without-restarting" target="_blank" rel="noopener">Raspberry Pi 3 - WiFi Stopped Working - How to debug and fix without restarting</a></li>
+</ul>
+<h2 id="Docker-安装-mongodb"><a href="#Docker-安装-mongodb" class="headerlink" title="Docker 安装 mongodb"></a>Docker 安装 mongodb</h2><ul>
+<li><code>docker search rpi-mongodb3</code></li>
+<li><code>docker pull andresvidal/rpi3-mongodb3</code></li>
+<li><code>mkdir ~/db/mongo</code> 创建数据目录</li>
+<li><code>docker run -d --name rpi-mongodb3 -v /home/pi/db/mongo:/data.db -p 27017:27017 andresvidal/rpi3-mongodb3 mongod</code></li>
 </ul>
 
       
@@ -1031,7 +1038,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1044,7 +1051,7 @@ if(canvas.getContext){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1100,7 +1107,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装界面"><span class="nav-number">17.</span> <span class="nav-text">Docker 安装界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pi-dashboard-树莓派监控页面"><span class="nav-number">18.</span> <span class="nav-text">Pi dashboard 树莓派监控页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置静态ip"><span class="nav-number">19.</span> <span class="nav-text">设置静态ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-wifi-连接"><span class="nav-number">20.</span> <span class="nav-text">设置 wifi 连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装界面"><span class="nav-number">17.</span> <span class="nav-text">Docker 安装界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pi-dashboard-树莓派监控页面"><span class="nav-number">18.</span> <span class="nav-text">Pi dashboard 树莓派监控页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置静态ip"><span class="nav-number">19.</span> <span class="nav-text">设置静态ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-wifi-连接"><span class="nav-number">20.</span> <span class="nav-text">设置 wifi 连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装-mongodb"><span class="nav-number">21.</span> <span class="nav-text">Docker 安装 mongodb</span></a></li></ol></div>
             
 
           </div>
@@ -1134,7 +1141,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.9k</span>
+    <span title="Site words total count">82.1k</span>
   
 </div>
 
