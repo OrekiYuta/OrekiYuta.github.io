@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Django Run</title>
+      <link href="/archives/djangoRun/"/>
+      <url>/archives/djangoRun/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Error-WinError-10013-以一种访问权限不允许的方式做了一个访问套接字的尝试。"><a href="#Error-WinError-10013-以一种访问权限不允许的方式做了一个访问套接字的尝试。" class="headerlink" title="Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"></a>Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Starting development server at http://127.0.0.1:8000/</span><br><span class="line">Quit the server with CTRL-BREAK.</span><br><span class="line">Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。</span><br></pre></td></tr></table></figure></div><ul><li>端口被占用，关闭被占用端口的程序</li><li><code>netstat -ano|findstr 8000</code></li><li><code>tasklist | findstr pid号</code></li><li><code>taskkill /pid pid号 /f</code></li></ul><p><img src="/images/djangoRun/Snipaste_2021-01-28_20-07-56.png" alt></p><ul><li>或者改端口<br><img src="/images/djangoRun/Snipaste_2021-01-28_20-10-41.png" alt></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python get function from String</title>
       <link href="/archives/pythonGetFunctionFromString/"/>
       <url>/archives/pythonGetFunctionFromString/</url>
@@ -100,9 +121,9 @@
             
             <tag> JavaScript </tag>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
             <tag> MySQL </tag>
             
@@ -160,9 +181,9 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
         </tags>
       
