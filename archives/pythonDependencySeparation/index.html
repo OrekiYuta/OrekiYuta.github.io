@@ -77,12 +77,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Python,">
 
 
 
-
-  
 
 
   <link rel="alternate" href="/rss.xml" title="Canoe" type="application/atom+xml">
@@ -92,14 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="(⊙_ʘ)💤💤">
-<meta property="og:url" content="http://www.orekiyuta.cn/tags/index.html">
+<meta name="description" content="Scene 由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取 因此在开发时，需要把依赖给保存下来，并且指明依赖的版本  Solutionfreeze pip freeze &amp;gt; requirements.txt 使用这个命令可以导出当前环境的所有依赖  pipreqs pip install pipreqs pipreqs ./ 切换到项目根目录下执行，导出当前目录所引用的依赖">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Dependency Separation">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/pythonDependencySeparation/index.html">
 <meta property="og:site_name" content="Canoe">
+<meta property="og:description" content="Scene 由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取 因此在开发时，需要把依赖给保存下来，并且指明依赖的版本  Solutionfreeze pip freeze &amp;gt; requirements.txt 使用这个命令可以导出当前环境的所有依赖  pipreqs pip install pipreqs pipreqs ./ 切换到项目根目录下执行，导出当前目录所引用的依赖">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-14T10:39:04.376Z">
+<meta property="og:updated_time" content="2021-01-30T21:01:57.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(⊙_ʘ)💤💤">
+<meta name="twitter:title" content="Python Dependency Separation">
+<meta name="twitter:description" content="Scene 由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取 因此在开发时，需要把依赖给保存下来，并且指明依赖的版本  Solutionfreeze pip freeze &amp;gt; requirements.txt 使用这个命令可以导出当前环境的所有依赖  pipreqs pip install pipreqs pipreqs ./ 切换到项目根目录下执行，导出当前目录所引用的依赖">
 
 
 
@@ -129,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/tags/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/pythonDependencySeparation/">
 
 
 
@@ -137,7 +139,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>(⊙_ʘ)💤💤 | Canoe</title>
+  <title>Python Dependency Separation | Canoe</title>
   
 
 
@@ -288,76 +290,207 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/pythonDependencySeparation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">(⊙_ʘ)💤💤</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">Python Dependency Separation</h1>
         
-          <div class="tag-cloud">
-           
-            <!--标签云-->
-            <div class="tag-cloud-tags">
-            <a href="/tags/Arm/" style="font-size: 15px; color: #827878">Arm</a> <a href="/tags/Batch/" style="font-size: 15px; color: #827878">Batch</a> <a href="/tags/BeautifulSoup/" style="font-size: 15px; color: #827878">BeautifulSoup</a> <a href="/tags/CORS/" style="font-size: 15px; color: #827878">CORS</a> <a href="/tags/CSS/" style="font-size: 21px; color: #4e4848">CSS</a> <a href="/tags/CentOS/" style="font-size: 15px; color: #827878">CentOS</a> <a href="/tags/ChromeDriver/" style="font-size: 18px; color: #686060">ChromeDriver</a> <a href="/tags/Chromium/" style="font-size: 15px; color: #827878">Chromium</a> <a href="/tags/Crack/" style="font-size: 15px; color: #827878">Crack</a> <a href="/tags/Crontab/" style="font-size: 15px; color: #827878">Crontab</a> <a href="/tags/Django/" style="font-size: 15px; color: #827878">Django</a> <a href="/tags/Docker/" style="font-size: 15px; color: #827878">Docker</a> <a href="/tags/ECMAScript/" style="font-size: 18px; color: #686060">ECMAScript</a> <a href="/tags/ES6/" style="font-size: 15px; color: #827878">ES6</a> <a href="/tags/Echarts/" style="font-size: 15px; color: #827878">Echarts</a> <a href="/tags/Flask/" style="font-size: 18px; color: #686060">Flask</a> <a href="/tags/Git/" style="font-size: 15px; color: #827878">Git</a> <a href="/tags/Gunicorn/" style="font-size: 15px; color: #827878">Gunicorn</a> <a href="/tags/Hexo/" style="font-size: 18px; color: #686060">Hexo</a> <a href="/tags/Java/" style="font-size: 27px; color: #1a1818">Java</a> <a href="/tags/JavaScript/" style="font-size: 21px; color: #4e4848">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 15px; color: #827878">Jupyter</a> <a href="/tags/Linux/" style="font-size: 24px; color: #343030">Linux</a> <a href="/tags/Mariadb/" style="font-size: 18px; color: #686060">Mariadb</a> <a href="/tags/Maven/" style="font-size: 15px; color: #827878">Maven</a> <a href="/tags/Mongodb/" style="font-size: 15px; color: #827878">Mongodb</a> <a href="/tags/MySQL/" style="font-size: 24px; color: #343030">MySQL</a> <a href="/tags/Network/" style="font-size: 15px; color: #827878">Network</a> <a href="/tags/Nginx/" style="font-size: 18px; color: #686060">Nginx</a> <a href="/tags/OS/" style="font-size: 15px; color: #827878">OS</a> <a href="/tags/Python/" style="font-size: 30px; color: #000">Python</a> <a href="/tags/RaspberryPi/" style="font-size: 18px; color: #686060">RaspberryPi</a> <a href="/tags/SVN/" style="font-size: 15px; color: #827878">SVN</a> <a href="/tags/Scrapy/" style="font-size: 18px; color: #686060">Scrapy</a> <a href="/tags/Selenium/" style="font-size: 18px; color: #686060">Selenium</a> <a href="/tags/Shell/" style="font-size: 15px; color: #827878">Shell</a> <a href="/tags/Springboot/" style="font-size: 15px; color: #827878">Springboot</a> <a href="/tags/Tmux/" style="font-size: 15px; color: #827878">Tmux</a> <a href="/tags/TypeScript/" style="font-size: 15px; color: #827878">TypeScript</a> <a href="/tags/Vue-js/" style="font-size: 18px; color: #686060">Vue.js</a> <a href="/tags/Windows/" style="font-size: 15px; color: #827878">Windows</a> <a href="/tags/Xpath/" style="font-size: 15px; color: #827878">Xpath</a>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-31T04:53:29+08:00">
+                2021-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  127
+                </span>
+              
+
+              
+
+              
             </div>
+          
 
-            <!--tagcanvascloud标签云-->
-            <div class="tags" id="myTags">
-  <canvas width="900" height="700" id="my3DTags" style="width:100%">
-    <p>Anything in here will be replaced on browsers that support the canvas element</p>
-  </canvas>
-</div>
-<div class="tags" id="tags">
-  <ul style="display: none">
-    <a href="/tags/Arm/" style="font-size: 16px; color: #ccc">Arm</a> <a href="/tags/Batch/" style="font-size: 16px; color: #ccc">Batch</a> <a href="/tags/BeautifulSoup/" style="font-size: 16px; color: #ccc">BeautifulSoup</a> <a href="/tags/CORS/" style="font-size: 16px; color: #ccc">CORS</a> <a href="/tags/CSS/" style="font-size: 23.6px; color: #818181">CSS</a> <a href="/tags/CentOS/" style="font-size: 16px; color: #ccc">CentOS</a> <a href="/tags/ChromeDriver/" style="font-size: 19.8px; color: #a7a7a7">ChromeDriver</a> <a href="/tags/Chromium/" style="font-size: 16px; color: #ccc">Chromium</a> <a href="/tags/Crack/" style="font-size: 16px; color: #ccc">Crack</a> <a href="/tags/Crontab/" style="font-size: 16px; color: #ccc">Crontab</a> <a href="/tags/Django/" style="font-size: 16px; color: #ccc">Django</a> <a href="/tags/Docker/" style="font-size: 16px; color: #ccc">Docker</a> <a href="/tags/ECMAScript/" style="font-size: 19.8px; color: #a7a7a7">ECMAScript</a> <a href="/tags/ES6/" style="font-size: 16px; color: #ccc">ES6</a> <a href="/tags/Echarts/" style="font-size: 16px; color: #ccc">Echarts</a> <a href="/tags/Flask/" style="font-size: 19.8px; color: #a7a7a7">Flask</a> <a href="/tags/Git/" style="font-size: 16px; color: #ccc">Git</a> <a href="/tags/Gunicorn/" style="font-size: 16px; color: #ccc">Gunicorn</a> <a href="/tags/Hexo/" style="font-size: 19.8px; color: #a7a7a7">Hexo</a> <a href="/tags/Java/" style="font-size: 31.2px; color: #363636">Java</a> <a href="/tags/JavaScript/" style="font-size: 23.6px; color: #818181">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 16px; color: #ccc">Jupyter</a> <a href="/tags/Linux/" style="font-size: 27.4px; color: #5c5c5c">Linux</a> <a href="/tags/Mariadb/" style="font-size: 19.8px; color: #a7a7a7">Mariadb</a> <a href="/tags/Maven/" style="font-size: 16px; color: #ccc">Maven</a> <a href="/tags/Mongodb/" style="font-size: 16px; color: #ccc">Mongodb</a> <a href="/tags/MySQL/" style="font-size: 27.4px; color: #5c5c5c">MySQL</a> <a href="/tags/Network/" style="font-size: 16px; color: #ccc">Network</a> <a href="/tags/Nginx/" style="font-size: 19.8px; color: #a7a7a7">Nginx</a> <a href="/tags/OS/" style="font-size: 16px; color: #ccc">OS</a> <a href="/tags/Python/" style="font-size: 35px; color: #111">Python</a> <a href="/tags/RaspberryPi/" style="font-size: 19.8px; color: #a7a7a7">RaspberryPi</a> <a href="/tags/SVN/" style="font-size: 16px; color: #ccc">SVN</a> <a href="/tags/Scrapy/" style="font-size: 19.8px; color: #a7a7a7">Scrapy</a> <a href="/tags/Selenium/" style="font-size: 19.8px; color: #a7a7a7">Selenium</a> <a href="/tags/Shell/" style="font-size: 16px; color: #ccc">Shell</a> <a href="/tags/Springboot/" style="font-size: 16px; color: #ccc">Springboot</a> <a href="/tags/Tmux/" style="font-size: 16px; color: #ccc">Tmux</a> <a href="/tags/TypeScript/" style="font-size: 16px; color: #ccc">TypeScript</a> <a href="/tags/Vue-js/" style="font-size: 19.8px; color: #a7a7a7">Vue.js</a> <a href="/tags/Windows/" style="font-size: 16px; color: #ccc">Windows</a> <a href="/tags/Xpath/" style="font-size: 16px; color: #ccc">Xpath</a>
-  </ul>
-</div>
-<script type="text/javascript" src="/js/src/tagcanvas.min.js"></script>
-<script type="text/javascript">
-  window.onload = function() {
-    try {
-      TagCanvas.Start('my3DTags','tags',{
-            textColour: '#000000',
-            outlineColour: '#0039FF ',
-            reverse: true,
-            depth: 0.8,
-            maxSpeed: 0.03,
-            minSpeed: 0.07,
-            shape: "hcylinder",
-            initial:[0, 0.1],
-            shuffleTags:true,
-            textHeight:20,
-            centreImage:'/images/uploads/tagcenter.png',
-      });
-    } catch(e) {
-      // something went wrong, hide the canvas container
-      document.getElementById('myTags').style.display = 'none';
-    }
-  };
-</script>
+          
 
-          </div>
-        
-      </div>
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul>
+<li>由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取</li>
+<li>因此在开发时，需要把依赖给保存下来，并且指明依赖的版本</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="freeze"><a href="#freeze" class="headerlink" title="freeze"></a>freeze</h3><ul>
+<li><code>pip freeze &gt; requirements.txt</code></li>
+<li>使用这个命令可以导出当前环境的所有依赖</li>
+</ul>
+<h3 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h3><ul>
+<li><code>pip install pipreqs</code></li>
+<li><code>pipreqs ./</code> 切换到项目根目录下执行，导出当前目录所引用的依赖</li>
+<li><code>pipreqs ./ --encoding==utf-8</code></li>
+<li><code>pipreqs ./ --encoding==utf-8 --force</code></li>
+</ul>
+<h2 id="venv"><a href="#venv" class="headerlink" title="venv"></a>venv</h2><ul>
+<li>使用 python 的虚拟环境</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Orekiyuta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.orekiyuta.cn/archives/pythonDependencySeparation/" title="Python Dependency Separation">http://www.orekiyuta.cn/archives/pythonDependencySeparation/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: black;font-size:15px;margin-top:30px">< - Thanks for reading - ></div>
+    
+</div>
+      
+     </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/djangoRun/" rel="next" title="Django Run">
+                <i class="fa fa-chevron-left"></i> Django Run
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -660,8 +793,17 @@ if(canvas.getContext){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -740,6 +882,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scene"><span class="nav-number">1.</span> <span class="nav-text">Scene</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#freeze"><span class="nav-number">2.1.</span> <span class="nav-text">freeze</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pipreqs"><span class="nav-number">2.2.</span> <span class="nav-text">pipreqs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#venv"><span class="nav-number">3.</span> <span class="nav-text">venv</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

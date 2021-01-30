@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-01-28T16:58:16.926Z</updated>
+  <updated>2021-01-30T21:01:57.204Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python Dependency Separation</title>
+    <link href="http://www.orekiyuta.cn/archives/pythonDependencySeparation/"/>
+    <id>http://www.orekiyuta.cn/archives/pythonDependencySeparation/</id>
+    <published>2021-01-30T20:53:29.000Z</published>
+    <updated>2021-01-30T21:01:57.204Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取</li><li>因此在开发时，需要把依赖给保存下来，并且指明依赖的版本</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="freeze"><a href="#freeze" class="headerlink" title="freeze"></a>freeze</h3><ul><li><code>pip freeze &gt; requirements.txt</code></li><li>使用这个命令可以导出当前环境的所有依赖</li></ul><h3 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h3><ul><li><code>pip install pipreqs</code></li><li><code>pipreqs ./</code> 切换到项目根目录下执行，导出当前目录所引用的依赖</li><li><code>pipreqs ./ --encoding==utf-8</code></li><li><code>pipreqs ./ --encoding==utf-8 --force</code></li></ul><h2 id="venv"><a href="#venv" class="headerlink" title="venv"></a>venv</h2><ul><li>使用 python 的虚拟环境</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Scene&quot;&gt;&lt;a href=&quot;#Scene&quot; class=&quot;headerlink&quot; title=&quot;Scene&quot;&gt;&lt;/a&gt;Scene&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取&lt;/li&gt;
+&lt;li&gt;因此在开发时，需要把依
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Django Run</title>
@@ -37,9 +63,9 @@
     
     
     
-      <category term="Django" scheme="http://www.orekiyuta.cn/tags/Django/"/>
-    
       <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
+    
+      <category term="Django" scheme="http://www.orekiyuta.cn/tags/Django/"/>
     
   </entry>
   
@@ -262,9 +288,9 @@
     
       <category term="JavaScript" scheme="http://www.orekiyuta.cn/tags/JavaScript/"/>
     
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
       <category term="Flask" scheme="http://www.orekiyuta.cn/tags/Flask/"/>
+    
+      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
       <category term="MySQL" scheme="http://www.orekiyuta.cn/tags/MySQL/"/>
     
@@ -335,9 +361,9 @@
     
     
     
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
       <category term="Flask" scheme="http://www.orekiyuta.cn/tags/Flask/"/>
+    
+      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
   </entry>
   
@@ -365,34 +391,6 @@
 &lt;li&gt;然后项目执行到上面两句插入的位置的时候，就会启动 Shell &lt;/li&gt;
 &lt;li&gt;接着就在 Shell 里调试&lt;br&gt;&lt;img src=&quot;/images/scrapyLearningLog/Snipaste_2020-12-27_22-04-22.png&quot; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
-      <category term="Scrapy" scheme="http://www.orekiyuta.cn/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Step into Scrapy</title>
-    <link href="http://www.orekiyuta.cn/archives/stepIntoScrapy/"/>
-    <id>http://www.orekiyuta.cn/archives/stepIntoScrapy/</id>
-    <published>2020-12-26T11:24:56.000Z</published>
-    <updated>2020-12-27T09:56:15.823Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul><li><code>pip install scrapy</code></li><li><code>scrapy</code> 查看用法</li><li><code>scrapy startproject getTiobe</code> 新建 scrapy 项目</li><li><code>cd getTiobe\spiders</code> 进入该目录</li><li><code>scrapy genspider tiobe www.tiobe.com/tiobe-index</code> 生成该链接的爬虫文件<br><img src="/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png" alt><a id="more"></a><h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2></li><li>获取该元素对应的 css 选择器<br><img src="/images/stepIntoScrapy/Snipaste_2020-12-26_19-36-35.png" alt></li><li>修改 parse 方法</li><li><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> response.css(<span class="string">'#top20 &gt; tbody &gt; tr'</span>):</span><br><span class="line">    <span class="keyword">yield</span> &#123;</span><br><span class="line">        <span class="string">'rank_this-year'</span>: item.css(<span class="string">'td:nth-child(1)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'rank_last-year'</span>: item.css(<span class="string">'td:nth-child(2)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'programming_language'</span>: item.css(<span class="string">'td:nth-child(4)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'ratings'</span>: item.css(<span class="string">'td:nth-child(5)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'change'</span>: item.css(<span class="string">'td:nth-child(6)::text'</span>).get().strip(),</span><br><span class="line">        <span class="string">'date'</span>: time.strftime(<span class="string">'%Y/%m/%d %H:%M:%S'</span>, time.localtime(time.time()))</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div></li></ul><h2 id="实施"><a href="#实施" class="headerlink" title="实施"></a>实施</h2><ul><li><p>在 spiders 目录下的 settings.py 设置导出 json 格式</p><ul><li><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FEED_FORMAT = &quot;json&quot;</span><br><span class="line">FEED_URI = &quot;tiobe.json&quot;</span><br></pre></td></tr></table></figure></div></li></ul></li><li><p><code>scrapy crawl tiobe</code></p></li><li>就可以在项目的目录下找到 tiobe.json 获得的数据了</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>👉 <a href="https://blog.csdn.net/mieleizhi0522/article/details/82142856" target="_blank" rel="noopener">python中yield的用法详解——最简单，最清晰的解释</a></li><li>👉 <a href="https://scrapy.org/" target="_blank" rel="noopener">https://scrapy.org/</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;pip install scrapy&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scrapy&lt;/code&gt; 查看用法&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scrapy startproject getTiobe&lt;/code&gt; 新建 scrapy 项目&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd getTiobe\spiders&lt;/code&gt; 进入该目录&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scrapy genspider tiobe www.tiobe.com/tiobe-index&lt;/code&gt; 生成该链接的爬虫文件&lt;br&gt;&lt;img src=&quot;/images/stepIntoScrapy/Snipaste_2020-12-26_19-34-43.png&quot; alt&gt;
     
     </summary>
     
