@@ -98,10 +98,13 @@
 <meta property="og:site_name" content="Canoe">
 <meta property="og:description" content="Scene 由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取 因此在开发时，需要把依赖给保存下来，并且指明依赖的版本  Solutionfreeze pip freeze &amp;gt; requirements.txt 使用这个命令可以导出当前环境的所有依赖  pipreqs pip install pipreqs pipreqs ./ 切换到项目根目录下执行，导出当前目录所引用的依赖">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-01-30T21:02:10.839Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/pythonDependencySeparation/Snipaste_2021-02-01_00-39-18.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/pythonDependencySeparation/Snipaste_2021-02-01_00-55-30.png">
+<meta property="og:updated_time" content="2021-01-31T17:05:43.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Dependency Separation">
 <meta name="twitter:description" content="Scene 由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取 因此在开发时，需要把依赖给保存下来，并且指明依赖的版本  Solutionfreeze pip freeze &amp;gt; requirements.txt 使用这个命令可以导出当前环境的所有依赖  pipreqs pip install pipreqs pipreqs ./ 切换到项目根目录下执行，导出当前目录所引用的依赖">
+<meta name="twitter:image" content="http://www.orekiyuta.cn/images/pythonDependencySeparation/Snipaste_2021-02-01_00-39-18.png">
 
 
 
@@ -365,7 +368,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  127
+                  462
                 </span>
               
 
@@ -405,7 +408,37 @@
 <li><code>pipreqs ./ --encoding==utf-8 --force</code></li>
 </ul>
 <h3 id="venv"><a href="#venv" class="headerlink" title="venv"></a>venv</h3><ul>
-<li>使用 python 的虚拟环境</li>
+<li>使用 python 的虚拟环境<ul>
+<li><code>python -m venv -h</code></li>
+<li><code>python -m venv venvdemo</code> 创建虚拟环境</li>
+<li>找到虚拟环境的文件夹，进入 Scripts 目录<ul>
+<li><code>activate</code> 激活虚拟环境</li>
+<li><code>activate</code> 退出虚拟环境</li>
+</ul>
+</li>
+<li>所谓的激活虚拟环境，只不过是把当前系统的环境变量指向该虚拟环境</li>
+<li><img src="/images/pythonDependencySeparation/Snipaste_2021-02-01_00-39-18.png" alt></li>
+<li>在环境变量中，一个变量先找到哪个就算哪个<ul>
+<li>如图所示，激活虚拟环境时，把该虚拟环境路径放在最前面，因此当前 python 的 path 就指向这个路径 ; 后面的 path 就不生效</li>
+</ul>
+</li>
+<li>激活虚拟环境后，可执行 <code>pip list</code> 查看当前的依赖库</li>
+<li>在激活虚拟环境后，执行的 <code>pip install</code> 都是装到该虚拟环境的目录里的</li>
+<li>在 IDE 工具中 ,比如 PyCharm 中,直接把项目设置指向虚拟变量路径即可，本质就是改环境变量的 PATH</li>
+</ul>
+</li>
+<li>迁移 虚拟环境<ul>
+<li>在激活虚拟环境下，导出当前环境依赖库</li>
+<li><code>pip freeze &gt; requirements.txt</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li>虚拟环境的使用还是很有必要的，</li>
+<li>因为安装一个依赖的时候，很多时候是会把指定依赖与其相关的其他依赖都安装</li>
+<li>而卸载的时候只卸载了指定的依赖库</li>
+<li><img src="/images/pythonDependencySeparation/Snipaste_2021-02-01_00-55-30.png" alt></li>
+<li>如果不控制一下依赖库，久而久之就很难管理了</li>
 </ul>
 
       
@@ -892,7 +925,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scene"><span class="nav-number">1.</span> <span class="nav-text">Scene</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#freeze"><span class="nav-number">2.1.</span> <span class="nav-text">freeze</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pipreqs"><span class="nav-number">2.2.</span> <span class="nav-text">pipreqs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#venv"><span class="nav-number">2.3.</span> <span class="nav-text">venv</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scene"><span class="nav-number">1.</span> <span class="nav-text">Scene</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#freeze"><span class="nav-number">2.1.</span> <span class="nav-text">freeze</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pipreqs"><span class="nav-number">2.2.</span> <span class="nav-text">pipreqs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#venv"><span class="nav-number">2.3.</span> <span class="nav-text">venv</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">3.</span> <span class="nav-text">Other</span></a></li></ol></div>
             
 
           </div>
@@ -926,7 +959,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">83.2k</span>
+    <span title="Site words total count">83.6k</span>
   
 </div>
 
