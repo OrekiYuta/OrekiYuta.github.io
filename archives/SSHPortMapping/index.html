@@ -82,6 +82,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/rss.xml" title="Canoe" type="application/atom+xml">
 
@@ -90,18 +92,18 @@
 
 
 
-<meta name="description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
+<meta name="description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 云服务器的请求转发到 局域网内部设备里       不同子网之间的访问 内网穿透原理应该也是差不多">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH Port Mapping">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/SSHPortMapping/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
+<meta property="og:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 云服务器的请求转发到 局域网内部设备里       不同子网之间的访问 内网穿透原理应该也是差不多">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-02-03T17:34:56.784Z">
+<meta property="og:updated_time" content="2021-02-03T17:37:10.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH Port Mapping">
-<meta name="twitter:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
+<meta name="twitter:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射       我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 云服务器的请求转发到 局域网内部设备里       不同子网之间的访问 内网穿透原理应该也是差不多">
 
 
 
@@ -365,7 +367,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  719
+                  742
                 </span>
               
 
@@ -403,7 +405,15 @@
 <ol start="2">
 <li><ul>
 <li>我们想从公网去访问局域网内部的服务</li>
-<li>也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里</li>
+<li>也可以利用 SSH 端口映射 把 云服务器的请求转发到 局域网内部设备里</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="3">
+<li><ul>
+<li>不同子网之间的访问</li>
+<li>内网穿透原理应该也是差不多</li>
 </ul>
 </li>
 </ol>
