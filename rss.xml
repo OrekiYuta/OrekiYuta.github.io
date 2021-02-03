@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-02-02T17:12:16.971Z</updated>
+  <updated>2021-02-03T17:30:32.943Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSH Port Mapping</title>
+    <link href="http://www.orekiyuta.cn/archives/SSHPortMapping/"/>
+    <id>http://www.orekiyuta.cn/archives/SSHPortMapping/</id>
+    <published>2021-02-03T16:28:34.000Z</published>
+    <updated>2021-02-03T17:30:32.943Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ol><li><ul><li>正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口</li><li>然后去云服务器商设置开放端口，最后才能访问</li><li>但是，我们只是想随手用一下而已，又懒得去开放端口</li><li>这种时候可以用 SSH 端口映射</li></ul></li><li><ul><li>我们想从公网去访问局域网内部的服务</li><li>也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里<a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="本地端口转发-从本地访问公网内部子网服务"><a href="#本地端口转发-从本地访问公网内部子网服务" class="headerlink" title="本地端口转发-从本地访问公网内部子网服务"></a>本地端口转发-从本地访问公网内部子网服务</h3></li></ul></li></ol><ul><li>这里的操作视角为 本机 -&gt; 云服务器</li><li>这里的用户视角为 本机或处于同一网络下的机器 -&gt; 云服务器</li><li><code>ssh root@ip</code> 正常登录服务器 </li><li><code>ssh -L 2222:localhost:8080 root@ip</code> 这里就相当于把本机的 2222 端口 转发到 云服务器的 8080 端口<ul><li><code>ssh -L 本机地址:云服务器内网地址 root@ip</code></li><li>2222 其实是 localhost:2222 本机</li><li>而 localhost:8080 指的是 服务器内网中该服务器的地址</li><li>这个转发会在退出服务器登录时失效</li></ul></li><li><code>ssh -L 192.168.1.200:2222:localhost:8080 root@ip</code> </li><li>最后，就可以使得与本机处于同一网段的机器一起使用该地址转发到 云服务器的 8080 端口</li></ul><h3 id="远程端口转发-从公网访问与本机不在同一网段的服务"><a href="#远程端口转发-从公网访问与本机不在同一网段的服务" class="headerlink" title="远程端口转发-从公网访问与本机不在同一网段的服务"></a>远程端口转发-从公网访问与本机不在同一网段的服务</h3><ul><li>这里的操作视角为 远端子网机器 -&gt; 云服务器</li><li>这里的用户视角为 用户机器 -&gt; 云服务器 -&gt; 远端子网机器</li><li><p><code>ssh -R 3333:10.10.10.254:7777 root@ip</code> 这里意思就是将云服务器的端口 转发到 远端子网机器的 3333 端口 </p><ul><li><code>ssh -R 云服务器内网地址:远端子网机器地址 root@ip</code></li><li>3333 就是 云服务器的 localhost:3000</li><li>10.10.10.254:7777 为远端子网机器的地址</li><li>执行该命令后可用 <code>netstat -anp | grep 3333</code> 查看是否启用了监听该端口的服务</li></ul></li><li><p>当然这样还不行，问题在于安全问题，不能随意把远程端口开放了</p><ul><li>SSH 默认把该操作关闭了</li></ul></li><li>修改配置，开放该操作</li><li><code>vim /etc/ssh/sshd_config</code><pre><code class="diff"><span class="deletion">-#GatewayPorts no</span><span class="addition">+GatewayPorts yes</span></code></pre></li><li><code>systemctl restart sshd</code>  </li><li><code>ssh -R 0.0.0.0:3333:10.10.10.254:7777 root@ip</code> </li><li><code>netstat -anp | grep 3333</code> 再次查看</li><li>当然同时还要在云服务器商设置里把 3333 端口开放</li><li>最后，就可以通过 云服务器公网 ip + 端口 访问到 远程子网的机器里的端口服务了</li></ul><h3 id="访问不同网络下的设备-两者结合"><a href="#访问不同网络下的设备-两者结合" class="headerlink" title="访问不同网络下的设备-两者结合"></a>访问不同网络下的设备-两者结合</h3><ul><li>在前面两个的基础上，远程机器设置转发，本地机器也设置转发</li><li>就可以达到，利用处于公网的云服务器作为中介去访问不同网络下的机器</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Scene&quot;&gt;&lt;a href=&quot;#Scene&quot; class=&quot;headerlink&quot; title=&quot;Scene&quot;&gt;&lt;/a&gt;Scene&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口&lt;/li&gt;
+&lt;li&gt;然后去云服务器商设置开放端口，最后才能访问&lt;/li&gt;
+&lt;li&gt;但是，我们只是想随手用一下而已，又懒得去开放端口&lt;/li&gt;
+&lt;li&gt;这种时候可以用 SSH 端口映射&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;我们想从公网去访问局域网内部的服务&lt;/li&gt;
+&lt;li&gt;也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://www.orekiyuta.cn/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Bitwarden On Docker</title>
@@ -371,34 +402,6 @@
     
     
       <category term="Jupyter" scheme="http://www.orekiyuta.cn/tags/Jupyter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flask Run</title>
-    <link href="http://www.orekiyuta.cn/archives/flaskRun/"/>
-    <id>http://www.orekiyuta.cn/archives/flaskRun/</id>
-    <published>2020-12-28T14:08:59.000Z</published>
-    <updated>2021-01-08T13:54:49.935Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Quickstart"><a href="#Quickstart" class="headerlink" title="Quickstart"></a>Quickstart</h2><ul><li><p>On PowerShell</p>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir flk</span><br><span class="line">cd flk</span><br><span class="line">py -m venv venv</span><br><span class="line">pip install flask</span><br><span class="line">mk hello.py</span><br><span class="line">New-Item hello.py -type file</span><br></pre></td></tr></table></figure></div></li><li><p>在 hello.py 写入 </p>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line"><span class="keyword">return</span> <span class="string">'Hello, World!'</span></span><br></pre></td></tr></table></figure></div></li><li><p>run</p>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$env:FLASK_APP = <span class="string">"hello.py"</span></span><br><span class="line">flask run</span><br></pre></td></tr></table></figure></div></li><li><p>get / post</p>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, World!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/name')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elias</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, elias!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/login', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"A"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"B"</span></span><br></pre></td></tr></table></figure></div></li></ul><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li>👉<a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Quickstart&quot;&gt;&lt;a href=&quot;#Quickstart&quot; class=&quot;headerlink&quot; title=&quot;Quickstart&quot;&gt;&lt;/a&gt;Quickstart&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;On PowerShell&lt;/p&gt;
-  &lt;div clas
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Flask" scheme="http://www.orekiyuta.cn/tags/Flask/"/>
-    
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
   </entry>
   

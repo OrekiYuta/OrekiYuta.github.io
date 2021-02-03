@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -90,13 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Canoe">
-<meta property="og:url" content="http://www.orekiyuta.cn/archives/page/5/index.html">
+<meta name="description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射    我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH Port Mapping">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/SSHPortMapping/index.html">
 <meta property="og:site_name" content="Canoe">
+<meta property="og:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射    我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-02-03T17:30:32.943Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canoe">
+<meta name="twitter:title" content="SSH Port Mapping">
+<meta name="twitter:description" content="Scene  正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口 然后去云服务器商设置开放端口，最后才能访问 但是，我们只是想随手用一下而已，又懒得去开放端口 这种时候可以用 SSH 端口映射    我们想从公网去访问局域网内部的服务 也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/archives/page/5/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/SSHPortMapping/">
 
 
 
@@ -134,7 +139,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>Archive | Canoe</title>
+  <title>SSH Port Mapping | Canoe</title>
   
 
 
@@ -154,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/OrekiYuta" class="github-corner" aria-label="View source on GitHub" style><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,318 +288,253 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-        A white bird drifting alone , blending neither into the blue of the sky nor the blue of the sea.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/SSHPortMapping/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">SSH Port Mapping</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-04T00:28:34+08:00">
+                2021-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/Hexo-Install-Migrate/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Hexo-Install+Migrate</span>
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  719
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-19T19:20:12+08:00" content="2019-09-19">
-          09-19
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/Git-flow/" itemprop="url">
-              
-                <span itemprop="name">Git flow</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-28T01:29:36+08:00" content="2019-06-28">
-          06-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/CentOS-SVNConfigure/" itemprop="url">
-              
-                <span itemprop="name">CentOS:SVN Configure</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-11T19:36:49+08:00" content="2019-06-11">
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ol>
+<li><ul>
+<li>正常来说在服务器部署了一个服务，要访问该服务得用该云服务器 ip + 端口</li>
+<li>然后去云服务器商设置开放端口，最后才能访问</li>
+<li>但是，我们只是想随手用一下而已，又懒得去开放端口</li>
+<li>这种时候可以用 SSH 端口映射</li>
+</ul>
+</li>
+<li><ul>
+<li>我们想从公网去访问局域网内部的服务</li>
+<li>也可以利用 SSH 端口映射 把 服务器的请求转发到 局域网内部设备里<a id="more"></a>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="本地端口转发-从本地访问公网内部子网服务"><a href="#本地端口转发-从本地访问公网内部子网服务" class="headerlink" title="本地端口转发-从本地访问公网内部子网服务"></a>本地端口转发-从本地访问公网内部子网服务</h3></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>这里的操作视角为 本机 -&gt; 云服务器</li>
+<li>这里的用户视角为 本机或处于同一网络下的机器 -&gt; 云服务器</li>
+<li><code>ssh root@ip</code> 正常登录服务器 </li>
+<li><code>ssh -L 2222:localhost:8080 root@ip</code> 这里就相当于把本机的 2222 端口 转发到 云服务器的 8080 端口<ul>
+<li><code>ssh -L 本机地址:云服务器内网地址 root@ip</code></li>
+<li>2222 其实是 localhost:2222 本机</li>
+<li>而 localhost:8080 指的是 服务器内网中该服务器的地址</li>
+<li>这个转发会在退出服务器登录时失效</li>
+</ul>
+</li>
+<li><code>ssh -L 192.168.1.200:2222:localhost:8080 root@ip</code> </li>
+<li>最后，就可以使得与本机处于同一网段的机器一起使用该地址转发到 云服务器的 8080 端口</li>
+</ul>
+<h3 id="远程端口转发-从公网访问与本机不在同一网段的服务"><a href="#远程端口转发-从公网访问与本机不在同一网段的服务" class="headerlink" title="远程端口转发-从公网访问与本机不在同一网段的服务"></a>远程端口转发-从公网访问与本机不在同一网段的服务</h3><ul>
+<li>这里的操作视角为 远端子网机器 -&gt; 云服务器</li>
+<li>这里的用户视角为 用户机器 -&gt; 云服务器 -&gt; 远端子网机器</li>
+<li><p><code>ssh -R 3333:10.10.10.254:7777 root@ip</code> 这里意思就是将云服务器的端口 转发到 远端子网机器的 3333 端口 </p>
+<ul>
+<li><code>ssh -R 云服务器内网地址:远端子网机器地址 root@ip</code></li>
+<li>3333 就是 云服务器的 localhost:3000</li>
+<li>10.10.10.254:7777 为远端子网机器的地址</li>
+<li>执行该命令后可用 <code>netstat -anp | grep 3333</code> 查看是否启用了监听该端口的服务</li>
+</ul>
+</li>
+<li><p>当然这样还不行，问题在于安全问题，不能随意把远程端口开放了</p>
+<ul>
+<li>SSH 默认把该操作关闭了</li>
+</ul>
+</li>
+<li>修改配置，开放该操作</li>
+<li><code>vim /etc/ssh/sshd_config</code><pre><code class="diff"><span class="deletion">-#GatewayPorts no</span>
+<span class="addition">+GatewayPorts yes</span>
+</code></pre>
+</li>
+<li><code>systemctl restart sshd</code>  </li>
+<li><code>ssh -R 0.0.0.0:3333:10.10.10.254:7777 root@ip</code> </li>
+<li><code>netstat -anp | grep 3333</code> 再次查看</li>
+<li>当然同时还要在云服务器商设置里把 3333 端口开放</li>
+<li>最后，就可以通过 云服务器公网 ip + 端口 访问到 远程子网的机器里的端口服务了</li>
+</ul>
+<h3 id="访问不同网络下的设备-两者结合"><a href="#访问不同网络下的设备-两者结合" class="headerlink" title="访问不同网络下的设备-两者结合"></a>访问不同网络下的设备-两者结合</h3><ul>
+<li>在前面两个的基础上，远程机器设置转发，本地机器也设置转发</li>
+<li>就可以达到，利用处于公网的云服务器作为中介去访问不同网络下的机器</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/Java-ArtificialSimulation/" itemprop="url">
-              
-                <span itemprop="name">Java-ArtificialSimulation</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-10T09:50:57+08:00" content="2019-06-10">
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/CrackRefrain/" itemprop="url">
-              
-                <span itemprop="name">CrackRefrain</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-28T11:15:44+08:00" content="2019-05-28">
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/FieldworkDaily/" itemprop="url">
-              
-                <span itemprop="name">FieldworkDaily</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-27T10:35:50+08:00" content="2019-05-27">
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/AzureLaneCrack/" itemprop="url">
-              
-                <span itemprop="name">AzureLaneCrack</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-13T00:40:33+08:00" content="2019-05-13">
-          05-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/jnote/" itemprop="url">
-              
-                <span itemprop="name">インデックス</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-01T22:03:23+08:00" content="2019-05-01">
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-      - Flying on the white wings with you to the tropical island between the two blue worlds.
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Orekiyuta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.orekiyuta.cn/archives/SSHPortMapping/" title="SSH Port Mapping">http://www.orekiyuta.cn/archives/SSHPortMapping/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: black;font-size:15px;margin-top:30px">< - Thanks for reading - ></div>
+    
+</div>
+      
+     </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/bitwardenOnDocker/" rel="next" title="Bitwarden On Docker">
+                <i class="fa fa-chevron-left"></i> Bitwarden On Docker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -602,6 +542,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -892,8 +836,17 @@ if(canvas.getContext){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -972,6 +925,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scene"><span class="nav-number">1.</span> <span class="nav-text">Scene</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地端口转发-从本地访问公网内部子网服务"><span class="nav-number">2.1.</span> <span class="nav-text">本地端口转发-从本地访问公网内部子网服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程端口转发-从公网访问与本机不在同一网段的服务"><span class="nav-number">2.2.</span> <span class="nav-text">远程端口转发-从公网访问与本机不在同一网段的服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问不同网络下的设备-两者结合"><span class="nav-number">2.3.</span> <span class="nav-text">访问不同网络下的设备-两者结合</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1141,6 +1110,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
