@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>The rain turned fine</title>
+      <link href="/archives/TheRainTurnedFine/"/>
+      <url>/archives/TheRainTurnedFine/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>遠くには川 かすむ橋渡る電車揺れてもここは靜か</p></li><li><p>屆かないこと分かったときには あなたのあの言葉</p></li></ul><blockquote><p>人たちはこの空飛ぶことは葉わないけど その代わり</p></blockquote><blockquote><p>いま流す涙は天に升りまた 雨となり還る</p></blockquote><ul><li><p>西風が吹く雲が流れて 木陰にツグミの顔が覗く</p></li><li><p>立ち止まる ほら 淡い影ひとつわたしの傍 のびる</p></li><li><p>そしてここに光が差す</p></li></ul><ul><li><p>飛び立つ鳥たち 追いかけ虹が架かる</p></li><li><p>少女が走ればその先 待つ人がいる</p></li><li><p>両手を伸ばすと最後のしずく落ちる</p></li><li><p>こぼれた涙は乾き 微笑みが戻る</p></li><li><p>桥の向こうから 茜に空が染まる</p></li><li><p>明日は広げた傘に陽の匂い集め</p></li><li><p>誰かが流した涙を空に帰す</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Mood </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSH Port Mapping</title>
       <link href="/archives/SSHPortMapping/"/>
       <url>/archives/SSHPortMapping/</url>
@@ -73,9 +92,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -180,9 +199,9 @@
             
             <tag> JavaScript </tag>
             
-            <tag> Python </tag>
-            
             <tag> Flask </tag>
+            
+            <tag> Python </tag>
             
             <tag> MySQL </tag>
             
@@ -240,9 +259,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Flask </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -375,13 +394,19 @@
     
     
     <entry>
-      <title>One Line</title>
+      <title>We must go</title>
       <link href="/archives/OneLine/"/>
       <url>/archives/OneLine/</url>
       
         <content type="html"><![CDATA[<ul><li>We’ve always fooled around together since we were kids.<ul><li>We’ve shared the most exciting moments, but every story has an end.</li><li>No one can stay a kid forever.</li><li>Time moves on, and people grow up.</li><li>We must go our separate ways.</li><li>You keep going even after Im gone.</li></ul></li></ul>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Mood </tag>
+            
+        </tags>
       
     </entry>
     

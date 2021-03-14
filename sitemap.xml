@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/OneLine/</loc>
+    
+    <lastmod>2021-03-14T10:07:07.609Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/TheRainTurnedFine/</loc>
+    
+    <lastmod>2021-03-14T10:07:00.454Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/WindowsSetting/</loc>
     
     <lastmod>2021-02-09T17:13:26.302Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>http://www.orekiyuta.cn/archives/JSgetter-setter/</loc>
     
     <lastmod>2020-12-05T18:18:53.260Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/OneLine/</loc>
-    
-    <lastmod>2020-12-02T16:31:20.118Z</lastmod>
     
   </url>
   
