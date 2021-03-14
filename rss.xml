@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-03-14T10:07:00.454Z</updated>
+  <updated>2021-03-14T10:14:18.185Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.orekiyuta.cn/archives/TheRainTurnedFine/"/>
     <id>http://www.orekiyuta.cn/archives/TheRainTurnedFine/</id>
     <published>2021-03-14T09:54:27.000Z</published>
-    <updated>2021-03-14T10:07:00.454Z</updated>
+    <updated>2021-03-14T10:14:18.185Z</updated>
     
     <content type="html"><![CDATA[<ul><li><p>遠くには川 かすむ橋渡る電車揺れてもここは靜か</p></li><li><p>屆かないこと分かったときには あなたのあの言葉</p></li></ul><blockquote><p>人たちはこの空飛ぶことは葉わないけど その代わり</p></blockquote><blockquote><p>いま流す涙は天に升りまた 雨となり還る</p></blockquote><ul><li><p>西風が吹く雲が流れて 木陰にツグミの顔が覗く</p></li><li><p>立ち止まる ほら 淡い影ひとつわたしの傍 のびる</p></li><li><p>そしてここに光が差す</p></li></ul><ul><li><p>飛び立つ鳥たち 追いかけ虹が架かる</p></li><li><p>少女が走ればその先 待つ人がいる</p></li><li><p>両手を伸ばすと最後のしずく落ちる</p></li><li><p>こぼれた涙は乾き 微笑みが戻る</p></li><li><p>桥の向こうから 茜に空が染まる</p></li><li><p>明日は広げた傘に陽の匂い集め</p></li><li><p>誰かが流した涙を空に帰す</p></li></ul>]]></content>
     
@@ -175,9 +175,9 @@
     
     
     
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
       <category term="Django" scheme="http://www.orekiyuta.cn/tags/Django/"/>
+    
+      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
   </entry>
   
@@ -400,9 +400,9 @@
     
       <category term="JavaScript" scheme="http://www.orekiyuta.cn/tags/JavaScript/"/>
     
-      <category term="Flask" scheme="http://www.orekiyuta.cn/tags/Flask/"/>
-    
       <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
+    
+      <category term="Flask" scheme="http://www.orekiyuta.cn/tags/Flask/"/>
     
       <category term="MySQL" scheme="http://www.orekiyuta.cn/tags/MySQL/"/>
     
