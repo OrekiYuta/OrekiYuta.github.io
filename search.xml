@@ -218,10 +218,6 @@
             
             <tag> JavaScript </tag>
             
-            <tag> RaspberryPi </tag>
-            
-            <tag> Nginx </tag>
-            
             <tag> Python </tag>
             
             <tag> Flask </tag>
@@ -229,6 +225,10 @@
             <tag> MySQL </tag>
             
             <tag> Mariadb </tag>
+            
+            <tag> RaspberryPi </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> Chromium </tag>
             
