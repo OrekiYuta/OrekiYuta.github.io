@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>try Flutter</title>
+      <link href="/archives/tryFlutter/"/>
+      <url>/archives/tryFlutter/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Get-started"><a href="#Get-started" class="headerlink" title="Get started"></a>Get started</h2><ul><li>get SDK 👉<a href="https://flutter.dev/docs/development/tools/sdk/releases" target="_blank" rel="noopener">Flutter SDK releases</a></li><li>update system path</li><li><img src="/images/tryflutter/Snipaste_2021-04-09_20-44-44.png" alt></li><li>update user path</li><li><img src="/images/tryflutter/Snipaste_2021-04-09_20-45-40.png" alt></li><li><img src="/images/tryflutter/Snipaste_2021-04-09_20-46-04.png" alt></li><li><code>flutter doctor</code></li><li><img src="/images/tryflutter/Snipaste_2021-04-09_20-50-12.png" alt></li><li>👉<a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">Android Studio</a></li></ul><p>## </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Acer Bios Reset PW</title>
       <link href="/archives/acerBiosResetPW/"/>
       <url>/archives/acerBiosResetPW/</url>
       
-        <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>Acer 主板进入 bios 需要密码，但是又不知道密码<a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2></li><li><img src="/images/acerBiosResetPW/01.jpg" alt><ul><li>先输入三次任意密码，然后出现下面的选项</li></ul></li><li><img src="/images/acerBiosResetPW/02.jpg" alt><ul><li>进入第一个选项</li></ul></li><li>然后看到 Enter Unlock Password(key:xxxxx)</li><li>进入 <a href="https://bios-pw.org/" target="_blank" rel="noopener">https://bios-pw.org/</a> <ul><li>输入上面的 key</li></ul></li><li><img src="/images/acerBiosResetPW/04.png" alt><ul><li>取得对应的 code 并输入</li></ul></li></ul><h3 id="取消-bios-密码"><a href="#取消-bios-密码" class="headerlink" title="取消 bios 密码"></a>取消 bios 密码</h3><ul><li><img src="/images/acerBiosResetPW/03.jpg" alt></li><li>第一行输入刚才取得的 code , 其余两行直接回车</li><li>保存设置即可</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>Acer 主板进入 bios 需要密码，但是又不知道密码<a id="more"></a></li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li><img src="/images/acerBiosResetPW/01.jpg" alt></li><li>先输入三次任意密码，然后出现下面的选项</li><li><img src="/images/acerBiosResetPW/02.jpg" alt></li><li>进入第一个选项</li><li>然后看到 Enter Unlock Password(key:xxxxx)</li><li>进入 <a href="https://bios-pw.org/" target="_blank" rel="noopener">https://bios-pw.org/</a> </li><li>输入上面的 key</li><li><img src="/images/acerBiosResetPW/04.png" alt></li><li>取得对应的 code 并输入</li></ul><h3 id="取消-bios-密码"><a href="#取消-bios-密码" class="headerlink" title="取消 bios 密码"></a>取消 bios 密码</h3><ul><li><img src="/images/acerBiosResetPW/03.jpg" alt></li><li>第一行输入刚才取得的 code , 其余两行直接回车</li><li>保存设置即可</li></ul>]]></content>
       
       
       
