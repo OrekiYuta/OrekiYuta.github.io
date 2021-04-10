@@ -304,6 +304,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/virtualDiskMapping/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/virtualDiskMapping/" itemprop="url">Virtual Disk Mapping</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-04-10T17:38:55+08:00">
+                2021-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  265
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Create-Vritual-Disk-Mapping"><a href="#Create-Vritual-Disk-Mapping" class="headerlink" title="Create Vritual Disk Mapping"></a>Create Vritual Disk Mapping</h2><ul>
+<li>将物理盘符中的目录映射到虚拟盘符，能够在一定的场景发挥作用<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">::在物理盘符下创建文件夹</span><br><span class="line">::如果存在虚拟盘符就执行删除盘符映射关系</span><br><span class="line">::创建虚拟盘符并映射到物理盘符的文件夹</span><br><span class="line">::打开虚拟盘符</span><br><span class="line"></span><br><span class="line">::H 物理盘符名</span><br><span class="line"><span class="built_in">md</span> H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;&gt;<span class="built_in">NUL</span></span><br><span class="line">::M 虚拟盘符名</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> M:\<span class="built_in">NUL</span> <span class="keyword">goto</span> delete</span><br><span class="line">::映射虚拟盘符 M 到 物理盘符 H 下的 RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125; 目录</span><br><span class="line"><span class="built_in">subst</span> M: H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;</span><br><span class="line"><span class="built_in">start</span> M:\</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line">:delete</span><br><span class="line"><span class="built_in">subst</span> /D M:</span><br><span class="line">:end</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> inputTimes=<span class="number">3</span></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> Notice:Three opportunities.</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"></span><br><span class="line">:<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> /p password=Input password：</span><br><span class="line"><span class="keyword">if</span> \"<span class="variable">%password%</span>\"==\"IamPassword\" <span class="keyword">goto</span> o</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> /a inputTimes-=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> \"<span class="variable">%inputTimes%</span>\"==\"<span class="number">0</span>\" <span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">echo</span> =&lt;Passenger no entry&gt;<span class="variable">!!!</span>=&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">pause</span>&amp;<span class="built_in">echo</span>.&amp;<span class="keyword">exit</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">echo</span> There are <span class="variable">%inputTimes%</span> opportunities left&amp;<span class="built_in">echo</span>.&amp;<span class="keyword">goto</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">:o</span><br><span class="line"><span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span>= Welcome<span class="variable">!!!</span> =</span><br><span class="line"><span class="built_in">md</span> H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;&gt;<span class="built_in">NUL</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> M:\<span class="built_in">NUL</span> <span class="keyword">goto</span> delete</span><br><span class="line"><span class="built_in">subst</span> M: H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;</span><br><span class="line"><span class="built_in">start</span> M:\</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line">:delete</span><br><span class="line"><span class="built_in">subst</span> /D M:</span><br><span class="line">:end</span><br></pre></td></tr></table></figure></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+     <div>
+      
+     </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/tryFlutter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1804,163 +1950,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/mysqlSyncToMariadb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Orekiyuta">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Canoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/mysqlSyncToMariadb/" itemprop="url">MySQL Sync to Mariadb</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-20T20:43:04+08:00">
-                2021-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  144
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Unkown-collation-’utf8mb4-0900-ai-ci’"><a href="#Unkown-collation-’utf8mb4-0900-ai-ci’" class="headerlink" title="Unkown collation:’utf8mb4_0900_ai_ci’"></a>Unkown collation:’utf8mb4_0900_ai_ci’</h2><ul>
-<li>把 MySQL 数据同步到 Mariadb 出现排序规则不一致</li>
-<li>MySQL 数据库默认字符集和排序规则<br><img src="/images/mysqlSyncToMariadb/Snipaste_2021-01-20_21-07-07.png" alt></li>
-<li>MySQL 转储的 SQL 文件默认<code>DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</code></li>
-<li>Mariadb 数据库默认字符集和排序规则<br><img src="/images/mysqlSyncToMariadb/Snipaste_2021-01-20_20-47-17.png" alt></li>
-<li>Mariadb 转储的 SQL 文件默认<code>DEFAULT CHARSET=utf8mb4;</code></li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
-<li>在 Mariadb 中排序规则没有 utf8mb4_0900_ai_ci </li>
-<li>解决方法是 ：转储 MySQL 数据，然后把 SQL 文件里的 <code>COLLATE=utf8mb4_0900_ai_ci</code>全部替换成 <code>COLLATE=utf8mb4_general_ci</code> 即可<ul>
-<li>或者是把 SQL 文件里的 <code>COLLATE=utf8mb4_0900_ai_ci</code> 去掉</li>
-</ul>
-</li>
-<li>总的来说就是把设置配成一致就可以了</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-     <div>
-      
-     </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2286,7 +2275,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2373,7 +2362,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">84.8k</span>
+    <span title="Site words total count">85k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-04-09T17:27:46.697Z</updated>
+  <updated>2021-04-10T09:48:23.119Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Virtual Disk Mapping</title>
+    <link href="http://www.orekiyuta.cn/archives/virtualDiskMapping/"/>
+    <id>http://www.orekiyuta.cn/archives/virtualDiskMapping/</id>
+    <published>2021-04-10T09:38:55.000Z</published>
+    <updated>2021-04-10T09:48:23.119Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Create-Vritual-Disk-Mapping"><a href="#Create-Vritual-Disk-Mapping" class="headerlink" title="Create Vritual Disk Mapping"></a>Create Vritual Disk Mapping</h2><ul><li>将物理盘符中的目录映射到虚拟盘符，能够在一定的场景发挥作用<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">::在物理盘符下创建文件夹</span><br><span class="line">::如果存在虚拟盘符就执行删除盘符映射关系</span><br><span class="line">::创建虚拟盘符并映射到物理盘符的文件夹</span><br><span class="line">::打开虚拟盘符</span><br><span class="line"></span><br><span class="line">::H 物理盘符名</span><br><span class="line"><span class="built_in">md</span> H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;&gt;<span class="built_in">NUL</span></span><br><span class="line">::M 虚拟盘符名</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> M:\<span class="built_in">NUL</span> <span class="keyword">goto</span> delete</span><br><span class="line">::映射虚拟盘符 M 到 物理盘符 H 下的 RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125; 目录</span><br><span class="line"><span class="built_in">subst</span> M: H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;</span><br><span class="line"><span class="built_in">start</span> M:\</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line">:delete</span><br><span class="line"><span class="built_in">subst</span> /D M:</span><br><span class="line">:end</span><br></pre></td></tr></table></figure></div></li></ul><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">set</span> inputTimes=<span class="number">3</span></span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> Notice:Three opportunities.</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"></span><br><span class="line">:<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> /p password=Input password：</span><br><span class="line"><span class="keyword">if</span> \"<span class="variable">%password%</span>\"==\"IamPassword\" <span class="keyword">goto</span> o</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> /a inputTimes-=<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> \"<span class="variable">%inputTimes%</span>\"==\"<span class="number">0</span>\" <span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">echo</span> =&lt;Passenger no entry&gt;<span class="variable">!!!</span>=&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">pause</span>&amp;<span class="built_in">echo</span>.&amp;<span class="keyword">exit</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.&amp;<span class="built_in">echo</span> There are <span class="variable">%inputTimes%</span> opportunities left&amp;<span class="built_in">echo</span>.&amp;<span class="keyword">goto</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">:o</span><br><span class="line"><span class="built_in">cls</span>&amp;<span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span>= Welcome<span class="variable">!!!</span> =</span><br><span class="line"><span class="built_in">md</span> H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;&gt;<span class="built_in">NUL</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> M:\<span class="built_in">NUL</span> <span class="keyword">goto</span> delete</span><br><span class="line"><span class="built_in">subst</span> M: H:\RECYCLED\UDrives.&#123;<span class="number">25336920</span>-<span class="number">03</span>F9-<span class="number">11</span>CF-<span class="number">8</span>FD0-<span class="number">00</span>AA00686F13&#125;</span><br><span class="line"><span class="built_in">start</span> M:\</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line">:delete</span><br><span class="line"><span class="built_in">subst</span> /D M:</span><br><span class="line">:end</span><br></pre></td></tr></table></figure></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Create-Vritual-Disk-Mapping&quot;&gt;&lt;a href=&quot;#Create-Vritual-Disk-Mapping&quot; class=&quot;headerlink&quot; title=&quot;Create Vritual Disk Mapping&quot;&gt;&lt;/a&gt;Creat
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Batch" scheme="http://www.orekiyuta.cn/tags/Batch/"/>
+    
+  </entry>
   
   <entry>
     <title>try Flutter</title>
@@ -222,9 +246,9 @@
     
     
     
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
       <category term="Django" scheme="http://www.orekiyuta.cn/tags/Django/"/>
+    
+      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
   </entry>
   
@@ -363,32 +387,6 @@
     
     
       <category term="MySQL" scheme="http://www.orekiyuta.cn/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL Sync to Mariadb</title>
-    <link href="http://www.orekiyuta.cn/archives/mysqlSyncToMariadb/"/>
-    <id>http://www.orekiyuta.cn/archives/mysqlSyncToMariadb/</id>
-    <published>2021-01-20T12:43:04.000Z</published>
-    <updated>2021-01-20T13:08:24.882Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Unkown-collation-’utf8mb4-0900-ai-ci’"><a href="#Unkown-collation-’utf8mb4-0900-ai-ci’" class="headerlink" title="Unkown collation:’utf8mb4_0900_ai_ci’"></a>Unkown collation:’utf8mb4_0900_ai_ci’</h2><ul><li>把 MySQL 数据同步到 Mariadb 出现排序规则不一致</li><li>MySQL 数据库默认字符集和排序规则<br><img src="/images/mysqlSyncToMariadb/Snipaste_2021-01-20_21-07-07.png" alt></li><li>MySQL 转储的 SQL 文件默认<code>DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci</code></li><li>Mariadb 数据库默认字符集和排序规则<br><img src="/images/mysqlSyncToMariadb/Snipaste_2021-01-20_20-47-17.png" alt></li><li>Mariadb 转储的 SQL 文件默认<code>DEFAULT CHARSET=utf8mb4;</code></li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li>在 Mariadb 中排序规则没有 utf8mb4_0900_ai_ci </li><li>解决方法是 ：转储 MySQL 数据，然后把 SQL 文件里的 <code>COLLATE=utf8mb4_0900_ai_ci</code>全部替换成 <code>COLLATE=utf8mb4_general_ci</code> 即可<ul><li>或者是把 SQL 文件里的 <code>COLLATE=utf8mb4_0900_ai_ci</code> 去掉</li></ul></li><li>总的来说就是把设置配成一致就可以了</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Unkown-collation-’utf8mb4-0900-ai-ci’&quot;&gt;&lt;a href=&quot;#Unkown-collation-’utf8mb4-0900-ai-ci’&quot; class=&quot;headerlink&quot; title=&quot;Unkown collation:’
-      
-    
-    </summary>
-    
-    
-    
-      <category term="MySQL" scheme="http://www.orekiyuta.cn/tags/MySQL/"/>
-    
-      <category term="Mariadb" scheme="http://www.orekiyuta.cn/tags/Mariadb/"/>
     
   </entry>
   
