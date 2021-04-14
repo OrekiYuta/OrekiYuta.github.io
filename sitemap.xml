@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/pythonGetFunctionFromString/</loc>
+    
+    <lastmod>2021-04-14T14:11:11.348Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/tryFlutter/</loc>
     
     <lastmod>2021-04-10T15:46:00.857Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://www.orekiyuta.cn/archives/djangoRun/</loc>
     
     <lastmod>2021-01-28T16:58:16.926Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/pythonGetFunctionFromString/</loc>
-    
-    <lastmod>2021-01-24T18:17:18.948Z</lastmod>
     
   </url>
   
