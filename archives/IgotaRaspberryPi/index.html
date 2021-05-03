@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2020-12-25_15-28-39.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-06_20-58-26.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/IgotaRaspberryPi/Snipaste_2021-01-19_22-13-01.png">
-<meta property="og:updated_time" content="2021-01-19T14:32:18.893Z">
+<meta property="og:updated_time" content="2021-05-03T14:18:50.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I got a Raspberry Pi">
 <meta name="twitter:description" content="通过网络分享连接树莓派 确保一台能上网的主机 把已经连接的网络通过想要共享的形式共享出去  开启共享前后的本机 ipv4">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  1.8k
                 </span>
               
 
@@ -484,7 +484,13 @@
 - 修改完毕，ctrl+x ， y 保存 
 - `sudo reboot` 重启树莓派，再次 ifconfig 查看 ip -->
 <h2 id="设置-mariadb-远程连接"><a href="#设置-mariadb-远程连接" class="headerlink" title="设置 mariadb 远程连接"></a>设置 mariadb 远程连接</h2><p>👉 <a href="https://www.jianshu.com/p/f440099f056d" target="_blank" rel="noopener">树莓派4 官方系统 安装mysql</a><br>👉 <a href="https://blog.csdn.net/Co_zy/article/details/73923962" target="_blank" rel="noopener">解决MariaDB无法远程连接</a></p>
-<h2 id="开启远程-FTP"><a href="#开启远程-FTP" class="headerlink" title="开启远程 FTP"></a>开启远程 FTP</h2><p>👉 <a href="https://blog.csdn.net/madrabbit1987/article/details/53750272" target="_blank" rel="noopener">FTP连接树莓派（Linux）进行文件传输</a></p>
+<h2 id="开启远程-FTP"><a href="#开启远程-FTP" class="headerlink" title="开启远程 FTP"></a>开启远程 FTP</h2><ul>
+<li><code>sudo apt-get install vsftpd</code></li>
+<li><code>sudo service vsftpd start</code></li>
+<li><code>sudo nano /etc/vsftpd.conf</code> 赋予上传权限 “write_enable=YES”</li>
+<li><code>sudo /etc/init.d/vsftpd restart</code></li>
+</ul>
+<p>👉 <a href="https://blog.csdn.net/madrabbit1987/article/details/53750272" target="_blank" rel="noopener">FTP连接树莓派（Linux）进行文件传输</a></p>
 <h2 id="树莓派磁盘没有占满整个-SD-卡"><a href="#树莓派磁盘没有占满整个-SD-卡" class="headerlink" title="树莓派磁盘没有占满整个 SD 卡"></a>树莓派磁盘没有占满整个 SD 卡</h2><ul>
 <li><code>df -h</code></li>
 <li><img src="/images/IgotaRaspberryPi/Snipaste_2020-12-24_14-44-40.png" alt></li>
@@ -578,25 +584,13 @@
 <li><p>最终要使两者版本一致</p>
 </li>
 </ul>
-<h2 id="Docker-安装界面"><a href="#Docker-安装界面" class="headerlink" title="Docker 安装界面"></a>Docker 安装界面</h2><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSL https://get.docker.com | sh</span><br><span class="line">sudo docker pull portainer/portainer</span><br><span class="line">sudo docker volume create portainer_data</span><br><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>浏览器输入 ip:9000</li>
-<li>👉 <a href="https://shumeipai.nxez.com/2019/05/20/how-to-install-docker-on-your-raspberry-pi.html" target="_blank" rel="noopener">树莓派上 Docker 的安装和使用</a></li>
-</ul>
-<h2 id="Pi-dashboard-树莓派监控页面"><a href="#Pi-dashboard-树莓派监控页面" class="headerlink" title="Pi dashboard 树莓派监控页面"></a>Pi dashboard 树莓派监控页面</h2><ul>
-<li><code>sudo apt update</code></li>
-<li><code>sudo apt install docker</code></li>
-<li><code>sudo docker run -d --name docker-pi-dashboard -e &#39;LISTEN=1024&#39; --net=host ecat/docker-pi-dashboard</code></li>
-<li>浏览器输入 ip:1024</li>
-<li>👉 <a href="https://blog.nocode.site/2018/03/25/docker-pi-dashboard.html" target="_blank" rel="noopener">一行命令部署pi dashboard</a></li>
-</ul>
 <h2 id="设置静态ip"><a href="#设置静态ip" class="headerlink" title="设置静态ip"></a>设置静态ip</h2><ul>
 <li><code>route -n</code> 找到网关</li>
 <li><code>cat /etc/resolv.conf</code> 找到 DNS</li>
 <li><p><code>sudo nano /etc/dhcpcd.conf</code> 在末尾写入</p>
 <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface eth0</span><br><span class="line">inform 192.168.137.200/24</span><br><span class="line">static routers=192.168.137.1</span><br><span class="line">static domain_name_servers=192.168.137.1</span><br><span class="line">noipv6</span><br></pre></td></tr></table></figure></div>
 </li>
-<li><p>还可以点击桌面的网络连接进去设置</p>
+<li><p>还可以点击桌面右上角的网络连接进去设置</p>
 </li>
 </ul>
 <h2 id="设置-wifi-连接"><a href="#设置-wifi-连接" class="headerlink" title="设置 wifi 连接"></a>设置 wifi 连接</h2><ul>
@@ -614,6 +608,35 @@
 <li><code>mkdir ~/db/mongo</code> 创建数据目录</li>
 <li><code>docker run -d --name rpi-mongodb3 -v /home/pi/db/mongo:/data.db -p 27017:27017 andresvidal/rpi3-mongodb3 mongod</code></li>
 </ul>
+<h2 id="重装-raspberry-系统"><a href="#重装-raspberry-系统" class="headerlink" title="重装 raspberry 系统"></a>重装 raspberry 系统</h2><ul>
+<li>👉 <a href="https://www.raspberrypi.org/software/" target="_blank" rel="noopener">写入系统工具</a></li>
+<li>👉 <a href="https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit" target="_blank" rel="noopener">系统</a></li>
+</ul>
+<h2 id="换下载源"><a href="#换下载源" class="headerlink" title="换下载源"></a>换下载源</h2><ul>
+<li>👉 <a href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/" target="_blank" rel="noopener">根据架构和版本更换源</a></li>
+</ul>
+<h2 id="SSH-认证更新"><a href="#SSH-认证更新" class="headerlink" title="SSH 认证更新"></a>SSH 认证更新</h2><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint for the ECDSA key sent by the remote host is</span><br><span class="line">SHA256:wFyPv88OeUwo1eUnjPQTUB1PR/O/XLlJMip3BVX5mPU.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key in C:\\Users\\OrekiYuta/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending ECDSA key in C:\\Users\\OrekiYuta/.ssh/known_hosts:14</span><br><span class="line">ECDSA host key for 192.168.1.201 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>到对应目录下把当前 SSH 要访问的地址信息删除，重新连接即可</li>
+</ul>
+<h2 id="修改-host"><a href="#修改-host" class="headerlink" title="修改 host"></a>修改 host</h2><ul>
+<li><code>sudo nano /etc/hosts</code></li>
+<li>查看域名对应 IP 👉 <a href="https://www.ipaddress.com/" target="_blank" rel="noopener">ipaddress</a><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">199.232.68.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<h2 id><a href="#" class="headerlink" title></a><hr></h2><h2 id="Portainer"><a href="#Portainer" class="headerlink" title="Portainer"></a>Portainer</h2><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sSL https://get.docker.com | sh</span><br><span class="line">or </span><br><span class="line">sudo curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line"></span><br><span class="line">sudo docker pull portainer/portainer</span><br><span class="line">sudo docker volume create portainer_data</span><br><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>浏览器输入 ip:9000</li>
+<li>👉 <a href="https://shumeipai.nxez.com/2019/05/20/how-to-install-docker-on-your-raspberry-pi.html" target="_blank" rel="noopener">树莓派上 Docker 的安装和使用</a></li>
+</ul>
+<h2 id="Pi-dashboard-树莓派监控页面"><a href="#Pi-dashboard-树莓派监控页面" class="headerlink" title="Pi dashboard 树莓派监控页面"></a>Pi dashboard 树莓派监控页面</h2><ul>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt install docker</code></li>
+<li><code>sudo docker run -d --name docker-pi-dashboard -e &#39;LISTEN=1024&#39; --net=host ecat/docker-pi-dashboard</code></li>
+<li>浏览器输入 ip:1024</li>
+<li>👉 <a href="https://blog.nocode.site/2018/03/25/docker-pi-dashboard.html" target="_blank" rel="noopener">一行命令部署pi dashboard</a></li>
+</ul>
+<h2 id="netdata"><a href="#netdata" class="headerlink" title="netdata"></a>netdata</h2><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d --name=netdata \</span><br><span class="line">  -p 19999:19999 \</span><br><span class="line">  -v /proc:/host/proc:ro \</span><br><span class="line">  -v /sys:/host/sys:ro \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock:ro \</span><br><span class="line">  --cap-add SYS_PTRACE \</span><br><span class="line">  --security-opt apparmor=unconfined \</span><br><span class="line">  netdata/netdata</span><br></pre></td></tr></table></figure></div>
 
       
     </div>
@@ -1107,7 +1130,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装界面"><span class="nav-number">17.</span> <span class="nav-text">Docker 安装界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pi-dashboard-树莓派监控页面"><span class="nav-number">18.</span> <span class="nav-text">Pi dashboard 树莓派监控页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置静态ip"><span class="nav-number">19.</span> <span class="nav-text">设置静态ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-wifi-连接"><span class="nav-number">20.</span> <span class="nav-text">设置 wifi 连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装-mongodb"><span class="nav-number">21.</span> <span class="nav-text">Docker 安装 mongodb</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过网络分享连接树莓派"><span class="nav-number">1.</span> <span class="nav-text">通过网络分享连接树莓派</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看树莓派基本信息"><span class="nav-number">2.</span> <span class="nav-text">查看树莓派基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-远程桌面连接"><span class="nav-number">3.</span> <span class="nav-text">Windows 远程桌面连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-SSH"><span class="nav-number">4.</span> <span class="nav-text">开启 SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已连接树莓派"><span class="nav-number">4.1.</span> <span class="nav-text">已连接树莓派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未连接树莓派"><span class="nav-number">4.2.</span> <span class="nav-text">未连接树莓派</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-mariadb-远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置 mariadb 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启远程-FTP"><span class="nav-number">6.</span> <span class="nav-text">开启远程 FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派磁盘没有占满整个-SD-卡"><span class="nav-number">7.</span> <span class="nav-text">树莓派磁盘没有占满整个 SD 卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正时间"><span class="nav-number">8.</span> <span class="nav-text">修正时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-Redis"><span class="nav-number">9.</span> <span class="nav-text">离线安装 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Redis-远程连接"><span class="nav-number">10.</span> <span class="nav-text">设置 Redis 远程连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-切换用户"><span class="nav-number">11.</span> <span class="nav-text">Linux 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同网段问题"><span class="nav-number">12.</span> <span class="nav-text">不同网段问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线安装-pip-包"><span class="nav-number">13.</span> <span class="nav-text">离线安装 pip 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看-apt-get-已安装的程序"><span class="nav-number">14.</span> <span class="nav-text">查看 apt-get 已安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-无法正常工作相关"><span class="nav-number">15.</span> <span class="nav-text">Nginx 无法正常工作相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌-chromium-版本更换"><span class="nav-number">16.</span> <span class="nav-text">谷歌 chromium 版本更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置静态ip"><span class="nav-number">17.</span> <span class="nav-text">设置静态ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-wifi-连接"><span class="nav-number">18.</span> <span class="nav-text">设置 wifi 连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-安装-mongodb"><span class="nav-number">19.</span> <span class="nav-text">Docker 安装 mongodb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重装-raspberry-系统"><span class="nav-number">20.</span> <span class="nav-text">重装 raspberry 系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换下载源"><span class="nav-number">21.</span> <span class="nav-text">换下载源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-认证更新"><span class="nav-number">22.</span> <span class="nav-text">SSH 认证更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-host"><span class="nav-number">23.</span> <span class="nav-text">修改 host</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">24.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Portainer"><span class="nav-number">25.</span> <span class="nav-text">Portainer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pi-dashboard-树莓派监控页面"><span class="nav-number">26.</span> <span class="nav-text">Pi dashboard 树莓派监控页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netdata"><span class="nav-number">27.</span> <span class="nav-text">netdata</span></a></li></ol></div>
             
 
           </div>
@@ -1141,7 +1164,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">85.4k</span>
+    <span title="Site words total count">85.7k</span>
   
 </div>
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.orekiyuta.cn/archives/IgotaRaspberryPi/</loc>
+    <lastmod>2021-05-03</lastmod>
+  </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/tryFlutter/</loc>
     <lastmod>2021-05-02</lastmod>
   </url>  <url>
@@ -44,9 +47,6 @@
     <lastmod>2021-01-20</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/localAnywhereAndCORS/</loc>
-    <lastmod>2021-01-19</lastmod>
-  </url>  <url>
-    <loc>http://www.orekiyuta.cn/archives/IgotaRaspberryPi/</loc>
     <lastmod>2021-01-19</lastmod>
   </url>  <url>
     <loc>http://www.orekiyuta.cn/archives/reptilesAndRaspberries/</loc>
