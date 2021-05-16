@@ -108,7 +108,8 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/tryflutter/Snipaste_2021-04-10_01-27-37.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/tryflutter/Snipaste_2021-05-03_00-54-16.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/tryflutter/Snipaste_2021-05-03_00-58-11.png">
-<meta property="og:updated_time" content="2021-05-02T17:03:50.633Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/tryflutter/Snipaste_2021-05-16_16-27-58.png">
+<meta property="og:updated_time" content="2021-05-16T08:31:48.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Try Flutter">
 <meta name="twitter:description" content="Get started get SDK 👉Flutter SDK releases update system path  update user path   flutter doctor  👉Android Studio">
@@ -376,7 +377,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  144
+                  252
                 </span>
               
 
@@ -437,6 +438,13 @@
 <li><img src="/images/tryflutter/Snipaste_2021-05-03_00-54-16.png" alt></li>
 <li>关闭共享的网络即可 👉<a href="https://stackoverflow.com/questions/49609313/could-not-receive-a-message-from-the-daemon" target="_blank" rel="noopener">Could not receive a message from the daemon</a></li>
 <li><img src="/images/tryflutter/Snipaste_2021-05-03_00-58-11.png" alt></li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="异常关闭-emulator-导致再次启动黑屏"><a href="#异常关闭-emulator-导致再次启动黑屏" class="headerlink" title="异常关闭 emulator 导致再次启动黑屏"></a>异常关闭 emulator 导致再次启动黑屏</h3><ul>
+<li>原因是因为 emulator 启动采用的是热启动，下次启动会采用上次关闭保存的状态</li>
+<li>解决方法：用 Android Studio 打开 emulator 设置,用 Cold boot now 即可，下次启动用回原本的启动方式即可</li>
+<li><img src="/images/tryflutter/Snipaste_2021-05-16_16-27-58.png" alt></li>
+<li>bat 启动脚本<div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> C:\Users\[userName]\AppData\Local\Android\Sdk\emulator\emulator.exe  -netspeed full -avd Pixel_2_API_30</span><br><span class="line"></span><br><span class="line"><span class="comment">rem avd 默认目录 C:\Users\[userName]\.android\avd</span></span><br></pre></td></tr></table></figure></div>
+</li>
 </ul>
 
       
@@ -927,7 +935,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-started"><span class="nav-number">1.</span> <span class="nav-text">Get started</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Go"><span class="nav-number">2.</span> <span class="nav-text">First Go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-lib"><span class="nav-number">3.</span> <span class="nav-text">Get lib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-process"><span class="nav-number">4.</span> <span class="nav-text">In process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Could-not-receive-a-message-from-the-daemon"><span class="nav-number">4.1.</span> <span class="nav-text">Could not receive a message from the daemon.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-started"><span class="nav-number">1.</span> <span class="nav-text">Get started</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Go"><span class="nav-number">2.</span> <span class="nav-text">First Go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-lib"><span class="nav-number">3.</span> <span class="nav-text">Get lib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-process"><span class="nav-number">4.</span> <span class="nav-text">In process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Could-not-receive-a-message-from-the-daemon"><span class="nav-number">4.1.</span> <span class="nav-text">Could not receive a message from the daemon.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">5.</span> <span class="nav-text">Other</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常关闭-emulator-导致再次启动黑屏"><span class="nav-number">5.1.</span> <span class="nav-text">异常关闭 emulator 导致再次启动黑屏</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -961,7 +969,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">85.7k</span>
+    <span title="Site words total count">85.8k</span>
   
 </div>
 
