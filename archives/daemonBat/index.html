@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Batch,">
 
 
 
@@ -90,13 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Canoe">
-<meta property="og:url" content="http://www.orekiyuta.cn/tags/CentOS/index.html">
+<meta name="description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
+<meta name="keywords" content="Batch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deamon bat">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/daemonBat/index.html">
 <meta property="og:site_name" content="Canoe">
+<meta property="og:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-05-18T16:13:34.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canoe">
+<meta name="twitter:title" content="Deamon bat">
+<meta name="twitter:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/tags/CentOS/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/daemonBat/">
 
 
 
@@ -134,7 +139,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>Tag: CentOS | Canoe</title>
+  <title>Deamon bat | Canoe</title>
   
 
 
@@ -154,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/OrekiYuta" class="github-corner" aria-label="View source on GitHub" style><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,58 +288,243 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CentOS<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/daemonBat/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/archives/CentOS-SVNConfigure/" itemprop="url">
-              
-                <span itemprop="name">CentOS:SVN Configure</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Deamon bat</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-11T19:36:49+08:00" content="2019-06-11">
-          06-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-18T23:38:41+08:00">
+                2021-05-18 => 23:38:41
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  516
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="创建守护进程监控-gt-指定进程"><a href="#创建守护进程监控-gt-指定进程" class="headerlink" title="创建守护进程监控 =&gt; 指定进程"></a>创建守护进程监控 =&gt; 指定进程</h2><ul>
+<li><p>在 win 中可以通过以下几种方式查看进程状况</p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM 查看端口</span></span><br><span class="line">netstat -an | <span class="built_in">find</span> /C "<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">1313</span>"</span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程名</span></span><br><span class="line">tasklist | <span class="built_in">find</span> /i "App.exe" </span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程句柄标题</span></span><br><span class="line">tasklist /fi "windowtitle eq App"</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>选择合适的方式监控即可</p>
+</li>
+<li><p>循环监控端口</p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM fileName, mamoru.bat</span></span><br><span class="line">:RESTART</span><br><span class="line"><span class="built_in">title</span> mamoru</span><br><span class="line">netstat -an | <span class="built_in">find</span> /C "<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">1313</span>" &gt; temp.txt </span><br><span class="line"><span class="built_in">set</span> /p num=&lt;temp.txt</span><br><span class="line"><span class="built_in">del</span> /F temp.txt</span><br><span class="line"><span class="keyword">if</span> <span class="variable">%num%</span> == <span class="number">0</span> <span class="built_in">start</span> /D "C:\Users" xx.bat</span><br><span class="line"><span class="comment">@REM echo Wscript.Sleep WScript.Arguments(0) &gt;sleep.vbs</span></span><br><span class="line"><span class="comment">@REM cscript //b //nologo sleep.vbs 5000</span></span><br><span class="line">     </span><br><span class="line"><span class="built_in">ping</span> <span class="number">127</span>.<span class="number">1</span> -n <span class="number">5</span> &gt;<span class="built_in">nul</span> <span class="number">2</span>&gt;<span class="built_in">nul</span></span><br><span class="line"><span class="keyword">goto</span> RESTART</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="VBS"><figure class="iseeu highlight /vbs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">' fileName, mamoru.vbs</span></span><br><span class="line"><span class="comment">' 隐藏运行</span></span><br><span class="line"><span class="keyword">set</span> ws = <span class="built_in">createobject</span>(<span class="string">"wscript.shell"</span>)</span><br><span class="line">ws.run <span class="string">"mamoru.bat"</span>,vbhide</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>创建 mamoru.bat , 每隔 5s 检测端口进程是否存在,不存在就启动 xx.bat</li>
+</ul>
+</li>
+<li><p>监控 XMR</p>
+ <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">title</span> XMR_Daemon</span><br><span class="line"><span class="built_in">echo</span>. Process Checking...</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> forN = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">:<span class="built_in">start</span></span><br><span class="line"><span class="built_in">set</span> /a forN += <span class="number">1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%forN%</span></span><br><span class="line">tasklist /fi "windowtitle eq XMR" | <span class="built_in">find</span> "<span class="built_in">cmd</span>"</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">%forN%</span> <span class="keyword">equ</span> <span class="number">3</span> <span class="keyword">goto</span> end</span><br><span class="line"><span class="keyword">if</span> "<span class="variable">%errorlevel%</span>" =="<span class="number">0</span>" (<span class="keyword">goto</span> <span class="keyword">exist</span>) <span class="keyword">else</span> (<span class="keyword">goto</span> unexist)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">%forN%</span></span><br><span class="line">:<span class="keyword">exist</span></span><br><span class="line"><span class="built_in">echo</span>. Process <span class="keyword">exist</span> . <span class="keyword">do</span> nothing.</span><br><span class="line"><span class="keyword">goto</span> <span class="built_in">start</span></span><br><span class="line"></span><br><span class="line">:unexist</span><br><span class="line"><span class="built_in">echo</span>. Process unexist . restart XMR</span><br><span class="line"><span class="built_in">start</span> /D "C:\Users\" <span class="built_in">start</span>.<span class="built_in">cmd</span></span><br><span class="line"><span class="built_in">ping</span> <span class="number">127</span>.<span class="number">1</span> -n <span class="number">5</span> &gt; <span class="built_in">nul</span></span><br><span class="line"><span class="keyword">goto</span> <span class="built_in">start</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">:end</span><br><span class="line"><span class="built_in">echo</span>. XMR_Daemon <span class="keyword">exit</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>find 会有返回值 errorlevel , 根据该值判断状态</li>
+<li>循环 3 次判断 进程标题名等于 XMRig 6.12.0 的进程是否存在, 不存在就启动 start.cmd</li>
+</ul>
+</li>
+<li><p>监控 ethminer </p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">title</span> Eth_Daemon</span><br><span class="line"><span class="built_in">echo</span>. Process Checking...</span><br><span class="line"></span><br><span class="line">netstat -an | <span class="built_in">find</span> /C "<span class="number">13333</span>" &gt; temp.txt </span><br><span class="line"><span class="built_in">set</span> /p num=&lt;temp.txt</span><br><span class="line"><span class="built_in">del</span> /F temp.txt</span><br><span class="line"><span class="keyword">if</span> <span class="variable">%num%</span> == <span class="number">0</span> (<span class="keyword">goto</span> unexist) <span class="keyword">else</span> (<span class="keyword">goto</span> <span class="keyword">exist</span>)</span><br><span class="line"></span><br><span class="line">:<span class="keyword">exist</span></span><br><span class="line"><span class="built_in">echo</span>. Process <span class="keyword">exist</span> . <span class="keyword">do</span> nothing.</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line"></span><br><span class="line">:unexist</span><br><span class="line"><span class="built_in">echo</span>. Process unexist . restart ethminer</span><br><span class="line"><span class="built_in">start</span> /D "C:\Users\" <span class="built_in">start</span>.bat</span><br><span class="line"><span class="keyword">goto</span> end</span><br><span class="line"></span><br><span class="line">:end</span><br><span class="line"><span class="built_in">echo</span>. Eth_Daemon <span class="keyword">exit</span></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure></div>
+</li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li><p>find 的更多用法</p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM tasklist /fi "imagename eq cmd.exe" /fi "windowtitle eq ethminer.exe" </span></span><br><span class="line"><span class="comment">@REM tasklist /fi "windowtitle eq 管理员:  ethminer.exe" | find "cmd"</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>find 的返回值偶尔有点问题,状态不一样还是返回一样的值</p>
+<ul>
+<li>这种情况只能换 <code>netstat</code> 监控端口</li>
+</ul>
+</li>
+<li>以批处理方式启动,也就是 bat 文件启动的进程都是 cmd.exe<ul>
+<li>这样的进程通过  <code>tasklist /fi &quot;windowtitle eq&quot;</code> 监控比较好,在各自的 bat 文件里配置 title</li>
+</ul>
+</li>
+<li>以管理员方式启动的 bat , 用 <code>tasklist /fi &quot;windowtitle eq&quot;</code> 需要注意 “管理员” 后带着两个字符的空格</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Orekiyuta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.orekiyuta.cn/archives/daemonBat/" title="Deamon bat">http://www.orekiyuta.cn/archives/daemonBat/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: black;font-size:15px;margin-top:30px">< - Thanks for reading - ></div>
+    
+</div>
+      
+     </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Batch/" rel="tag"><i class="fa fa-tag"></i> Batch</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/win10TurnsBlueScreenWhenOpeningAndroidEmulator/" rel="next" title="Win10 turns blue screen when opening Android emulator">
+                <i class="fa fa-chevron-left"></i> Win10 turns blue screen when opening Android emulator
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
 
           </div>
           
 
 
           
+
+  
+
+
 
         </div>
         
@@ -625,8 +815,17 @@ if(canvas.getContext){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -705,6 +904,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建守护进程监控-gt-指定进程"><span class="nav-number">1.</span> <span class="nav-text">创建守护进程监控 =&gt; 指定进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">2.</span> <span class="nav-text">Other</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -874,6 +1089,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

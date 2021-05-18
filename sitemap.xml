@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/archives/daemonBat/</loc>
+    
+    <lastmod>2021-05-18T16:13:34.866Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.orekiyuta.cn/archives/djangoRun/</loc>
+    
+    <lastmod>2021-05-18T16:11:24.858Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/tryFlutter/</loc>
     
     <lastmod>2021-05-16T08:31:48.237Z</lastmod>
@@ -82,13 +96,6 @@
     <loc>http://www.orekiyuta.cn/archives/bitwardenOnDocker/</loc>
     
     <lastmod>2021-02-02T17:12:16.971Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/archives/djangoRun/</loc>
-    
-    <lastmod>2021-01-28T16:58:16.926Z</lastmod>
     
   </url>
   
