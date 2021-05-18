@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Hexo-IM/08.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Hexo-IM/09.png">
 <meta property="og:image" content="http://www.orekiyuta.cn/images/Hexo-IM/10.png">
-<meta property="og:updated_time" content="2021-05-18T16:48:06.386Z">
+<meta property="og:updated_time" content="2021-05-18T17:24:27.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Install+Migrate">
 <meta name="twitter:description" content="安装Git , Node 安装Hexo 先创建一个文件夹，然后cd到这个目录下 npm install -g hexo-cli    安装hexo项目构建工具 hexo -v     查看版本">
@@ -376,7 +376,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  304
+                  323
                 </span>
               
 
@@ -465,10 +465,13 @@
 <li><code>hexo s --debug</code>    启动服务并执行本地调试模式</li>
 </ul>
 <h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a><center>Other</center></h2><ul>
-<li>fatal: unable to access “xxx”: OpenSSL SSL_read: Connection was aborted, errno 10053<ul>
+<li><p>fatal: unable to access “xxx”: OpenSSL SSL_read: Connection was aborted, errno 10053</p>
+<ul>
 <li><code>git config --global http.sslVerify &quot;false&quot;</code></li>
 </ul>
 </li>
+<li><p>tag/ 目录下 git 推送后 大小写问题</p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .deploy_git</span><br><span class="line">git config core.ignorecase false</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 
       
