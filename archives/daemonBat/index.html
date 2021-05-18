@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="BatchFile,">
+  <meta name="keywords" content="Batch,">
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
-<meta name="keywords" content="BatchFile">
+<meta name="description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况  12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;">
+<meta name="keywords" content="Batch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deamon bat">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/daemonBat/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
+<meta property="og:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况  12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-05-18T16:51:47.977Z">
+<meta property="og:updated_time" content="2021-05-18T16:58:50.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deamon bat">
-<meta name="twitter:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况   12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;  选择合适的方式监控即可">
+<meta name="twitter:description" content="创建守护进程监控 =&amp;gt; 指定进程 在 win 中可以通过以下几种方式查看进程状况  12345678@REM 查看端口netstat -an | find /C &quot;127.0.0.1:1313&quot;@REM 查看进程名tasklist | find /i &quot;App.exe&quot; @REM 查看进程句柄标题tasklist /fi &quot;windowtitle eq App&quot;">
 
 
 
@@ -391,9 +391,11 @@
 
       
         <h2 id="创建守护进程监控-gt-指定进程"><a href="#创建守护进程监控-gt-指定进程" class="headerlink" title="创建守护进程监控 =&gt; 指定进程"></a>创建守护进程监控 =&gt; 指定进程</h2><ul>
-<li><p>在 win 中可以通过以下几种方式查看进程状况</p>
-  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM 查看端口</span></span><br><span class="line">netstat -an | <span class="built_in">find</span> /C "<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">1313</span>"</span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程名</span></span><br><span class="line">tasklist | <span class="built_in">find</span> /i "App.exe" </span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程句柄标题</span></span><br><span class="line">tasklist /fi "windowtitle eq App"</span><br></pre></td></tr></table></figure></div>
+<li>在 win 中可以通过以下几种方式查看进程状况  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BAT"><figure class="iseeu highlight /bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@REM 查看端口</span></span><br><span class="line">netstat -an | <span class="built_in">find</span> /C "<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">1313</span>"</span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程名</span></span><br><span class="line">tasklist | <span class="built_in">find</span> /i "App.exe" </span><br><span class="line"></span><br><span class="line"><span class="comment">@REM 查看进程句柄标题</span></span><br><span class="line">tasklist /fi "windowtitle eq App"</span><br></pre></td></tr></table></figure></div>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p>选择合适的方式监控即可</p>
 </li>
 <li><p>循环监控端口</p>
@@ -472,7 +474,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BatchFile/" rel="tag"><i class="fa fa-tag"></i> BatchFile</a>
+            <a href="/tags/Batch/" rel="tag"><i class="fa fa-tag"></i> Batch</a>
           
         </div>
       
@@ -858,7 +860,7 @@ if(canvas.getContext){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
