@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.orekiyuta.cn/tags/index.html</loc>
+    
+    <lastmod>2021-05-24T15:01:49.635Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.orekiyuta.cn/archives/tryFlutter/</loc>
     
     <lastmod>2021-05-20T12:22:11.391Z</lastmod>
@@ -229,13 +236,6 @@
     <loc>http://www.orekiyuta.cn/archives/DockerNote/</loc>
     
     <lastmod>2020-11-30T13:21:59.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.orekiyuta.cn/tags/index.html</loc>
-    
-    <lastmod>2020-11-14T10:39:04.376Z</lastmod>
     
   </url>
   
