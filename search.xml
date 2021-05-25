@@ -189,9 +189,9 @@
       
         <tags>
             
-            <tag> Django </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Django </tag>
             
         </tags>
       
@@ -290,19 +290,19 @@
             
             <tag> Linux </tag>
             
-            <tag> JavaScript </tag>
-            
             <tag> Selenium </tag>
             
             <tag> ChromeDriver </tag>
             
-            <tag> MySQL </tag>
+            <tag> JavaScript </tag>
+            
+            <tag> Flask </tag>
             
             <tag> Python </tag>
             
-            <tag> Mariadb </tag>
+            <tag> MySQL </tag>
             
-            <tag> Flask </tag>
+            <tag> Mariadb </tag>
             
             <tag> RaspberryPi </tag>
             
@@ -356,9 +356,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Flask </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
