@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Set up Seafile</title>
+      <link href="/archives/setupSeafile/"/>
+      <url>/archives/setupSeafile/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2><ul><li>强制要 Python 2.7.11 32位环境</li><li>下载解压 Seafile 文件</li><li>启动目录下的 run.bat</li><li>选择存储位置</li><li>添加管理员账号</li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 127.0.0.1 为该机器 ip</li><li>👉<a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li><li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li></ul><h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Deamon bat</title>
       <link href="/archives/daemonBat/"/>
       <url>/archives/daemonBat/</url>

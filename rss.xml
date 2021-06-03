@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-05-18T16:58:50.864Z</updated>
+  <updated>2021-06-03T13:40:42.981Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Set up Seafile</title>
+    <link href="http://www.orekiyuta.cn/archives/setupSeafile/"/>
+    <id>http://www.orekiyuta.cn/archives/setupSeafile/</id>
+    <published>2021-06-03T13:15:37.000Z</published>
+    <updated>2021-06-03T13:40:42.981Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2><ul><li>强制要 Python 2.7.11 32位环境</li><li>下载解压 Seafile 文件</li><li>启动目录下的 run.bat</li><li>选择存储位置</li><li>添加管理员账号</li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 127.0.0.1 为该机器 ip</li><li>👉<a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li><li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li></ul><h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Windows-Server&quot;&gt;&lt;a href=&quot;#Windows-Server&quot; class=&quot;headerlink&quot; title=&quot;Windows Server&quot;&gt;&lt;/a&gt;Windows Server&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;强制要 Python 2.7.1
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Linux" scheme="http://www.orekiyuta.cn/tags/Linux/"/>
+    
+      <category term="Windows" scheme="http://www.orekiyuta.cn/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Deamon bat</title>
@@ -275,33 +302,6 @@
     </summary>
     
     
-    
-      <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django Run</title>
-    <link href="http://www.orekiyuta.cn/archives/djangoRun/"/>
-    <id>http://www.orekiyuta.cn/archives/djangoRun/</id>
-    <published>2021-01-28T12:03:52.000Z</published>
-    <updated>2021-05-18T16:11:24.858Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Error-WinError-10013-以一种访问权限不允许的方式做了一个访问套接字的尝试。"><a href="#Error-WinError-10013-以一种访问权限不允许的方式做了一个访问套接字的尝试。" class="headerlink" title="Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"></a>Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Starting development server at http://127.0.0.1:8000/</span><br><span class="line">Quit the server with CTRL-BREAK.</span><br><span class="line">Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。</span><br></pre></td></tr></table></figure></div><ul><li>端口被占用，关闭被占用端口的程序</li><li><code>netstat -ano|findstr 8000</code></li><li><code>tasklist | findstr pid号</code></li><li><code>taskkill /pid pid号 /f</code></li></ul><p><img src="/images/djangoRun/Snipaste_2021-01-28_20-07-56.png" alt></p><ul><li>或者改端口<br><img src="/images/djangoRun/Snipaste_2021-01-28_20-10-41.png" alt></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;Other&quot;&gt;&lt;a href=&quot;#Other&quot; class=&quot;headerlink&quot; title=&quot;Other&quot;&gt;&lt;/a&gt;Other&lt;/h2&gt;&lt;h3 id=&quot;Error-WinError-10013-以一种访问权限不允许的方式做
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Django" scheme="http://www.orekiyuta.cn/tags/Django/"/>
     
       <category term="Python" scheme="http://www.orekiyuta.cn/tags/Python/"/>
     
