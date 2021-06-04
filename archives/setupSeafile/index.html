@@ -90,18 +90,22 @@
 
 
 
-<meta name="description" content="Windows Server 强制要 Python 2.7.11 32位环境 下载解压 Seafile 文件 启动目录下的 run.bat 选择存储位置 添加管理员账号 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 127.0.0.1 为该机器 ip 👉seafile-server_6.0.7_win32.">
+<meta name="description" content="Linux Server yum install docker-compose -y 编写 docker-compose.yml  docker-compose up -d 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 url 为该机器地址 👉 docker-compose.yml-👉 用 Docker">
 <meta name="keywords" content="Linux,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Set up Seafile">
 <meta property="og:url" content="http://www.orekiyuta.cn/archives/setupSeafile/index.html">
 <meta property="og:site_name" content="Canoe">
-<meta property="og:description" content="Windows Server 强制要 Python 2.7.11 32位环境 下载解压 Seafile 文件 启动目录下的 run.bat 选择存储位置 添加管理员账号 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 127.0.0.1 为该机器 ip 👉seafile-server_6.0.7_win32.">
+<meta property="og:description" content="Linux Server yum install docker-compose -y 编写 docker-compose.yml  docker-compose up -d 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 url 为该机器地址 👉 docker-compose.yml-👉 用 Docker">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-06-03T13:40:42.981Z">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/setupSeafile/Snipaste_2021-06-04_21-34-14.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/setupSeafile/Snipaste_2021-06-04_21-36-54.png">
+<meta property="og:image" content="http://www.orekiyuta.cn/images/setupSeafile/Snipaste_2021-06-04_21-38-04.png">
+<meta property="og:updated_time" content="2021-06-04T14:13:55.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Set up Seafile">
-<meta name="twitter:description" content="Windows Server 强制要 Python 2.7.11 32位环境 下载解压 Seafile 文件 启动目录下的 run.bat 选择存储位置 添加管理员账号 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 127.0.0.1 为该机器 ip 👉seafile-server_6.0.7_win32.">
+<meta name="twitter:description" content="Linux Server yum install docker-compose -y 编写 docker-compose.yml  docker-compose up -d 进入 http://&amp;lt;您的 IP 地址&amp;gt;:8000  右上角 System Admin -&amp;gt; Settings 更改 url 为该机器地址 👉 docker-compose.yml-👉 用 Docker">
+<meta name="twitter:image" content="http://www.orekiyuta.cn/images/setupSeafile/Snipaste_2021-06-04_21-34-14.png">
 
 
 
@@ -365,7 +369,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  84
+                  204
                 </span>
               
 
@@ -390,7 +394,14 @@
       
 
       
-        <h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2><ul>
+        <h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2><ul>
+<li><code>yum install docker-compose -y</code></li>
+<li>编写 docker-compose.yml </li>
+<li><code>docker-compose up -d</code></li>
+<li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li>
+<li>右上角 System Admin -&gt; Settings 更改 url 为该机器地址</li>
+<li>👉 <a href="https://github.com/OrekiYuta/Gear/blob/master/Seafile/linux/docker-compose.yml" target="_blank" rel="noopener">docker-compose.yml</a><br>-👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md" target="_blank" rel="noopener">用 Docker 部署 Seafile 服务</a><a id="more"></a>
+<h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2></li>
 <li>强制要 Python 2.7.11 32位环境</li>
 <li>下载解压 Seafile 文件</li>
 <li>启动目录下的 run.bat</li>
@@ -401,7 +412,19 @@
 <li>👉<a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li>
 <li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li>
 </ul>
-<h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Docker-Compose-ERROR-network-has-active-endpoints"><a href="#Docker-Compose-ERROR-network-has-active-endpoints" class="headerlink" title="Docker Compose ERROR network has active endpoints"></a>Docker Compose ERROR network has active endpoints</h3><ul>
+<li>删除 container 和 image 之后重新部署不成功</li>
+<li>因为之前的 network 没删除仍然存在</li>
+<li>方法一：重启 docker <code>sudo service docker restart</code></li>
+<li>方法二：删除网络</li>
+<li><div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br><span class="line">docker network inspect [网络ID]</span><br><span class="line">docker network disconnet -f [网络ID] [容器Name]</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><img src="/images/setupSeafile/Snipaste_2021-06-04_21-34-14.png" alt></p>
+</li>
+<li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-36-54.png" alt></li>
+<li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-38-04.png" alt></li>
+</ul>
+
       
     </div>
     
@@ -468,6 +491,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/fileSharingOnWin/" rel="prev" title="File Sharing On Win">
+                File Sharing On Win <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -819,7 +846,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -888,7 +915,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-Server"><span class="nav-number">1.</span> <span class="nav-text">Windows Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Server"><span class="nav-number">2.</span> <span class="nav-text">Linux Server</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-Server"><span class="nav-number">1.</span> <span class="nav-text">Linux Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-Server"><span class="nav-number">2.</span> <span class="nav-text">Windows Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">3.</span> <span class="nav-text">Other</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-Compose-ERROR-network-has-active-endpoints"><span class="nav-number">3.1.</span> <span class="nav-text">Docker Compose ERROR network has active endpoints</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -922,7 +949,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.4k</span>
+    <span title="Site words total count">86.6k</span>
   
 </div>
 

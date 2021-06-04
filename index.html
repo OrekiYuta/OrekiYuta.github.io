@@ -304,6 +304,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/fileSharingOnWin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/fileSharingOnWin/" itemprop="url">File Sharing On Win</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-04T21:58:30+08:00">
+                2021-06-04 => 21:58:30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  33
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="带账户密码的文件共享的几个要点"><a href="#带账户密码的文件共享的几个要点" class="headerlink" title="带账户密码的文件共享的几个要点"></a>带账户密码的文件共享的几个要点</h2><ul>
+<li>开启密码共享</li>
+<li><img src="/images/fileSharingOnWin/Snipaste_2021-06-04_22-01-49.png" alt></li>
+<li>创建账户</li>
+<li><img src="/images/fileSharingOnWin/Snipaste_2021-06-04_22-04-12.png" alt></li>
+<li>设置文件共享权限</li>
+<li><img src="/images/fileSharingOnWin/Snipaste_2021-06-04_22-06-07.png" alt></li>
+<li><img src="/images/fileSharingOnWin/Snipaste_2021-06-04_22-07-09.png" alt></li>
+<li><img src="/images/fileSharingOnWin/Snipaste_2021-06-04_22-08-15.png" alt></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+     <div>
+      
+     </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/setupSeafile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -369,7 +521,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  84
+                  204
                 </span>
               
 
@@ -395,23 +547,23 @@
 
       
         
-          
-            <h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2><ul>
-<li>强制要 Python 2.7.11 32位环境</li>
-<li>下载解压 Seafile 文件</li>
-<li>启动目录下的 run.bat</li>
-<li>选择存储位置</li>
-<li>添加管理员账号</li>
+          <h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2><ul>
+<li><code>yum install docker-compose -y</code></li>
+<li>编写 docker-compose.yml </li>
+<li><code>docker-compose up -d</code></li>
 <li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li>
-<li>右上角 System Admin -&gt; Settings 更改 127.0.0.1 为该机器 ip</li>
-<li>👉<a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li>
-<li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li>
-</ul>
-<h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2>
-          
+<li>右上角 System Admin -&gt; Settings 更改 url 为该机器地址</li>
+<li>👉 <a href="https://github.com/OrekiYuta/Gear/blob/master/Seafile/linux/docker-compose.yml" target="_blank" rel="noopener">docker-compose.yml</a><br>-👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md" target="_blank" rel="noopener">用 Docker 部署 Seafile 服务</a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/setupSeafile/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
     
     
     
@@ -1696,168 +1848,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/pythonDependencySeparation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Orekiyuta">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Canoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/pythonDependencySeparation/" itemprop="url">Python Dependency Separation</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-31T04:53:29+08:00">
-                2021-01-31 => 04:53:29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  462
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul>
-<li>由于每个项目之间的引入的依赖版本不同，并且有的依赖库还难以获取</li>
-<li>因此在开发时，需要把依赖给保存下来，并且指明依赖的版本</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="freeze"><a href="#freeze" class="headerlink" title="freeze"></a>freeze</h3><ul>
-<li><code>pip freeze &gt; requirements.txt</code></li>
-<li>使用这个命令可以导出当前环境的所有依赖</li>
-</ul>
-<h3 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h3><ul>
-<li><code>pip install pipreqs</code></li>
-<li><code>pipreqs ./</code> 切换到项目根目录下执行，导出当前目录所引用的依赖</li>
-<li><code>pipreqs ./ --encoding==utf-8</code></li>
-<li><code>pipreqs ./ --encoding==utf-8 --force</code></li>
-</ul>
-<h3 id="venv"><a href="#venv" class="headerlink" title="venv"></a>venv</h3><ul>
-<li>使用 python 的虚拟环境
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/pythonDependencySeparation/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-    
-    
-    
-
-    
-
-    
-
-    
-     <div>
-      
-     </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2183,7 +2173,7 @@ if(canvas.getContext){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2270,7 +2260,7 @@ if(canvas.getContext){
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.4k</span>
+    <span title="Site words total count">86.6k</span>
   
 </div>
 
