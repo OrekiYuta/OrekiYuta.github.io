@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-06-04T14:10:05.048Z</updated>
+  <updated>2021-06-14T12:47:57.790Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>janlear</title>
+    <link href="http://www.orekiyuta.cn/archives/janlear/"/>
+    <id>http://www.orekiyuta.cn/archives/janlear/</id>
+    <published>2021-06-14T12:40:43.000Z</published>
+    <updated>2021-06-14T12:47:57.790Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><ul><li><img src="/images/janlear/Snipaste_2021-06-14_20-47-27.png" alt> </li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;/images/janlear/Snipaste_2021-06-14_20-47-27.png&quot; alt&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>File Sharing On Win</title>
@@ -271,31 +297,6 @@
     
     
       <category term="Linux" scheme="http://www.orekiyuta.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bitwarden On Docker</title>
-    <link href="http://www.orekiyuta.cn/archives/bitwardenOnDocker/"/>
-    <id>http://www.orekiyuta.cn/archives/bitwardenOnDocker/</id>
-    <published>2021-02-02T15:32:12.000Z</published>
-    <updated>2021-02-02T17:12:16.971Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install docker</span><br><span class="line"><span class="comment"># ------</span></span><br><span class="line">su root</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></div><h2 id="Portainer"><a href="#Portainer" class="headerlink" title="Portainer"></a>Portainer</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull portainer/portainer</span><br><span class="line">sudo docker volume create portainer_data</span><br><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure></div><h2 id="Bitwarden"><a href="#Bitwarden" class="headerlink" title="Bitwarden"></a>Bitwarden</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull bitwardenrs/server:latest</span><br><span class="line">docker run -d --name bitwarden -v /var/run/bitwarden/:/data/ -p 80:9001 bitwardenrs/server:latest</span><br></pre></td></tr></table></figure></div><a id="more"></a><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Job-for-docker-service-failed-because-the-control-process-exited-with-error-code-See-“systemctl-status-docker-service”-and-“journalctl-xe”-for-details"><a href="#Job-for-docker-service-failed-because-the-control-process-exited-with-error-code-See-“systemctl-status-docker-service”-and-“journalctl-xe”-for-details" class="headerlink" title="Job for docker.service failed because the control process exited with error code. See “systemctl status docker.service” and “journalctl -xe” for details."></a>Job for docker.service failed because the control process exited with error code. See “systemctl status docker.service” and “journalctl -xe” for details.</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm /etc/docker/daemon.json</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></div><h3 id="Image-accelerator"><a href="#Image-accelerator" class="headerlink" title="Image accelerator"></a>Image accelerator</h3><ul><li><a href="https://cr.console.aliyun.com/cn-beijing/instances/mirrors" target="_blank" rel="noopener">https://cr.console.aliyun.com/cn-beijing/instances/mirrors</a></li></ul><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl cat docker | grep <span class="string">'\-\-registry\-mirror'</span></span><br><span class="line">sudo nano /etc/docker/daemon.json</span><br></pre></td></tr></table></figure></div><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"this link from aliyun"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure></div><h2 id="Refer"><a href="#Refer" class="headerlink" title="Refer"></a>Refer</h2><ul><li><a href="https://bitwarden.com/download/" target="_blank" rel="noopener">bitwarden</a></li><li><a href="https://github.com/dani-garcia/bitwarden_rs" target="_blank" rel="noopener">dani-garcia/bitwarden_rs</a></li><li><a href="https://bitwarden.com/help/article/install-on-premise/" target="_blank" rel="noopener">Install and Deploy</a></li><li><a href="https://hub.docker.com/r/bitwarden/setup" target="_blank" rel="noopener">bitwarden/setup</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot; title=&quot;Docker&quot;&gt;&lt;/a&gt;Docker&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install docker&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# ------&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;su root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl &lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt; docker&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl start docker&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;systemctl restart docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Portainer&quot;&gt;&lt;a href=&quot;#Portainer&quot; class=&quot;headerlink&quot; title=&quot;Portainer&quot;&gt;&lt;/a&gt;Portainer&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo docker pull portainer/portainer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo docker volume create portainer_data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Bitwarden&quot;&gt;&lt;a href=&quot;#Bitwarden&quot; class=&quot;headerlink&quot; title=&quot;Bitwarden&quot;&gt;&lt;/a&gt;Bitwarden&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker pull bitwardenrs/server:latest&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker run -d --name bitwarden -v /var/run/bitwarden/:/data/ -p 80:9001 bitwardenrs/server:latest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Docker" scheme="http://www.orekiyuta.cn/tags/Docker/"/>
-    
-      <category term="Bitwarden" scheme="http://www.orekiyuta.cn/tags/Bitwarden/"/>
     
   </entry>
   
