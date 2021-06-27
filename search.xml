@@ -366,6 +366,8 @@
             
             <tag> ChromeDriver </tag>
             
+            <tag> JavaScript </tag>
+            
             <tag> Python </tag>
             
             <tag> Flask </tag>
@@ -373,8 +375,6 @@
             <tag> MySQL </tag>
             
             <tag> Mariadb </tag>
-            
-            <tag> JavaScript </tag>
             
             <tag> RaspberryPi </tag>
             
