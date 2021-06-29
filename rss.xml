@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.orekiyuta.cn/"/>
-  <updated>2021-06-29T04:59:16.312Z</updated>
+  <updated>2021-06-29T15:16:47.716Z</updated>
   <id>http://www.orekiyuta.cn/</id>
   
   <author>
@@ -17,23 +17,51 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Github Commit Account About</title>
+    <link href="http://www.orekiyuta.cn/archives/githubCommitAccountAbout/"/>
+    <id>http://www.orekiyuta.cn/archives/githubCommitAccountAbout/</id>
+    <published>2021-06-29T15:12:11.000Z</published>
+    <updated>2021-06-29T15:16:47.716Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>发现 Github 的 commit 没有显示在主页的记录图表中</li><li>排查后得出是 commit 的用户不对</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3><ul><li><p>先调整本地的 git config </p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 设置全局</span><br><span class="line">git config --global user.name &quot;Author Name&quot;</span><br><span class="line">git config --global user.email &quot;Author Email&quot;</span><br><span class="line"></span><br><span class="line">// 或者设置本地项目库配置</span><br><span class="line">git config user.name &quot;Author Name&quot;</span><br><span class="line">git config user.email &quot;Author Email&quot;</span><br></pre></td></tr></table></figure></div></li><li><p><strong>以后每次提交前都检查下用户</strong></p><a id="more"></a><h3 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h3></li><li>修改已经 commit 了的历史用户信息记录</li><li><code>git rebase -i HEAD~n</code> n 回溯到指定的位置</li><li>在想要修改的位置添加 <code>exec git commit --amend --author=&quot;New Author&lt;New Email Address&gt;&quot; -C HEAD</code></li><li><img src="/images/githubCommitAccountAbout/Snipaste_2021-06-29_10-51-06.png" alt></li><li><code>git pull</code></li><li><code>git push</code></li><li>结果如下，并不能完全移除之前的提交历史，只是替换了</li><li><img src="/images/githubCommitAccountAbout/Snipaste_2021-06-29_14-31-56.png" alt><h3 id="git-filter-branch"><a href="#git-filter-branch" class="headerlink" title="git filter-branch"></a>git filter-branch</h3></li><li>同样的修改历史用户信息记录</li><li><p>shell 脚本循环所有 commit 记录修改</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">git filter-branch --env-filter '</span><br><span class="line">OLD_EMAIL="your-old-email@example.com"</span><br><span class="line">CORRECT_NAME="Your Correct Name"</span><br><span class="line">CORRECT_EMAIL="your-correct-email@example.com"</span><br><span class="line">if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]</span><br><span class="line">then</span><br><span class="line">    export GIT_COMMITTER_NAME="$CORRECT_NAME"</span><br><span class="line">    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"</span><br><span class="line">fi</span><br><span class="line">if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]</span><br><span class="line">then</span><br><span class="line">    export GIT_AUTHOR_NAME="$CORRECT_NAME"</span><br><span class="line">    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"</span><br><span class="line">fi</span><br><span class="line">' --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure></div></li><li><p><code>git pull</code></p></li><li><code>git push</code></li><li>和前面的 rebase 同样效果</li></ul><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul><li>👉 <a href="https://www.cnblogs.com/hiver/p/7891724.html" target="_blank" rel="noopener">Github个人主页不显示提交记录的问题</a></li><li>👉 <a href="https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi" target="_blank" rel="noopener">How to change the author and committer name and e-mail of multiple commits in Git?</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Scene&quot;&gt;&lt;a href=&quot;#Scene&quot; class=&quot;headerlink&quot; title=&quot;Scene&quot;&gt;&lt;/a&gt;Scene&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;发现 Github 的 commit 没有显示在主页的记录图表中&lt;/li&gt;
+&lt;li&gt;排查后得出是 commit 的用户不对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;h3 id=&quot;git-config&quot;&gt;&lt;a href=&quot;#git-config&quot; class=&quot;headerlink&quot; title=&quot;git config&quot;&gt;&lt;/a&gt;git config&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;先调整本地的 git config &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// 设置全局&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;quot;Author Name&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &amp;quot;Author Email&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 或者设置本地项目库配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config user.name &amp;quot;Author Name&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config user.email &amp;quot;Author Email&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;以后每次提交前都检查下用户&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Git" scheme="http://www.orekiyuta.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL Migrate 8.0.18 -&gt; 5.6.28</title>
     <link href="http://www.orekiyuta.cn/archives/mysqlMigrate8-0-18to5-6-28/"/>
     <id>http://www.orekiyuta.cn/archives/mysqlMigrate8-0-18to5-6-28/</id>
     <published>2021-06-26T09:24:14.000Z</published>
-    <updated>2021-06-29T04:59:16.312Z</updated>
+    <updated>2021-06-29T15:17:02.469Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>迁移 MySQL 数据库</li><li>用 Navicat 转储 SQL 文件</li><li>再导入新数据库<br><img src="/images/mysqlMigrate8-0-18to5-6-28/Snipaste_2021-06-26_17-30-25.png" alt></li><li>unkown collation:’utf8mb4_0900_ai_ci’<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2></li><li>这是因为 数据库版本 不一致 导致的<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li></ul><p>=======</p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>back-up<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- old db</span></span><br><span class="line">mysql&gt;  select version();</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">| version() |</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">| 8.0.18    |</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.04</span> sec)</span><br></pre></td></tr></table></figure></div></p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- new db</span></span><br><span class="line">mysql&gt;  select version();</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">| version()          |</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">| 5.6.28-cdb2016-log |</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.06</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure></div><ul><li>把转储 SQL 文件中的所有的 utf8mb4_0900_ai_ci 替换为 utf8_general_ci </li><li>把转储 SQL 文件中的所有的 utf8mb4 替换为 utf8</li><li>再次导入即可</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h2><ul><li>迁移 MySQL 数据库</li><li>用 Navicat 转储 SQL 文件</li><li>再导入新数据库<br><img src="/images/mysqlMigrate8-0-18to5-6-28/Snipaste_2021-06-26_17-30-25.png" alt></li><li>unkown collation:’utf8mb4_0900_ai_ci’<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2></li><li>这是因为 数据库版本 不一致 导致的<a id="more"></a><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- old db</span></span><br><span class="line">mysql&gt;  select version();</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">| version() |</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">| 8.0.18    |</span><br><span class="line">+<span class="comment">-----------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.04</span> sec)</span><br></pre></td></tr></table></figure></div></li></ul><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- new db</span></span><br><span class="line">mysql&gt;  select version();</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">| version()          |</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">| 5.6.28-cdb2016-log |</span><br><span class="line">+<span class="comment">--------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.06</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure></div><ul><li>把转储 SQL 文件中的所有的 utf8mb4_0900_ai_ci 替换为 utf8_general_ci </li><li>把转储 SQL 文件中的所有的 utf8mb4 替换为 utf8</li><li>再次导入即可</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;Scene&quot;&gt;&lt;a href=&quot;#Scene&quot; class=&quot;headerlink&quot; title=&quot;Scene&quot;&gt;&lt;/a&gt;Scene&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;Scene&quot;&gt;&lt;a href=&quot;#Scene&quot; class=&quot;headerlink&quot; title=&quot;Scene&quot;&gt;&lt;/a&gt;Scene&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;迁移 MySQL 数据库&lt;/li&gt;
 &lt;li&gt;用 Navicat 转储 SQL 文件&lt;/li&gt;
-&lt;li&gt;再
-      
+&lt;li&gt;再导入新数据库&lt;br&gt;&lt;img src=&quot;/images/mysqlMigrate8-0-18to5-6-28/Snipaste_2021-06-26_17-30-25.png&quot; alt&gt;&lt;/li&gt;
+&lt;li&gt;unkown collation:’utf8mb4_0900_ai_ci’&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;这是因为 数据库版本 不一致 导致的
     
     </summary>
     
@@ -100,9 +128,9 @@
     <link href="http://www.orekiyuta.cn/archives/setupSeafile/"/>
     <id>http://www.orekiyuta.cn/archives/setupSeafile/</id>
     <published>2021-06-03T13:15:37.000Z</published>
-    <updated>2021-06-29T04:59:16.323Z</updated>
+    <updated>2021-06-29T15:16:02.317Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2><ul><li><code>yum install docker-compose -y</code></li><li>编写 docker-compose.yml </li><li><code>docker-compose up -d</code></li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 url 为该机器地址</li><li>👉 <a href="https://github.com/OrekiYuta/Gear/blob/master/Seafile/linux/docker-compose.yml" target="_blank" rel="noopener">docker-compose.yml</a><br>-👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md" target="_blank" rel="noopener">用 Docker 部署 Seafile 服务</a><a id="more"></a><h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2></li><li>强制要 Python 2.7.11 32位环境</li><li>下载解压 Seafile 文件</li><li>启动目录下的 run.bat</li><li>选择存储位置</li><li>添加管理员账号</li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 127.0.0.1 为该机器 ip</li><li>👉<a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li><li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li></ul><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Docker-Compose-ERROR-network-has-active-endpoints"><a href="#Docker-Compose-ERROR-network-has-active-endpoints" class="headerlink" title="Docker Compose ERROR network has active endpoints"></a>Docker Compose ERROR network has active endpoints</h3><ul><li>删除 container 和 image 之后重新部署不成功</li><li>因为之前的 network 没删除仍然存在</li><li>方法一：重启 docker <code>sudo service docker restart</code></li><li>方法二：删除网络</li><li><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br><span class="line">docker network inspect [网络ID]</span><br><span class="line">docker network disconnet -f [网络ID] [容器Name]</span><br></pre></td></tr></table></figure></div></li><li><p><img src="/images/setupSeafile/Snipaste_2021-06-04_21-34-14.png" alt></p></li><li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-36-54.png" alt></li><li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-38-04.png" alt></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Linux-Server"><a href="#Linux-Server" class="headerlink" title="Linux Server"></a>Linux Server</h2><ul><li><code>yum install docker-compose -y</code></li><li>编写 docker-compose.yml </li><li><code>docker-compose up -d</code></li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 url 为该机器地址</li><li>👉 <a href="https://github.com/OrekiYuta/Gear/blob/master/Seafile/linux/docker-compose.yml" target="_blank" rel="noopener">docker-compose.yml</a><br>-👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md" target="_blank" rel="noopener">用 Docker 部署 Seafile 服务</a><a id="more"></a><h2 id="Windows-Server"><a href="#Windows-Server" class="headerlink" title="Windows Server"></a>Windows Server</h2></li><li>强制要 Python 2.7.11 32位环境</li><li>下载解压 Seafile 文件</li><li>启动目录下的 run.bat</li><li>选择存储位置</li><li>添加管理员账号</li><li>进入 <code>http://&lt;您的 IP 地址&gt;:8000</code> </li><li>右上角 System Admin -&gt; Settings 更改 127.0.0.1 为该机器 ip</li><li>👉 <a href="https://github.com/OrekiYuta/Gear/tree/master/Seafile/win" target="_blank" rel="noopener">seafile-server_6.0.7_win32.tar.gz</a></li><li>👉 <a href="https://cloud.seafile.com/published/seafile-manual-cn/deploy_windows/download_and_setup_seafile_windows_server.md" target="_blank" rel="noopener">Windows 版 Seafile 服务器</a></li></ul><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Docker-Compose-ERROR-network-has-active-endpoints"><a href="#Docker-Compose-ERROR-network-has-active-endpoints" class="headerlink" title="Docker Compose ERROR network has active endpoints"></a>Docker Compose ERROR network has active endpoints</h3><ul><li>删除 container 和 image 之后重新部署不成功</li><li>因为之前的 network 没删除仍然存在</li><li>方法一：重启 docker <code>sudo service docker restart</code></li><li>方法二：删除网络</li><li><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker network ls</span><br><span class="line">docker network inspect [网络ID]</span><br><span class="line">docker network disconnet -f [网络ID] [容器Name]</span><br></pre></td></tr></table></figure></div></li><li><p><img src="/images/setupSeafile/Snipaste_2021-06-04_21-34-14.png" alt></p></li><li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-36-54.png" alt></li><li><img src="/images/setupSeafile/Snipaste_2021-06-04_21-38-04.png" alt></li></ul>]]></content>
     
     <summary type="html">
     
@@ -247,38 +275,6 @@
     
     
       <category term="Windows" scheme="http://www.orekiyuta.cn/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The rain turned fine</title>
-    <link href="http://www.orekiyuta.cn/archives/TheRainTurnedFine/"/>
-    <id>http://www.orekiyuta.cn/archives/TheRainTurnedFine/</id>
-    <published>2021-03-14T09:54:27.000Z</published>
-    <updated>2021-06-29T04:59:16.283Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><p>遠くには川 かすむ橋渡る電車揺れてもここは靜か</p></li><li><p>屆かないこと分かったときには あなたのあの言葉</p></li></ul><blockquote><p>人たちはこの空飛ぶことは葉わないけど その代わり</p></blockquote><blockquote><p>いま流す涙は天に升りまた 雨となり還る</p></blockquote><ul><li><p>西風が吹く雲が流れて 木陰にツグミの顔が覗く</p></li><li><p>立ち止まる ほら 淡い影ひとつわたしの傍 のびる</p></li><li><p>そしてここに光が差す</p></li></ul><ul><li><p>飛び立つ鳥たち 追いかけ虹が架かる</p></li><li><p>少女が走ればその先 待つ人がいる</p></li><li><p>両手を伸ばすと最後のしずく落ちる</p></li><li><p>こぼれた涙は乾き 微笑みが戻る</p></li><li><p>桥の向こうから 茜に空が染まる</p></li><li><p>明日は広げた傘に陽の匂い集め</p></li><li><p>誰かが流した涙を空に帰す</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;遠くには川 かすむ橋渡る電車揺れてもここは靜か&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;屆かないこと分かったときには あなたのあの言葉&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人たちはこの空飛ぶことは葉わないけど その代わり&lt;/p&gt;
-&lt;/
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Mood" scheme="http://www.orekiyuta.cn/tags/Mood/"/>
     
   </entry>
   
