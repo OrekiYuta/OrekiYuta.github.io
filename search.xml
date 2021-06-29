@@ -280,9 +280,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Django </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -385,11 +385,11 @@
             
             <tag> ChromeDriver </tag>
             
-            <tag> JavaScript </tag>
+            <tag> Python </tag>
             
             <tag> Flask </tag>
             
-            <tag> Python </tag>
+            <tag> JavaScript </tag>
             
             <tag> MySQL </tag>
             
@@ -447,9 +447,9 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Flask </tag>
             
         </tags>
       
