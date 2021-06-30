@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -90,13 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Canoe">
-<meta property="og:url" content="http://www.orekiyuta.cn/tags/ECMAScript/index.html">
+<meta name="description" content="Sence Python Flask 项目迁移到其他机器上开发，venv 虚拟环境无法使用 在 PyCharm 上指定该项目的虚拟环境 venv 的信息为 invalid 不可用  Solution 因为项目在原机器上的路径和新机器上的路径的虚拟环境位置不同 查看可见在 venv 里面的几个文件里写的是旧机器的绝对路径">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Venv Migrate Invalid">
+<meta property="og:url" content="http://www.orekiyuta.cn/archives/pythonVenvMigrateInvalid/index.html">
 <meta property="og:site_name" content="Canoe">
+<meta property="og:description" content="Sence Python Flask 项目迁移到其他机器上开发，venv 虚拟环境无法使用 在 PyCharm 上指定该项目的虚拟环境 venv 的信息为 invalid 不可用  Solution 因为项目在原机器上的路径和新机器上的路径的虚拟环境位置不同 查看可见在 venv 里面的几个文件里写的是旧机器的绝对路径">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-06-30T11:54:02.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canoe">
+<meta name="twitter:title" content="Python Venv Migrate Invalid">
+<meta name="twitter:description" content="Sence Python Flask 项目迁移到其他机器上开发，venv 虚拟环境无法使用 在 PyCharm 上指定该项目的虚拟环境 venv 的信息为 invalid 不可用  Solution 因为项目在原机器上的路径和新机器上的路径的虚拟环境位置不同 查看可见在 venv 里面的几个文件里写的是旧机器的绝对路径">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.orekiyuta.cn/tags/ECMAScript/">
+  <link rel="canonical" href="http://www.orekiyuta.cn/archives/pythonVenvMigrateInvalid/">
 
 
 
@@ -134,7 +139,7 @@
 <meta name="google-site-verification" content="UVhJF4cXYZJhCM6uaJWsNQktr-Y59XRhX_AIGiqUv3E">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <title>Tag: ECMAScript | Canoe</title>
+  <title>Python Venv Migrate Invalid | Canoe</title>
   
 
 
@@ -154,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/OrekiYuta" class="github-corner" aria-label="View source on GitHub" style><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -283,84 +288,247 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ECMAScript<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.orekiyuta.cn/archives/pythonVenvMigrateInvalid/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Orekiyuta">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Canoe">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/archives/SortOutJSESTS/" itemprop="url">
-              
-                <span itemprop="name">What is JS? ES? TS?</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Python Venv Migrate Invalid</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-17T17:21:02+08:00" content="2019-12-17">
-          12-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-30T19:51:42+08:00">
+                2021-06-30 => 19:51:42
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  464
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/archives/SwitchToES6/" itemprop="url">
-              
-                <span itemprop="name">Switch to ES6</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-13T20:01:02+08:00" content="2019-12-13">
-          12-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h2 id="Sence"><a href="#Sence" class="headerlink" title="Sence"></a>Sence</h2><ul>
+<li>Python Flask 项目迁移到其他机器上开发，venv 虚拟环境无法使用</li>
+<li>在 PyCharm 上指定该项目的虚拟环境 venv 的信息为 invalid 不可用</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>因为项目在原机器上的路径和新机器上的路径的虚拟环境位置不同</li>
+<li>查看可见在 venv 里面的几个文件里写的是旧机器的绝对路径<a id="more"></a></li>
+<li><p>修改以下几个文件内容</p>
+<ol>
+<li><p>venv/pyvenv.cfg</p>
+ <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">home = 新机器的全局python环境变量绝对路径</span><br><span class="line">include-system-site-packages = false</span><br><span class="line">version = 3.7.0</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>venv/Scripts/activate</p>
+ <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VIRTUAL_ENV=&quot;新机器的项目里的虚拟环境绝对路径\venv&quot;</span><br><span class="line">export VIRTUAL_ENV</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>venv/Scripts/activate.bat</p>
+ <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set &quot;VIRTUAL_ENV=新机器的项目里的虚拟环境绝对路径\venv&quot;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>venv/Scripts/Activate.ps1</p>
+ <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$env:VIRTUAL_ENV=&quot;新机器的项目里的虚拟环境绝对路径\venv&quot;</span><br></pre></td></tr></table></figure></div>
+</li>
+</ol>
+</li>
+<li><p>再次尝试 激活/设置 虚拟环境,启动项目</p>
+</li>
+<li><p>然后可能还会遇到以下问题</p>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Fatal Python error: Py_Initialize: unable to load the file system codec</span><br><span class="line">ImportError: No module named &apos;encodings&apos;</span><br><span class="line">Current thread 0x00001db4 (most recent call first):</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot set up a python SDK at Python 3.7 The SDK seems invalid</span><br></pre></td></tr></table></figure></div>
+  <div class="highlight-wrap" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ImportError: DLL load failed: %1 不是有效的 Win32 应用程序。</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>我的解决方法是:</p>
+<ul>
+<li>在新的机器上创建一个新的虚拟环境 venv/</li>
+<li>然后把该新的 venv/Script/ 目录下 除了 activate,activate.bat,Activate.ps1 以外的全部文件复制到 我们刚才迁移过来的项目的 venv/Script/ 目录下 并覆盖</li>
+<li>再次给该项目指定 虚拟环境 venv 即可</li>
+</ul>
+</li>
+<li>最后,以后在每个项目中还是需要添加一下环境依赖 <code>pip freeze&gt;requirements.txt</code></li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li>👉 <a href="https://blog.csdn.net/u011580175/article/details/105795665" target="_blank" rel="noopener">项目路径变化后virtualenv(venv)无法激活</a></li>
+<li>👉 <a href="https://blog.csdn.net/New_joined_lion/article/details/118053704" target="_blank" rel="noopener">Cannot set up a python SDK at Python 2.7 The SDK seems invalid - Python项目迁移时虚拟环境无法成功导入，致依赖包无法识别的问题</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Orekiyuta
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.orekiyuta.cn/archives/pythonVenvMigrateInvalid/" title="Python Venv Migrate Invalid">http://www.orekiyuta.cn/archives/pythonVenvMigrateInvalid/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+     <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: black;font-size:15px;margin-top:30px">< - Thanks for reading - ></div>
+    
+</div>
+      
+     </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/githubCommitAccountAbout/" rel="next" title="Github Commit Account About">
+                <i class="fa fa-chevron-left"></i> Github Commit Account About
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
 
           </div>
           
 
 
           
+
+  
+
+
 
         </div>
         
@@ -651,8 +819,17 @@ if(canvas.getContext){
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -731,6 +908,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sence"><span class="nav-number">1.</span> <span class="nav-text">Sence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">3.</span> <span class="nav-text">Other</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -900,6 +1093,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
