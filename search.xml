@@ -398,11 +398,11 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> Selenium </tag>
             
             <tag> ChromeDriver </tag>
+            
+            <tag> Linux </tag>
             
             <tag> JavaScript </tag>
             
@@ -410,13 +410,13 @@
             
             <tag> Flask </tag>
             
-            <tag> RaspberryPi </tag>
-            
-            <tag> Nginx </tag>
-            
             <tag> MySQL </tag>
             
             <tag> Mariadb </tag>
+            
+            <tag> RaspberryPi </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> Chromium </tag>
             
